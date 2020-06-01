@@ -32,10 +32,10 @@ bird_on <= '1' when ( ('0' & bird_x_pos <= '0' & pixel_column + size) and ('0' &
 			  '0';
 
 
--- Colours for pixel data on video signal
-Red <= '1';
-Green <= '1' and (not bird_on);
-Blue <= not bird_on;
+------ White bird, black background ------
+Red <= bird_on;
+Green <= bird_on;
+Blue <= bird_on;
 
 ------ Bird mechanics ------
 

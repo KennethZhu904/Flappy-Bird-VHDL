@@ -405,7 +405,7 @@ applicable agreement for further details.
 (symbol
 	(rect 768 432 976 576)
 	(text "display" (rect 5 0 40 12)(font "Arial" ))
-	(text "inst5" (rect 8 128 31 140)(font "Arial" ))
+	(text "inst10" (rect 8 128 37 140)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -531,53 +531,6 @@ applicable agreement for further details.
 	(pt 768 320)
 )
 (connector
-	(text "clk_25MHz" (rect 680 456 733 468)(font "Arial" ))
-	(pt 736 464)
-	(pt 768 464)
-)
-(connector
-	(text "vert_sync_out" (rect 664 472 735 484)(font "Arial" ))
-	(pt 736 480)
-	(pt 768 480)
-)
-(connector
-	(text "left_click" (rect 688 488 732 500)(font "Arial" ))
-	(pt 736 496)
-	(pt 768 496)
-)
-(connector
-	(text "pixel_row[9..0]" (rect 664 504 734 516)(font "Arial" ))
-	(pt 736 512)
-	(pt 768 512)
-	(bus)
-)
-(connector
-	(text "pixel_column[9..0]" (rect 648 520 737 532)(font "Arial" ))
-	(pt 736 528)
-	(pt 768 528)
-	(bus)
-)
-(connector
-	(text "red" (rect 1018 456 1033 468)(font "Arial" ))
-	(pt 1008 464)
-	(pt 976 464)
-)
-(connector
-	(text "green" (rect 1018 472 1045 484)(font "Arial" ))
-	(pt 1008 480)
-	(pt 976 480)
-)
-(connector
-	(text "blue" (rect 1018 488 1038 500)(font "Arial" ))
-	(pt 1008 496)
-	(pt 976 496)
-)
-(connector
-	(text "bird_dead" (rect 1016 504 1063 516)(font "Arial" ))
-	(pt 976 512)
-	(pt 1008 512)
-)
-(connector
 	(text "clk_25MHz" (rect 682 104 735 116)(font "Arial" ))
 	(pt 736 112)
 	(pt 768 112)
@@ -627,5 +580,52 @@ applicable agreement for further details.
 (connector
 	(pt 192 168)
 	(pt 224 168)
+)
+(connector
+	(text "clk_25MHz" (rect 680 456 733 468)(font "Arial" ))
+	(pt 736 464)
+	(pt 768 464)
+)
+(connector
+	(text "vert_sync_out" (rect 664 472 735 484)(font "Arial" ))
+	(pt 736 480)
+	(pt 768 480)
+)
+(connector
+	(text "left_click" (rect 688 488 732 500)(font "Arial" ))
+	(pt 736 496)
+	(pt 768 496)
+)
+(connector
+	(text "pixel_row[9..0]" (rect 664 504 734 516)(font "Arial" ))
+	(pt 736 512)
+	(pt 768 512)
+	(bus)
+)
+(connector
+	(text "pixel_column[9..0]" (rect 648 520 737 532)(font "Arial" ))
+	(pt 736 528)
+	(pt 768 528)
+	(bus)
+)
+(connector
+	(text "red" (rect 1018 456 1033 468)(font "Arial" ))
+	(pt 1008 464)
+	(pt 976 464)
+)
+(connector
+	(text "green" (rect 1018 472 1045 484)(font "Arial" ))
+	(pt 1008 480)
+	(pt 976 480)
+)
+(connector
+	(text "blue" (rect 1018 488 1038 500)(font "Arial" ))
+	(pt 1008 496)
+	(pt 976 496)
+)
+(connector
+	(text "bird_dead" (rect 1016 504 1063 516)(font "Arial" ))
+	(pt 976 512)
+	(pt 1008 512)
 )
 (junction (pt 1168 336))
