@@ -14,7 +14,7 @@ ENTITY display IS
 		SIGNAL pixel_row, pixel_column		: IN std_logic_vector(9 DOWNTO 0);
 		SIGNAL red, green, blue					: OUT std_logic;
 		--Bird Signals--
-		SIGNAL bird_dead 							: OUT std_logic;
+		SIGNAL bird_dead 							: OUT std_logic
 		--Pipe Signals--
 		);		
 END display;
@@ -22,15 +22,15 @@ END display;
 architecture behavior of display is
 
 ------ Signals associated with the bird ------
-SIGNAL bird_on										: std_logic;
+SIGNAL bird_on												: std_logic;
 SIGNAL bird_size, bird_y_pos, bird_y_motion		: std_logic_vector(9 DOWNTO 0);
-SIGNAL bird_x_pos									: std_logic_vector(10 DOWNTO 0);
+SIGNAL bird_x_pos											: std_logic_vector(10 DOWNTO 0);
 
 ------ Signals associated with the pipe ------
-SIGNAL pipe_top, pipe_bottom					: std_logic;
-SIGNAL pipe_size 									: std_logic_vector(9 DOWNTO 0);  
-SIGNAL pipe_top_y_pos, pipe_bottom_y_pos 	: std_logic_vector(9 DOWNTO 0);
-SIGNAL pipe_x_pos 								: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(640,10);
+SIGNAL pipe_top, pipe_bottom							: std_logic;
+SIGNAL pipe_size 											: std_logic_vector(9 DOWNTO 0);  
+SIGNAL pipe_top_y_pos, pipe_bottom_y_pos 			: std_logic_vector(9 DOWNTO 0);
+SIGNAL pipe_x_pos 										: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(640,10);
 
 BEGIN           
 
@@ -50,7 +50,7 @@ bird_on <= '1' when ( ('0' & bird_x_pos <= '0' & pixel_column + bird_size) and (
 
 ------ Display the pipe on the VGA screen ------
 pipe_top <= '1' when ( (pipe_x_pos <= pixel_column + pipe_size) and (pixel_column <= pipe_x_pos + pipe_size) 	-- x_pos - pipe_size <= pixel_column <= x_pos + pipe_size
-					 and (pixel_row <= pipe_top_y_pos + pipe_size) )  else	-- y_pos - pipe_size <= pixel_row <= y_pos + pipe_size
+					 and (pixel_row <= pipe_top_y_pos + pipe_size) )  else	
 			'0';
 pipe_bottom <= '1' when ( (pipe_x_pos <= pixel_column + pipe_size) and (pixel_column <= pipe_x_pos + pipe_size)
 					 and (pipe_bottom_y_pos <= pixel_row +pipe_size)) else
@@ -62,7 +62,7 @@ begin
 	-- Move bird once every vertical sync
 	if (rising_edge(vert_sync)) then
 		-- Let the bird freefall when there is no left click
-		bird_y_motion <= CONV_STD_LOGIC_VECTOR(4,10);
+		bird_y_motion <= CONV_STD_LOGIC_VECTOR(3,10);
 		-- Move the bird up on a left click 
 		if (left_click = '1' and (bird_y_pos > bird_size)) then
 			bird_y_motion <= - CONV_STD_LOGIC_VECTOR(6,10);
