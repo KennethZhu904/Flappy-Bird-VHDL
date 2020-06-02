@@ -1,0 +1,15 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity seg7 is 
+  port (bird_dead : in std_logic;
+		  leds : out std_logic_vector(7 downto 0));	
+end entity seg7;
+
+architecture behaviour of seg7 is
+  begin
+    process(bird_dead)
+      begin
+        case bird_dead is             --abcdefgDP--
+			 when "0000" => leds <= "11000000"; --0
+			 when "0001" => leds <= "11111001"; --1
