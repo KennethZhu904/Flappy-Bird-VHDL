@@ -12,8 +12,9 @@ ENTITY display IS
 		--Global Signals--
 		SIGNAL clk, vert_sync, left_click	: IN std_logic;
 		SIGNAL pixel_row, pixel_column		: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL red, green, blue					: OUT std_logic;
 		--Bird Signals--
-		SIGNAL red, green, blue, bird_dead	: OUT std_logic
+		SIGNAL bird_dead 							: OUT std_logic;
 		--Pipe Signals--
 		);		
 END display;
@@ -29,7 +30,7 @@ SIGNAL bird_x_pos									: std_logic_vector(10 DOWNTO 0);
 SIGNAL pipe_top, pipe_bottom					: std_logic;
 SIGNAL pipe_size 									: std_logic_vector(9 DOWNTO 0);  
 SIGNAL pipe_top_y_pos, pipe_bottom_y_pos 	: std_logic_vector(9 DOWNTO 0);
-SIGNAL pipe_x_pos 								: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(640,10);
+SIGNAL pipe_x_pos 								: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(640,10);
 
 BEGIN           
 
@@ -89,7 +90,7 @@ begin
 		if (clk_cnt = 1000000) then
 			clk_cnt := 1;
 			clk_t := NOT(clk_t);
-			if (position > 660) then
+			if (position > 640) then
 				position := 0;
 			else
 				position := position + 1;
@@ -100,7 +101,7 @@ begin
 end process pipe_move;
 
 ------ Display ------
-Red <= bird_on or ((not pipe_top) and (not pipe_bottom));
-Green <= bird_on or ((not pipe_top) and (not pipe_bottom));
-Blue <= bird_on or ((not pipe_top) and (not pipe_bottom));
+Red <= bird_on;
+Green <= (not bird_on) and (not pipe_top) and (not pipe_bottom);
+Blue <= (not bird_on) and (not pipe_top) and (not pipe_bottom);
 END behavior;
