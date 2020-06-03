@@ -4,14 +4,14 @@ USE  IEEE.STD_LOGIC_ARITH.all;
 USE  IEEE.STD_LOGIC_SIGNED.all;
 
 
-ENTITY bird IS
+ENTITY ball IS
 	PORT
 		(SIGNAL clk, vert_sync, left_click	: IN std_logic;
 		SIGNAL pixel_row, pixel_column		: IN std_logic_vector(9 DOWNTO 0); 
 		SIGNAL red, green, blue, bird_dead	: OUT std_logic);		
-END bird;
+END ball;
 
-architecture behavior of bird is
+architecture behavior of ball is
 
 SIGNAL bird_on										: std_logic;
 SIGNAL size, bird_y_pos, bird_y_motion		: std_logic_vector(9 DOWNTO 0);

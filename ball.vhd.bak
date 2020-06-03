@@ -1,0 +1,70 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE  IEEE.STD_LOGIC_ARITH.all;
+USE  IEEE.STD_LOGIC_UNSIGNED.all;
+
+
+ENTITY ball IS
+	PORT
+		(SIGNAL clk 							: IN std_logic;
+		SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL RNG								: IN std_LOGIC_vector(1 downto 0);
+		SIGNAL red, green, blue 			: OUT std_logic);		
+END ball;
+
+architecture behavior of ball is
+
+SIGNAL pipe_top, pipe_bottom				: std_logic;
+SIGNAL pipe_size 								: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(20,10);  
+SIGNAL pipe_top_y_pos 						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(200,10);
+SIGNAL pipe_bottom_y_pos 					: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(350,10);
+SIGNAL pipe_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(640,10);
+
+BEGIN           
+
+pipe_move: process(clk)
+variable clk_cnt 	: integer := 1;
+variable clk_t 		: STD_LOGIC := '0';
+variable position 	: integer := 0;
+begin
+	if (clk'event and clk = '1') then
+		clk_cnt := clk_cnt + 1;
+		if (clk_cnt = 1000000) then
+			clk_cnt := 1;
+			clk_t := NOT(clk_t);
+			if (position > 660) then
+				if (RNG = "00") then
+					pipe_top_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
+					pipe_bottom_y_pos <= CONV_STD_LOGIC_VECTOR(200,10);
+				elsif (RNG = "01") then
+					pipe_top_y_pos <= CONV_STD_LOGIC_VECTOR(150,10);
+					pipe_bottom_y_pos <= CONV_STD_LOGIC_VECTOR(300,10);
+				elsif (RNG = "10") then
+					pipe_top_y_pos <= CONV_STD_LOGIC_VECTOR(450,10);
+					pipe_bottom_y_pos <= CONV_STD_LOGIC_VECTOR(600,10);
+				elsif (RNG = "11") then
+					pipe_top_y_pos <= CONV_STD_LOGIC_VECTOR(200,10);
+					pipe_bottom_y_pos <= CONV_STD_LOGIC_VECTOR(350,10);
+				position := 0;
+				end if;
+			else
+				position := position + 1;
+			end if;
+		end if;
+	end if;
+	pipe_x_pos <= CONV_STD_LOGIC_VECTOR((640 - position),10);
+end process;
+	
+pipe_top <= '1' when ( (pipe_x_pos <= pixel_column + pipe_size) and (pixel_column <= pipe_x_pos + pipe_size) 	-- x_pos - pipe_size <= pixel_column <= x_pos + pipe_size
+					 and (pixel_row <= pipe_top_y_pos + pipe_size) )  else	-- y_pos - pipe_size <= pixel_row <= y_pos + pipe_size
+			'0';
+pipe_bottom <= '1' when ( (pipe_x_pos <= pixel_column + pipe_size) and (pixel_column <= pipe_x_pos + pipe_size)
+					 and (pipe_bottom_y_pos <= pixel_row +pipe_size)) else
+			'0';
+
+Red <=  '1';
+Green <= (not pipe_top) and (not pipe_bottom);
+Blue <=  (not pipe_top) and (not pipe_bottom);
+
+END behavior;
+
