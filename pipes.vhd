@@ -35,20 +35,7 @@ begin
 			clk_cnt := 1;
 			clk_t := NOT(clk_t);
 			if (position > 660) then
---				if (RNG = "00") then
---					pipe_top_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
---					pipe_bottom_y_pos <= CONV_STD_LOGIC_VECTOR(200,10);
---				elsif (RNG = "01") then
---					pipe_top_y_pos <= CONV_STD_LOGIC_VECTOR(150,10);
---					pipe_bottom_y_pos <= CONV_STD_LOGIC_VECTOR(300,10);
---				elsif (RNG = "10") then
---					pipe_top_y_pos <= CONV_STD_LOGIC_VECTOR(450,10);
---					pipe_bottom_y_pos <= CONV_STD_LOGIC_VECTOR(600,10);
---				elsif (RNG = "11") then
---					pipe_top_y_pos <= CONV_STD_LOGIC_VECTOR(200,10);
---					pipe_bottom_y_pos <= CONV_STD_LOGIC_VECTOR(350,10);
---				end if;
---				position := 0;
+				position := 0;
 			else
 				position := position + 1;
 			end if;
