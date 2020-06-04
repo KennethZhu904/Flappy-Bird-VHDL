@@ -105,7 +105,7 @@ begin
 				end if;
 				pipe3_x_pos <= CONV_STD_LOGIC_VECTOR(position3, 10);
 		--If Pipe Passes Bird, Increase Score--
-				if (position1 = 320 or position2 = 320 or position3 = 320) then
+				if ((position1 < 320 and position1 > 316) or (position2 < 320 and position2 > 316) or (position3 < 320 and position3 > 316)) then
 					score_incr <= '1';
 				else
 					score_incr <= '0';
