@@ -60,11 +60,24 @@ begin
 		end if;
 		-- Flag when the bird lands at the bottom of the screen.
 		if ('0' & bird_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - bird_size) then
-			bird_dead <= '1'; -------------------- BIRD DIES WHEN IT HITS THE GROUND BUT NOT WHEN IT HITS THE PIPES --------------------
+			bird_dead <= '1';
 			temp_bird_dead <= '1';
+			reset_score <= '1';
 		else
 			bird_dead <= '0';
 			temp_bird_dead <= '0';
+		end if;
+		--Bird Should Die when it touches a pipe--
+		if 	(	(conv_integer(pipe1_x_pos) >= 320 and conv_integer(pipe1_x_pos + pipe_size) <= 320 and (pipe1_top_y_pos > bird_y_pos or pipe1_bottom_y_pos < bird_y_pos))
+				or	(conv_integer(pipe2_x_pos) >= 320 and conv_integer(pipe2_x_pos + pipe_size) <= 320 and (pipe2_top_y_pos > bird_y_pos or pipe2_bottom_y_pos < bird_y_pos))
+				or (conv_integer(pipe3_x_pos) >= 320 and conv_integer(pipe3_x_pos + pipe_size) <= 320 and (pipe3_top_y_pos > bird_y_pos or pipe3_bottom_y_pos < bird_y_pos))
+				) then
+				bird_dead <= '1';
+				temp_bird_dead <= '1';
+				reset_score <= '1';
+		else
+				bird_dead <= '0';
+				temp_bird_dead <= '0';
 		end if;
 	-- Reset game when user goes back to the main menu and then starts a new game
 	elsif (temp_bird_dead = '1' and sw2 = '0') then
@@ -73,9 +86,6 @@ begin
 		bird_y_pos <= CONV_STD_LOGIC_VECTOR(240,10);
 		reset_score <= '1';
 	end if;
---	if (temp_bird_dead = '1' and sw2 = '1') then
---			--implement a counter so that  it counts for a bit
---			--set bird values to default
 --	end if;
 end process Move_Bird;
 

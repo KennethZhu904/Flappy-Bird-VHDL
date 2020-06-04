@@ -1,5 +1,5 @@
 Flow report for FlappyBird-FlappyCompsys
-Fri Jun 05 02:43:57 2020
+Fri Jun 05 03:08:41 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,15 +40,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun 05 02:43:57 2020           ;
+; Flow Status                        ; Successful - Fri Jun 05 03:08:41 2020           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; FlappyBird-FlappyCompsys                        ;
 ; Top-level Entity Name              ; FlappyBird-FlappyCompsys                        ;
 ; Family                             ; Cyclone III                                     ;
 ; Device                             ; EP3C16F484C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 1,035 / 15,408 ( 7 % )                          ;
-;     Total combinational functions  ; 989 / 15,408 ( 6 % )                            ;
+; Total logic elements               ; 1,089 / 15,408 ( 7 % )                          ;
+;     Total combinational functions  ; 1,053 / 15,408 ( 7 % )                          ;
 ;     Dedicated logic registers      ; 282 / 15,408 ( 2 % )                            ;
 ; Total registers                    ; 282                                             ;
 ; Total pins                         ; 11 / 347 ( 3 % )                                ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+--------------------------+
 ; Option            ; Setting                  ;
 +-------------------+--------------------------+
-; Start date & time ; 06/05/2020 02:43:31      ;
+; Start date & time ; 06/05/2020 03:08:12      ;
 ; Main task         ; Compilation              ;
 ; Revision Name     ; FlappyBird-FlappyCompsys ;
 +-------------------+--------------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 53447175424281.159128181115384        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 53447175424281.159128329217892        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; ALTPLL                                ; --            ; --          ; --             ;
@@ -104,12 +104,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 4658 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:00:11     ; 1.0                     ; 4928 MB             ; 00:00:11                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4549 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4609 MB             ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4523 MB             ; 00:00:02                           ;
-; Total                     ; 00:00:22     ; --                      ; --                  ; 00:00:21                           ;
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 4659 MB             ; 00:00:05                           ;
+; Fitter                    ; 00:00:12     ; 1.0                     ; 4920 MB             ; 00:00:13                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4552 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4614 MB             ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4538 MB             ; 00:00:02                           ;
+; Total                     ; 00:00:24     ; --                      ; --                  ; 00:00:24                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
