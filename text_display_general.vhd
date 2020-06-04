@@ -80,7 +80,8 @@ temp_char_address<= "110000" when counter_ones="0000" and ( '0' & text_x_pos<= p
 							"111000" when	counter_ones="1000" and ( '0' & text_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= text_x_pos + character_size) --number 8
 												and ('0' & text_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= text_y_pos +character_size) else
 							"111001" when counter_ones="1001" and ( '0' & text_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= text_x_pos + character_size) --number 9
-												and ('0' & text_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= text_y_pos +character_size) else   ------ FOR THE TENS DIGIT
+												and ('0' & text_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= text_y_pos +character_size) else   
+							------ FOR THE TENS DIGIT-----
 							"110000" when counter_tens="0000" and ( '0' & text_x_pos1<= pixel_column+ character_size) and ('0' & pixel_column <= text_x_pos1 + character_size)   --number 0
 												and ('0' & text_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= text_y_pos +character_size) else
 							"110001" when counter_tens="0001" and ( '0' & text_x_pos1<= pixel_column+ character_size) and ('0' & pixel_column <= text_x_pos1 + character_size) --number 1
@@ -100,7 +101,8 @@ temp_char_address<= "110000" when counter_ones="0000" and ( '0' & text_x_pos<= p
 							"111000" when	counter_tens="1000" and ( '0' & text_x_pos1<= pixel_column+ character_size) and ('0' & pixel_column <= text_x_pos1 + character_size) --number 8
 												and ('0' & text_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= text_y_pos +character_size) else
 							"111001" when counter_tens="1001" and ( '0' & text_x_pos1<= pixel_column+ character_size) and ('0' & pixel_column <= text_x_pos1 + character_size) --number 9
-												and ('0' & text_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= text_y_pos +character_size) else     --------DISPLAYING PAUSE when pause enable is 1
+												and ('0' & text_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= text_y_pos +character_size) else    
+							--------DISPLAYING PAUSE when pause enable is 1--------
 							"010000" when pause_enable='1' and ( '0' & P_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= P_x_pos + character_size) --Display P
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else					
 							"000001" when pause_enable='1' and ( '0' & A_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= A_x_pos + character_size) --Display A
@@ -110,22 +112,23 @@ temp_char_address<= "110000" when counter_ones="0000" and ( '0' & text_x_pos<= p
 							"010011" when pause_enable='1' and ( '0' & S_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= S_x_pos + character_size) --Display S
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
 							"000101" when pause_enable='1' and ( '0' & E_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= E_x_pos + character_size) --Display E
-												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else-----------DISPLAYING GAME OVER
-							"000111" when game_over_enable='1' and ( '0' & P_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= P_x_pos + character_size) --Display G
+												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
+							-----------DISPLAYING GAME OVER----------
+							"000111" when (game_over_enable='1' or (counter_tens = "1001" and counter_ones = "1001")) and ( '0' & P_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= P_x_pos + character_size) --Display G
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else					
-							"000001" when game_over_enable='1' and ( '0' & A_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= A_x_pos + character_size) --Display A
+							"000001" when (game_over_enable='1' or (counter_tens = "1001" and counter_ones = "1001")) and ( '0' & A_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= A_x_pos + character_size) --Display A
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else					
-							"001101" when game_over_enable='1' and ( '0' & U_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= U_x_pos + character_size) --Display M
+							"001101" when (game_over_enable='1' or (counter_tens = "1001" and counter_ones = "1001")) and ( '0' & U_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= U_x_pos + character_size) --Display M
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
-							"000101" when game_over_enable='1' and ( '0' & S_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= S_x_pos + character_size) --Display E
+							"000101" when (game_over_enable='1' or (counter_tens = "1001" and counter_ones = "1001")) and ( '0' & S_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= S_x_pos + character_size) --Display E
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
-							"001111" when game_over_enable='1' and ( '0' & O_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= O_x_pos + character_size) --Display O
+							"001111" when (game_over_enable='1' or (counter_tens = "1001" and counter_ones = "1001")) and ( '0' & O_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= O_x_pos + character_size) --Display O
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
-							"010110" when game_over_enable='1' and ( '0' & V_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= V_x_pos + character_size) --Display V
+							"010110" when (game_over_enable='1' or (counter_tens = "1001" and counter_ones = "1001")) and ( '0' & V_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= V_x_pos + character_size) --Display V
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
-							"000101" when game_over_enable='1' and ( '0' & E1_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= E1_x_pos + character_size) --Display E
+							"000101" when (game_over_enable='1' or (counter_tens = "1001" and counter_ones = "1001")) and ( '0' & E1_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= E1_x_pos + character_size) --Display E
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
-							"010010" when game_over_enable='1' and ( '0' & R_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= R_x_pos + character_size) --Display R
+							"010010" when (game_over_enable='1' or (counter_tens = "1001" and counter_ones = "1001")) and ( '0' & R_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= R_x_pos + character_size) --Display R
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else						
 							"100000";--Display it blank screen. 
 							

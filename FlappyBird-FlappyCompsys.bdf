@@ -645,7 +645,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -56 208 88 288)
+	(rect -96 264 48 344)
 	(text "clk_div" (rect 5 0 40 12)(font "Arial" ))
 	(text "inst14" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -667,7 +667,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 256 408 464 488)
+	(rect 264 408 472 488)
 	(text "LFSR" (rect 5 0 33 12)(font "Arial" ))
 	(text "inst8" (rect 8 64 31 76)(font "Arial" ))
 	(port
@@ -947,7 +947,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -88 552 128 664)
+	(rect -96 552 120 664)
 	(text "text_display_main_menu" (rect 5 0 127 12)(font "Arial" ))
 	(text "inst15" (rect 8 96 37 108)(font "Arial" ))
 	(port
@@ -1046,21 +1046,21 @@ applicable agreement for further details.
 		(pt 168 32)
 		(output)
 		(text "red" (rect 0 0 15 12)(font "Arial" ))
-		(text "red" (rect 135 27 147 39)(font "Arial" ))
+		(text "red" (rect 135 27 150 39)(font "Arial" ))
 		(line (pt 168 32)(pt 152 32))
 	)
 	(port
 		(pt 168 48)
 		(output)
 		(text "green" (rect 0 0 27 12)(font "Arial" ))
-		(text "green" (rect 125 43 147 55)(font "Arial" ))
+		(text "green" (rect 125 43 152 55)(font "Arial" ))
 		(line (pt 168 48)(pt 152 48))
 	)
 	(port
 		(pt 168 64)
 		(output)
 		(text "blue" (rect 0 0 20 12)(font "Arial" ))
-		(text "blue" (rect 131 59 147 71)(font "Arial" ))
+		(text "blue" (rect 131 59 151 71)(font "Arial" ))
 		(line (pt 168 64)(pt 152 64))
 	)
 	(drawing
@@ -1231,16 +1231,6 @@ applicable agreement for further details.
 	(pt 1352 584)
 )
 (connector
-	(text "clk_25MHz" (rect -152 232 -99 244)(font "Arial" ))
-	(pt -56 240)
-	(pt -96 240)
-)
-(connector
-	(text "clk_div" (rect 136 232 171 244)(font "Arial" ))
-	(pt 88 240)
-	(pt 128 240)
-)
-(connector
 	(text "clk_25MHz" (rect -184 384 -131 396)(font "Arial" ))
 	(pt -128 392)
 	(pt -96 392)
@@ -1312,28 +1302,6 @@ applicable agreement for further details.
 	(pt 40 80)
 )
 (connector
-	(text "main_menu" (rect 168 576 224 588)(font "Arial" ))
-	(pt 128 584)
-	(pt 160 584)
-)
-(connector
-	(text "clk_25MHz" (rect -176 576 -123 588)(font "Arial" ))
-	(pt -88 584)
-	(pt -120 584)
-)
-(connector
-	(text "pixel_row[9..0]" (rect -192 592 -122 604)(font "Arial" ))
-	(pt -88 600)
-	(pt -120 600)
-	(bus)
-)
-(connector
-	(text "pixel_column[9..0]" (rect -208 608 -119 620)(font "Arial" ))
-	(pt -88 616)
-	(pt -120 616)
-	(bus)
-)
-(connector
 	(text "sw2" (rect -158 672 -140 684)(font "Arial" ))
 	(pt -200 680)
 	(pt -168 680)
@@ -1402,10 +1370,6 @@ applicable agreement for further details.
 (connector
 	(pt -200 680)
 	(pt -200 632)
-)
-(connector
-	(pt -144 632)
-	(pt -88 632)
 )
 (connector
 	(text "clk_25Mhz" (rect 296 560 346 572)(font "Arial" ))
@@ -1533,14 +1497,50 @@ applicable agreement for further details.
 	(pt 1112 648)
 )
 (connector
-	(text "clk_25MHz" (rect 160 432 213 444)(font "Arial" ))
-	(pt 256 440)
-	(pt 216 440)
+	(text "RNG[15..0]" (rect 512 432 568 444)(font "Arial" ))
+	(pt 472 440)
+	(pt 504 440)
+	(bus)
 )
 (connector
-	(text "RNG[15..0]" (rect 504 432 560 444)(font "Arial" ))
-	(pt 464 440)
-	(pt 496 440)
+	(text "clk_25MHz" (rect 168 432 221 444)(font "Arial" ))
+	(pt 224 440)
+	(pt 264 440)
+)
+(connector
+	(text "clk_25MHz" (rect -192 288 -139 300)(font "Arial" ))
+	(pt -96 296)
+	(pt -136 296)
+)
+(connector
+	(text "clk_div" (rect 96 288 131 300)(font "Arial" ))
+	(pt 48 296)
+	(pt 88 296)
+)
+(connector
+	(text "clk_25MHz" (rect -184 576 -131 588)(font "Arial" ))
+	(pt -96 584)
+	(pt -128 584)
+)
+(connector
+	(text "pixel_row[9..0]" (rect -200 592 -130 604)(font "Arial" ))
+	(pt -96 600)
+	(pt -128 600)
 	(bus)
+)
+(connector
+	(text "pixel_column[9..0]" (rect -216 608 -127 620)(font "Arial" ))
+	(pt -96 616)
+	(pt -128 616)
+	(bus)
+)
+(connector
+	(pt -144 632)
+	(pt -96 632)
+)
+(connector
+	(text "main_menu" (rect 160 576 216 588)(font "Arial" ))
+	(pt 120 584)
+	(pt 152 584)
 )
 (junction (pt 1168 336))

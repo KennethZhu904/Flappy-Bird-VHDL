@@ -124,11 +124,6 @@ begin
 			end if;
 		end if;
 	end if;
---	if (bird_dead = '1') then
---	pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(213,10);
---	pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(426,10);
---	pipe3_x_pos <= CONV_STD_LOGIC_VECTOR(640,10);
---	end if;
 end process;
 	
 	

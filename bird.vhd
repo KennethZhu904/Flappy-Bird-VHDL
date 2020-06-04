@@ -60,9 +60,9 @@ begin
 		end if;
 		-- Flag when the bird lands at the bottom of the screen --
 		-- Bird Should Die when it touches a pipe --
-		if 	(	(conv_integer(pipe1_x_pos) <= 320 and conv_integer(pipe1_x_pos + pipe_size) >= 320 and (pipe1_top_y_pos > bird_y_pos or pipe1_bottom_y_pos < bird_y_pos))
-				or	(conv_integer(pipe2_x_pos) <= 320 and conv_integer(pipe2_x_pos + pipe_size) >= 320 and (pipe2_top_y_pos > bird_y_pos or pipe2_bottom_y_pos < bird_y_pos))
-				or (conv_integer(pipe3_x_pos) <= 320 and conv_integer(pipe3_x_pos + pipe_size) >= 320 and (pipe3_top_y_pos > bird_y_pos or pipe3_bottom_y_pos < bird_y_pos))
+		if 	(	(conv_integer(pipe1_x_pos) <= (320 + conv_integer(bird_size)) and conv_integer(pipe1_x_pos + pipe_size) >= 320 and (pipe1_top_y_pos > bird_y_pos or pipe1_bottom_y_pos < bird_y_pos))
+				or	(conv_integer(pipe2_x_pos) <= (320 + conv_integer(bird_size)) and conv_integer(pipe2_x_pos + pipe_size) >= 320 and (pipe2_top_y_pos > bird_y_pos or pipe2_bottom_y_pos < bird_y_pos))
+				or (conv_integer(pipe3_x_pos) <= (320 + conv_integer(bird_size)) and conv_integer(pipe3_x_pos + pipe_size) >= 320 and (pipe3_top_y_pos > bird_y_pos or pipe3_bottom_y_pos < bird_y_pos))
 				or ('0' & bird_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - bird_size)
 				) then
 				temp_bird_dead <= '1';
