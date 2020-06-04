@@ -11,7 +11,7 @@ ENTITY pipes IS
 		SIGNAL clk, sw0, bird_dead			: IN std_logic;
 		SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
 		SIGNAL Qones, Qtens					: IN std_logic_vector(3 DOWNTO 0);
-		--SIGNAL RNG								: IN std_LOGIC_vector(1 downto 0);
+		SIGNAL RNG								: IN std_LOGIC_vector(15 DOWNTO 0);
 		SIGNAL q_pipe_size : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL q_pipe1_x_pos, q_pipe1_top_y_pos, q_pipe1_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL q_pipe2_x_pos, q_pipe2_top_y_pos, q_pipe2_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
@@ -53,14 +53,10 @@ BEGIN
 pipe_move: process(clk)
 variable clk_cnt 																				: integer := 1;
 variable clk_t 																				: STD_LOGIC := '0';
-variable position1, position2, position3, position4, position5, position6 	: integer := 0;
+variable position1, position2, position3, position4, position5, position6 	: integer := 640;
+variable RNG_int : integer;
+variable next_pipe_top, next_pipe_bottom : std_logic_vector(9 DOWNTO 0);
 begin
-	--Get Pipe Position--
-	position1 := conv_integer(pipe1_x_pos);
-	position2 := conv_integer(pipe2_x_pos);
-	position3 := conv_integer(pipe3_x_pos);
-	position4 := conv_integer(pipe4_x_pos);
-	position5 := conv_integer(pipe5_x_pos);
 	-- Game should only run if not paused or the bird is alive --
 	if (sw0 = '0' and bird_dead = '0') then
 		if (clk'event and clk = '1') then
@@ -69,7 +65,28 @@ begin
 			if (clk_cnt = pipe_speed) then
 				clk_cnt := 1;
 				clk_t := NOT(clk_t);
-					-- Move Pipes--
+		--Get Pipe Position--
+				position1 := conv_integer(pipe1_x_pos);
+				position2 := conv_integer(pipe2_x_pos);
+				position3 := conv_integer(pipe3_x_pos);
+				position4 := conv_integer(pipe4_x_pos);
+				position5 := conv_integer(pipe5_x_pos);
+		--Get RNG--
+				RNG_int := conv_integer('0' & RNG(3 DOWNTO 0));
+				if (RNG_int >= 0 and RNG_int < 4) then
+					next_pipe_top := CONV_STD_LOGIC_VECTOR(50,10);
+					next_pipe_bottom := CONV_STD_LOGIC_VECTOR(200, 10);
+				elsif (RNG_int >= 4 and RNG_int < 8) then
+					next_pipe_top := CONV_STD_LOGIC_VECTOR(150,10);
+					next_pipe_bottom := CONV_STD_LOGIC_VECTOR(300, 10);
+				elsif (RNG_int >= 8 and RNG_int < 12) then
+					next_pipe_top := CONV_STD_LOGIC_VECTOR(250,10);
+					next_pipe_bottom := CONV_STD_LOGIC_VECTOR(400, 10);
+				else
+					next_pipe_top := CONV_STD_LOGIC_VECTOR(350,10);
+					next_pipe_bottom := CONV_STD_LOGIC_VECTOR(500, 10);
+				end if;
+		-- Move Pipes--
 				position1 := position1 - 1;
 				pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(position1, 10);
 				
@@ -84,7 +101,36 @@ begin
 				
 				position5 := position5 - 1;
 				pipe5_x_pos <= CONV_STD_LOGIC_VECTOR(position5, 10);
+		-- If Pipe reaches end restart with RNG position --
+				if (position1 <= 0) then
+					position1 := 640;
+					pipe1_top_y_pos <= next_pipe_top;
+					pipe1_bottom_y_pos <= next_pipe_bottom;
+				end if;
 				
+				if (position2 <= 0) then
+					position2 := 640;
+					pipe2_top_y_pos <= next_pipe_top;
+					pipe2_bottom_y_pos <= next_pipe_bottom;
+				end if;
+				
+				if (position3 <= 0) then
+					position3 := 640;
+					pipe3_top_y_pos <= next_pipe_top;
+					pipe3_bottom_y_pos <= next_pipe_bottom;
+				end if;
+				
+				if (position4 <= 0) then
+					position4 := 640;
+					pipe4_top_y_pos <= next_pipe_top;
+					pipe4_bottom_y_pos <= next_pipe_bottom;
+				end if;
+				
+				if (position5 <= 0) then
+					position5 := 640;
+					pipe5_top_y_pos <= next_pipe_top;
+					pipe5_bottom_y_pos <= next_pipe_bottom;
+				end if;			
 			end if;
 		end if;
 		-- Speed adjustment for the levels of the games	--
