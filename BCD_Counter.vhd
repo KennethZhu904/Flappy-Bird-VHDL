@@ -5,7 +5,7 @@ use IEEE.numeric_std.ALL;
 
 entity BCD_counter is
   
-port( Clk,Enable: in std_logic; 
+port( Clk, Reset, Enable: in std_logic; 
     Q_Out: out std_logic_vector(3 downto 0)); 
 end entity BCD_counter; 
 
@@ -25,7 +25,9 @@ begin
   
  
  if(Clk='1' and Clk'event) then
-	if (Enable='1') then
+	if (Reset = '1') then
+		temp_QOut1:="0000";
+	elsif (Enable='1') then
 		 
 		if (temp_QOut1<"1001") then
 				temp_QOut1:=temp_QOut1+"0001";

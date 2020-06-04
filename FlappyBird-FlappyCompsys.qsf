@@ -90,7 +90,8 @@ set_location_assignment PIN_H7 -to sw6
 set_location_assignment PIN_E3 -to sw7
 set_location_assignment PIN_E4 -to sw8
 set_location_assignment PIN_D2 -to sw9
-set_global_assignment -name VHDL_FILE text_display.vhd
+set_global_assignment -name VHDL_FILE text_display_main_menu.vhd
+set_global_assignment -name VHDL_FILE text_display_general.vhd
 set_global_assignment -name VHDL_FILE 1bit_sev_seg.vhd
 set_global_assignment -name VHDL_FILE bird.vhd
 set_global_assignment -name VHDL_FILE score_sev_seg.vhd

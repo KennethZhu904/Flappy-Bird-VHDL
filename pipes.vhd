@@ -4,14 +4,15 @@ USE  IEEE.STD_LOGIC_ARITH.all;
 USE  IEEE.STD_LOGIC_UNSIGNED.all;
 USE ieee.numeric_std.ALL;
 
+-- increment score from pipes rather than bird. socre will increment when pipes move past 320
 
 ENTITY pipes IS
 	PORT
 		(
-		SIGNAL clk, sw0, bird_dead			: IN std_logic;
-		SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
-		SIGNAL Qones, Qtens					: IN std_logic_vector(3 DOWNTO 0);
-		SIGNAL RNG								: IN std_LOGIC_vector(15 DOWNTO 0);
+		SIGNAL clk, sw0, sw1, sw2, bird_dead	: IN std_logic;
+		SIGNAL pixel_row, pixel_column			: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL Qones, Qtens							: IN std_logic_vector(3 DOWNTO 0);
+		SIGNAL RNG										: IN std_LOGIC_vector(15 DOWNTO 0);
 		SIGNAL q_pipe_size : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL q_pipe1_x_pos, q_pipe1_top_y_pos, q_pipe1_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL q_pipe2_x_pos, q_pipe2_top_y_pos, q_pipe2_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
@@ -58,7 +59,8 @@ variable RNG_int : integer;
 variable next_pipe_top, next_pipe_bottom : std_logic_vector(9 DOWNTO 0);
 begin
 	-- Game should only run if not paused or the bird is alive --
-	if (sw0 = '0' and bird_dead = '0') then
+	if (sw0 = '0' and bird_dead = '0' and sw2 = '1') then
+		-- we need the game to reset here too so that the user can go from game over to main menu to new game
 		if (clk'event and clk = '1') then
 			clk_cnt := clk_cnt + 1;
 		--Pipe Movement Occurs With Divided Clock--
@@ -133,16 +135,23 @@ begin
 				end if;			
 			end if;
 		end if;
-		-- Speed adjustment for the levels of the games	--
-		-- Score: 0-25 (Level 1) - Game is initialised at the speed for this level
-		if (Qtens = "0010" and Qones = "0110") then -- Score: 26-50 (Level 2)
-			pipe_speed <= 500000;
-		elsif (Qtens = "0101" and Qones = "0001") then -- Score: 51-75 (Level 3)
-			pipe_speed <= 400000;
-		elsif (Qtens = "0111" and Qones = "0110") then -- Score: 76-99 (Level 4)
-			pipe_speed <= 300000;
+		if (sw1 = '1') then
+			-- Speed adjustment for the levels of the games	--
+			-- Score: 0-25 (Level 1) - Game is initialised at the speed for this level
+			if (Qtens = "0010" and Qones = "0110") then -- Score: 26-50 (Level 2)
+				pipe_speed <= 500000;
+			elsif (Qtens = "0101" and Qones = "0001") then -- Score: 51-75 (Level 3)
+				pipe_speed <= 400000;
+			elsif (Qtens = "0111" and Qones = "0110") then -- Score: 76-99 (Level 4)
+				pipe_speed <= 300000;
+			end if;
 		end if;
 	end if;
+--	if (bird_dead = '1' and sw2 = '1') then
+--			--implement a counter so that  it counts for a bit
+--			--set bird values to default
+--	end if;
+	-- when game over, if sw2 high, wait for a bit then start game again. otherwise flick sw2 low and go back to main menu
 end process;
 	
 	

@@ -5,9 +5,9 @@ USE IEEE.STD_LOGIC_UNSIGNED.all;
 USE IEEE.STD_LOGIC_ARITH.all; 
 
 
--- Trial to Display the Score
+-- This component implemented the text for the pause menu, game over menu, and the score on the VGA screen.
 
-entity text_display is
+entity text_display_general is
    port (
      signal clk : in std_logic;
 	 signal pixel_row, pixel_column: in std_logic_vector(9 downto 0);
@@ -16,9 +16,9 @@ entity text_display is
 	signal game_over_enable: in std_logic; 
 	 signal text_output: out std_logic);
 	
-end entity text_display;
+end entity text_display_general;
 
-architecture arch of text_display is
+architecture arch of text_display_general is
 	
 	signal temp_char_address: std_logic_vector(5 downto 0) ;
 	signal pix_row_font: std_logic_vector(2 downto 0); 
