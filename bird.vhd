@@ -58,23 +58,15 @@ begin
 			-- Compute next bird Y position
 			bird_y_pos <= bird_y_pos + bird_y_motion;
 		end if;
-		-- Flag when the bird lands at the bottom of the screen.
-		if ('0' & bird_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - bird_size) then
-			bird_dead <= '1';
-			temp_bird_dead <= '1';
-			reset_score <= '1';
-		else
-			bird_dead <= '0';
-			temp_bird_dead <= '0';
-		end if;
-		--Bird Should Die when it touches a pipe--
-		if 	(	(conv_integer(pipe1_x_pos) >= 320 and conv_integer(pipe1_x_pos + pipe_size) <= 320 and (pipe1_top_y_pos > bird_y_pos or pipe1_bottom_y_pos < bird_y_pos))
-				or	(conv_integer(pipe2_x_pos) >= 320 and conv_integer(pipe2_x_pos + pipe_size) <= 320 and (pipe2_top_y_pos > bird_y_pos or pipe2_bottom_y_pos < bird_y_pos))
-				or (conv_integer(pipe3_x_pos) >= 320 and conv_integer(pipe3_x_pos + pipe_size) <= 320 and (pipe3_top_y_pos > bird_y_pos or pipe3_bottom_y_pos < bird_y_pos))
+		-- Flag when the bird lands at the bottom of the screen --
+		-- Bird Should Die when it touches a pipe --
+		if 	(	(conv_integer(pipe1_x_pos) <= 320 and conv_integer(pipe1_x_pos + pipe_size) >= 320 and (pipe1_top_y_pos > bird_y_pos or pipe1_bottom_y_pos < bird_y_pos))
+				or	(conv_integer(pipe2_x_pos) <= 320 and conv_integer(pipe2_x_pos + pipe_size) >= 320 and (pipe2_top_y_pos > bird_y_pos or pipe2_bottom_y_pos < bird_y_pos))
+				or (conv_integer(pipe3_x_pos) <= 320 and conv_integer(pipe3_x_pos + pipe_size) >= 320 and (pipe3_top_y_pos > bird_y_pos or pipe3_bottom_y_pos < bird_y_pos))
+				or ('0' & bird_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - bird_size)
 				) then
 				bird_dead <= '1';
 				temp_bird_dead <= '1';
-				reset_score <= '1';
 		else
 				bird_dead <= '0';
 				temp_bird_dead <= '0';
@@ -86,8 +78,6 @@ begin
 		bird_y_pos <= CONV_STD_LOGIC_VECTOR(240,10);
 		reset_score <= '1';
 	end if;
---	end if;
-end process Move_Bird;
-
+end process Move_Bird;	
 -- when game over, if sw2 high, wait for a bit then start game again. otherwise flick sw2 low and go back to main menu
 END behavior;
