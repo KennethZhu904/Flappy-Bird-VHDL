@@ -738,16 +738,9 @@ applicable agreement for further details.
 	(port
 		(pt 256 64)
 		(output)
-		(text "score_incr" (rect 0 0 50 12)(font "Arial" ))
-		(text "score_incr" (rect 193 59 235 71)(font "Arial" ))
-		(line (pt 256 64)(pt 240 64))
-	)
-	(port
-		(pt 256 80)
-		(output)
 		(text "reset_score" (rect 0 0 57 12)(font "Arial" ))
-		(text "reset_score" (rect 187 75 235 87)(font "Arial" ))
-		(line (pt 256 80)(pt 240 80))
+		(text "reset_score" (rect 187 59 235 71)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64))
 	)
 	(drawing
 		(rectangle (rect 16 16 240 416))
@@ -798,9 +791,9 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 336 544 624 880)
+	(rect 336 544 624 912)
 	(text "pipes" (rect 5 0 30 12)(font "Arial" ))
-	(text "inst6" (rect 8 320 31 332)(font "Arial" ))
+	(text "inst6" (rect 8 352 31 364)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -997,8 +990,15 @@ applicable agreement for further details.
 		(text "pipe_bottom" (rect 217 299 267 311)(font "Arial" ))
 		(line (pt 288 304)(pt 272 304))
 	)
+	(port
+		(pt 288 320)
+		(output)
+		(text "score_incr" (rect 0 0 50 12)(font "Arial" ))
+		(text "score_incr" (rect 225 315 267 327)(font "Arial" ))
+		(line (pt 288 320)(pt 272 320))
+	)
 	(drawing
-		(rectangle (rect 16 16 272 320))
+		(rectangle (rect 16 16 272 352))
 	)
 )
 (symbol
@@ -1585,11 +1585,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "score_incr" (rect 1056 488 1106 500)(font "Arial" ))
-	(pt 1024 496)
-	(pt 1048 496)
-)
-(connector
 	(text "bird_dead" (rect 1056 472 1103 484)(font "Arial" ))
 	(pt 1024 480)
 	(pt 1048 480)
@@ -1598,11 +1593,6 @@ applicable agreement for further details.
 	(text "bird_on" (rect 1056 456 1091 468)(font "Arial" ))
 	(pt 1048 464)
 	(pt 1024 464)
-)
-(connector
-	(text "reset_score" (rect 1056 504 1113 516)(font "Arial" ))
-	(pt 1024 512)
-	(pt 1048 512)
 )
 (connector
 	(text "clk_25MHz" (rect 184 440 237 452)(font "Arial" ))
@@ -1622,11 +1612,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "score_incr" (rect 176 320 226 332)(font "Arial" ))
-	(pt 264 328)
-	(pt 224 328)
-)
-(connector
 	(text "clk_div" (rect 192 304 227 316)(font "Arial" ))
 	(pt 224 312)
 	(pt 264 312)
@@ -1638,8 +1623,23 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "reset_score" (rect 168 336 225 348)(font "Arial" ))
-	(pt 264 344)
+	(text "score_incr" (rect 176 336 226 348)(font "Arial" ))
 	(pt 224 344)
+	(pt 264 344)
+)
+(connector
+	(text "reset_score" (rect 168 320 225 332)(font "Arial" ))
+	(pt 264 328)
+	(pt 224 328)
+)
+(connector
+	(text "score_incr" (rect 656 856 706 868)(font "Arial" ))
+	(pt 624 864)
+	(pt 648 864)
+)
+(connector
+	(text "reset_score" (rect 1056 488 1113 500)(font "Arial" ))
+	(pt 1024 496)
+	(pt 1048 496)
 )
 (junction (pt 1168 336))

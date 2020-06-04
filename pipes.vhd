@@ -19,7 +19,7 @@ ENTITY pipes IS
 		SIGNAL q_pipe3_x_pos, q_pipe3_top_y_pos, q_pipe3_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL q_pipe4_x_pos, q_pipe4_top_y_pos, q_pipe4_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL q_pipe5_x_pos, q_pipe5_top_y_pos, q_pipe5_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
-		SIGNAL pipe_top, pipe_bottom		: OUT std_logic
+		SIGNAL pipe_top, pipe_bottom, score_incr		: OUT std_logic
 		);
 END pipes;
 
@@ -89,50 +89,57 @@ begin
 					next_pipe_bottom := CONV_STD_LOGIC_VECTOR(500, 10);
 				end if;
 		-- Move Pipes--
-				position1 := position1 - 1;
-				pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(position1, 10);
-				
-				position2 := position2 - 1;
-				pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(position2, 10);
-				
-				position3 := position3 - 1;
-				pipe3_x_pos <= CONV_STD_LOGIC_VECTOR(position3, 10);
-				
-				position4 := position4 - 1;
-				pipe4_x_pos <= CONV_STD_LOGIC_VECTOR(position4, 10);
-				
-				position5 := position5 - 1;
-				pipe5_x_pos <= CONV_STD_LOGIC_VECTOR(position5, 10);
 		-- If Pipe reaches end restart with RNG position --
 				if (position1 <= 0) then
 					position1 := 640;
 					pipe1_top_y_pos <= next_pipe_top;
 					pipe1_bottom_y_pos <= next_pipe_bottom;
+				else
+					position1 := position1 - 1;
 				end if;
+				pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(position1, 10);
 				
 				if (position2 <= 0) then
-					position2 := 640;
+					position2 := 840;
 					pipe2_top_y_pos <= next_pipe_top;
 					pipe2_bottom_y_pos <= next_pipe_bottom;
+				else
+					position2 := position2 - 1;
 				end if;
+				pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(position2, 10);
 				
 				if (position3 <= 0) then
-					position3 := 640;
+					position3 := 1040;
 					pipe3_top_y_pos <= next_pipe_top;
 					pipe3_bottom_y_pos <= next_pipe_bottom;
+				else
+					position3 := position3 - 1;
 				end if;
+				pipe3_x_pos <= CONV_STD_LOGIC_VECTOR(position3, 10);
 				
 				if (position4 <= 0) then
-					position4 := 640;
+					position4 := 1240;
 					pipe4_top_y_pos <= next_pipe_top;
 					pipe4_bottom_y_pos <= next_pipe_bottom;
+				else
+					position4 := position4 - 1;
 				end if;
+				pipe4_x_pos <= CONV_STD_LOGIC_VECTOR(position4, 10);
 				
 				if (position5 <= 0) then
 					position5 := 640;
 					pipe5_top_y_pos <= next_pipe_top;
 					pipe5_bottom_y_pos <= next_pipe_bottom;
-				end if;			
+				else
+					position5 := position5 - 1;
+				end if;
+				pipe5_x_pos <= CONV_STD_LOGIC_VECTOR(position5, 10);
+		--If Pipe Passes Bird, Increase Score--
+				if (pipe1_x_pos = CONV_STD_LOGIC_VECTOR(320,10) or pipe2_x_pos = CONV_STD_LOGIC_VECTOR(320,10) or pipe3_x_pos = CONV_STD_LOGIC_VECTOR(320,10) or pipe4_x_pos = CONV_STD_LOGIC_VECTOR(320,10) or pipe5_x_pos = CONV_STD_LOGIC_VECTOR(320,10)) then
+					score_incr <= '1';
+				else
+					score_incr <= '0';
+				end if;
 			end if;
 		end if;
 		if (sw1 = '1') then

@@ -201,16 +201,9 @@ applicable agreement for further details.
 	(port
 		(pt 256 64)
 		(output)
-		(text "score_incr" (rect 0 0 42 12)(font "Arial" ))
-		(text "score_incr" (rect 193 59 235 71)(font "Arial" ))
-		(line (pt 256 64)(pt 240 64)(line_width 1))
-	)
-	(port
-		(pt 256 80)
-		(output)
 		(text "reset_score" (rect 0 0 48 12)(font "Arial" ))
-		(text "reset_score" (rect 187 75 235 87)(font "Arial" ))
-		(line (pt 256 80)(pt 240 80)(line_width 1))
+		(text "reset_score" (rect 187 59 235 71)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 240 416)(line_width 1))

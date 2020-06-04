@@ -19,7 +19,7 @@ ENTITY bird IS
 		SIGNAL pipe4_x_pos, pipe4_top_y_pos, pipe4_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
 		SIGNAL pipe5_x_pos, pipe5_top_y_pos, pipe5_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
 		--Bird Signals--
-		SIGNAL bird_on, bird_dead, score_incr, reset_score 										: OUT std_logic
+		SIGNAL bird_on, bird_dead, reset_score 										: OUT std_logic
 		);		
 END bird;
 
@@ -43,8 +43,9 @@ bird_on <= '1' when ( ('0' & bird_x_pos <= '0' & pixel_column + bird_size) and (
 ------ Bird mechanics ------
 Move_Bird: process (vert_sync, left_click)  	
 begin
-	-- Game should only run if not paused or the bird is alive
+	-- Game should only run if not paused and the bird is alive
 	if (sw0 = '0' and temp_bird_dead = '0' and sw2 = '1') then
+		reset_score <= '0';
 		-- Move bird once every vertical sync
 		if (rising_edge(vert_sync)) then
 			-- Let the bird freefall when there is no left click
@@ -67,21 +68,11 @@ begin
 			bird_dead <= '0';
 			temp_bird_dead <= '0';
 		end if;
-		-- Increment the score when the bird passes through a pipe.
-		if ((bird_x_pos = pipe1_x_pos + pipe_size) -- Passes through pipe 1 --
-			or (bird_x_pos = pipe2_x_pos + pipe_size) -- Passes through pipe 2 --
-			or (bird_x_pos = pipe3_x_pos + pipe_size) -- Passes through pipe 3 --
-			or (bird_x_pos = pipe4_x_pos + pipe_size) -- Passes through pipe 4 --
-			or (bird_x_pos = pipe5_x_pos + pipe_size)) then -- Passes through pipe 5 --
-			score_incr <= '1';
-		else
-			score_incr <= '0';
-		end if;
 	-- Reset game when user goes back to the main menu and then starts a new game
 	elsif (temp_bird_dead = '1' and sw2 = '0') then
 		bird_dead <= '0';
 		temp_bird_dead <= '0';
-		bird_y_pos <= "0000000000";
+		bird_y_pos <= CONV_STD_LOGIC_VECTOR(240,10);
 		reset_score <= '1';
 	end if;
 --	if (temp_bird_dead = '1' and sw2 = '1') then
