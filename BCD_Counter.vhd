@@ -25,10 +25,10 @@ begin
   
  
  if(Clk='1' and Clk'event) then
-	if (Init='0') then
+	if (Init='1') then
 		
 		temp_QOut1:="0000"; Q_Out<=temp_Qout1;
-	elsif (Enable='0') then
+	elsif (Enable='1') then
 		 
 		if (temp_QOut1<"1001") then
 				temp_QOut1:=temp_QOut1+"0001";

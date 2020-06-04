@@ -34,8 +34,8 @@ begin
      
     
 
-  Enable_tens<= '0' when Q_ones="1001" and Enable='0' else
-                '1'; 
+  Enable_tens<= '1' when Q_ones="1001" and Enable='1' else
+                '0'; 
   Q_Out<=Q_tens; 
   Q_Out1<= Q_ones;
   

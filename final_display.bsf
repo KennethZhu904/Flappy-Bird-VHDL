@@ -45,6 +45,13 @@ applicable agreement for further details.
 		(line (pt 0 64)(pt 16 64)(line_width 1))
 	)
 	(port
+		(pt 0 80)
+		(input)
+		(text "score" (rect 0 0 22 12)(font "Arial" ))
+		(text "score" (rect 21 75 43 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
 		(pt 160 32)
 		(output)
 		(text "red" (rect 0 0 12 12)(font "Arial" ))

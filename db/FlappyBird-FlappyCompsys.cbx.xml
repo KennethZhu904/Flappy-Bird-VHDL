@@ -2,5 +2,6 @@
 <LOG_ROOT>
 	<PROJECT NAME="FlappyBird-FlappyCompsys">
 		<CBX_INST_ENTRY INSTANCE_NAME="|FlappyBird-FlappyCompsys|altpll0:inst|altpll:altpll_component" CBX_FILE_NAME="altpll0_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FlappyBird-FlappyCompsys|text_display:inst11|char_rom:display|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

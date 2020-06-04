@@ -1,12 +1,12 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity seg7 is 
+entity bird_dead_seg7 is 
   port (bird_dead : in std_logic;
 		  leds : out std_logic_vector(7 downto 0));	
-end entity seg7;
+end entity bird_dead_seg7;
 
-architecture behaviour of seg7 is
+architecture behaviour of bird_dead_seg7 is
   begin
     process(bird_dead)
       begin
