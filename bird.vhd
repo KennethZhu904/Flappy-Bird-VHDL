@@ -28,6 +28,7 @@ architecture behavior of bird is
 ------ Signals associated with the bird ------
 SIGNAL bird_size, bird_y_pos, bird_y_motion		: std_logic_vector(9 DOWNTO 0);
 SIGNAL bird_x_pos											: std_logic_vector(10 DOWNTO 0);
+SIGNAL temp_bird_dead									: std_logic := '0';
 BEGIN           
 
 ------ Initialisation of the bird ------
@@ -42,8 +43,8 @@ bird_on <= '1' when ( ('0' & bird_x_pos <= '0' & pixel_column + bird_size) and (
 ------ Bird mechanics ------
 Move_Bird: process (vert_sync, left_click)  	
 begin
-	-- Check if game should be paused --
-	if (sw0 = '0') then
+	-- Game should only run if not paused or the bird is alive --
+	if (sw0 = '0' and temp_bird_dead = '0') then
 		-- Move bird once every vertical sync
 		if (rising_edge(vert_sync)) then
 			-- Let the bird freefall when there is no left click
@@ -61,15 +62,17 @@ begin
 		-- Flag when the bird lands at the bottom of the screen.
 		if ('0' & bird_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - bird_size) then
 			bird_dead <= '1'; -------------------- BIRD DIES WHEN IT HITS THE GROUND BUT NOT WHEN IT HITS THE PIPES --------------------
+			temp_bird_dead <= '1';
 		else
 			bird_dead <= '0';
+			temp_bird_dead <= '0';
 		end if;
 		-- Increment the score when the bird passes through a pipe.
-		if (((pipe1_x_pos <= bird_x_pos and bird_x_pos <= pipe1_x_pos + pipe_size) and (bird_y_pos > pipe1_top_y_pos and bird_y_pos < pipe1_bottom_y_pos)) -- Passes through pipe 1 --
-			or ((pipe2_x_pos <= bird_x_pos and bird_x_pos <= pipe2_x_pos + pipe_size) and (bird_y_pos > pipe2_top_y_pos and bird_y_pos < pipe2_bottom_y_pos)) -- Passes through pipe 2 --
-			or ((pipe3_x_pos <= bird_x_pos and bird_x_pos <= pipe3_x_pos + pipe_size) and (bird_y_pos > pipe3_top_y_pos and bird_y_pos < pipe3_bottom_y_pos)) -- Passes through pipe 3 --
-			or ((pipe4_x_pos <= bird_x_pos and bird_x_pos <= pipe4_x_pos + pipe_size) and (bird_y_pos > pipe4_top_y_pos and bird_y_pos < pipe4_bottom_y_pos)) -- Passes through pipe 4 --
-			or ((pipe5_x_pos <= bird_x_pos and bird_x_pos <= pipe5_x_pos + pipe_size) and (bird_y_pos > pipe5_top_y_pos and bird_y_pos < pipe5_bottom_y_pos))) then -- Passes through pipe 5 --
+		if (((bird_x_pos = pipe1_x_pos + pipe_size) and (bird_y_pos > pipe1_top_y_pos and bird_y_pos < pipe1_bottom_y_pos)) -- Passes through pipe 1 --
+			or ((bird_x_pos = pipe2_x_pos + pipe_size) and (bird_y_pos > pipe2_top_y_pos and bird_y_pos < pipe2_bottom_y_pos)) -- Passes through pipe 2 --
+			or ((bird_x_pos = pipe3_x_pos + pipe_size) and (bird_y_pos > pipe3_top_y_pos and bird_y_pos < pipe3_bottom_y_pos)) -- Passes through pipe 3 --
+			or ((bird_x_pos = pipe4_x_pos + pipe_size) and (bird_y_pos > pipe4_top_y_pos and bird_y_pos < pipe4_bottom_y_pos)) -- Passes through pipe 4 --
+			or ((bird_x_pos = pipe5_x_pos + pipe_size) and (bird_y_pos > pipe5_top_y_pos and bird_y_pos < pipe5_bottom_y_pos))) then -- Passes through pipe 5 --
 			score_incr <= '1';
 		else
 			score_incr <= '0';

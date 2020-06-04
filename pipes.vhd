@@ -8,8 +8,9 @@ USE ieee.numeric_std.ALL;
 ENTITY pipes IS
 	PORT
 		(
-		SIGNAL clk, sw0 								: IN std_logic;
+		SIGNAL clk, sw0, bird_dead			: IN std_logic;
 		SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL Qones, Qtens					: IN std_logic_vector(3 DOWNTO 0);
 		--SIGNAL RNG								: IN std_LOGIC_vector(1 downto 0);
 		SIGNAL q_pipe_size : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL q_pipe1_x_pos, q_pipe1_top_y_pos, q_pipe1_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
@@ -45,6 +46,8 @@ SIGNAL pipe5_top_y_pos 						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VE
 SIGNAL pipe5_bottom_y_pos 					: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(350,10);
 SIGNAL pipe5_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(1440,10);
 
+SIGNAL pipe_speed								: integer := 750000;
+
 BEGIN
 
 pipe_move: process(clk)
@@ -58,12 +61,12 @@ begin
 	position3 := conv_integer(pipe3_x_pos);
 	position4 := conv_integer(pipe4_x_pos);
 	position5 := conv_integer(pipe5_x_pos);
-	-- Check if game should be paused --
-	if (sw0 = '0') then
+	-- Game should only run if not paused or the bird is alive --
+	if (sw0 = '0' and bird_dead = '0') then
 		if (clk'event and clk = '1') then
 			clk_cnt := clk_cnt + 1;
 		--Pipe Movement Occurs With Divided Clock--
-			if (clk_cnt = 1000000) then
+			if (clk_cnt = pipe_speed) then
 				clk_cnt := 1;
 				clk_t := NOT(clk_t);
 					-- Move Pipes--
@@ -83,6 +86,15 @@ begin
 				pipe5_x_pos <= CONV_STD_LOGIC_VECTOR(position5, 10);
 				
 			end if;
+		end if;
+		-- Speed adjustment for the levels of the games	--
+		-- Score: 0-25 (Level 1) - Game is initialised at the speed for this level
+		if (Qtens = "0010" and Qones = "0110") then -- Score: 26-50 (Level 2)
+			pipe_speed <= 500000;
+		elsif (Qtens = "0101" and Qones = "0001") then -- Score: 51-75 (Level 3)
+			pipe_speed <= 400000;
+		elsif (Qtens = "0111" and Qones = "0110") then -- Score: 76-99 (Level 4)
+			pipe_speed <= 300000;
 		end if;
 	end if;
 end process;
