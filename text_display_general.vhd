@@ -14,7 +14,8 @@ entity text_display_general is
 	signal counter_tens, counter_ones: in std_logic_vector(3 downto 0); 
 	signal pause_enable: in std_logic; 
 	signal game_over_enable: in std_logic; 
-	 signal text_output: out std_logic);
+	 signal text_output: out std_logic;
+	 signal sw2: in std_logic);
 	
 end entity text_display_general;
 
@@ -60,10 +61,6 @@ display: component char_rom
 	
 	
 	
---Change the signals to unsigned	
---unsigned_pix_row<= unsigned(pixel_row); 
---unsigned_pix_col<= unsigned(pixel_column); 
-
 temp_char_address<= "110000" when counter_ones="0000" and ( '0' & text_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= text_x_pos + character_size)   --number 0
 												and ('0' & text_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= text_y_pos +character_size) else
 							"110001" when counter_ones="0001" and ( '0' & text_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= text_x_pos + character_size) --number 1

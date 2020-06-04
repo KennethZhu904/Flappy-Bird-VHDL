@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FlappyBird-FlappyCompsys
-Fri Jun 05 03:56:39 2020
+Fri Jun 05 10:24:13 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,8 +10,26 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis IP Cores Summary
-  6. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |FlappyBird-FlappyCompsys|MOUSE:inst2|mouse_state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated
+ 17. Source assignments for text_display_main_menu:inst15|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated
+ 18. Parameter Settings for User Entity Instance: altpll1:inst|altpll:altpll_component
+ 19. Parameter Settings for User Entity Instance: text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component
+ 20. Parameter Settings for User Entity Instance: text_display_main_menu:inst15|char_rom:display|altsyncram:altsyncram_component
+ 21. altpll Parameter Settings by Entity Instance
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +55,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Jun 05 03:56:39 2020               ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 05 10:24:12 2020           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; FlappyBird-FlappyCompsys                        ;
 ; Top-level Entity Name              ; FlappyBird-FlappyCompsys                        ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 1,120                                           ;
+;     Total combinational functions  ; 1,053                                           ;
+;     Dedicated logic registers      ; 282                                             ;
+; Total registers                    ; 282                                             ;
+; Total pins                         ; 11                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 8,192                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 1                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -152,6 +170,119 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
+; text_display_main_menu.vhd       ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/text_display_main_menu.vhd              ;         ;
+; text_display_general.vhd         ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/text_display_general.vhd                ;         ;
+; bird.vhd                         ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd                                ;         ;
+; Massive_Counter.vhd              ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/Massive_Counter.vhd                     ;         ;
+; clock_divider.vhd                ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/clock_divider.vhd                       ;         ;
+; char_rom.vhd                     ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/char_rom.vhd                            ;         ;
+; BCD_Counter.vhd                  ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/BCD_Counter.vhd                         ;         ;
+; vga_sync.vhd                     ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/vga_sync.vhd                            ;         ;
+; mouse_new_ver.vhd                ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/mouse_new_ver.vhd                       ;         ;
+; FlappyBird-FlappyCompsys.bdf     ; yes             ; User Block Diagram/Schematic File      ; D:/Docs/GitHub/flappy-bird-VHDL/FlappyBird-FlappyCompsys.bdf            ;         ;
+; pipes.vhd                        ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/pipes.vhd                               ;         ;
+; final_display.vhd                ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/final_display.vhd                       ;         ;
+; output_files/altpll1.vhd         ; yes             ; User Wizard-Generated File             ; D:/Docs/GitHub/flappy-bird-VHDL/output_files/altpll1.vhd                ;         ;
+; LFSR.vhd                         ; yes             ; User VHDL File                         ; D:/Docs/GitHub/flappy-bird-VHDL/LFSR.vhd                                ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
+; db/altpll1_altpll.v              ; yes             ; Auto-Generated Megafunction            ; D:/Docs/GitHub/flappy-bird-VHDL/db/altpll1_altpll.v                     ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_kt91.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Docs/GitHub/flappy-bird-VHDL/db/altsyncram_kt91.tdf                  ;         ;
+; tcgrom.mif                       ; yes             ; Auto-Found Memory Initialization File  ; D:/Docs/GitHub/flappy-bird-VHDL/tcgrom.mif                              ;         ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                       ;
++---------------------------------------------+-------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                               ;
++---------------------------------------------+-------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 1,120                                                                               ;
+;                                             ;                                                                                     ;
+; Total combinational functions               ; 1053                                                                                ;
+; Logic element usage by number of LUT inputs ;                                                                                     ;
+;     -- 4 input functions                    ; 409                                                                                 ;
+;     -- 3 input functions                    ; 281                                                                                 ;
+;     -- <=2 input functions                  ; 363                                                                                 ;
+;                                             ;                                                                                     ;
+; Logic elements by mode                      ;                                                                                     ;
+;     -- normal mode                          ; 718                                                                                 ;
+;     -- arithmetic mode                      ; 335                                                                                 ;
+;                                             ;                                                                                     ;
+; Total registers                             ; 282                                                                                 ;
+;     -- Dedicated logic registers            ; 282                                                                                 ;
+;     -- I/O registers                        ; 0                                                                                   ;
+;                                             ;                                                                                     ;
+; I/O pins                                    ; 11                                                                                  ;
+; Total memory bits                           ; 8192                                                                                ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                   ;
+; Total PLLs                                  ; 1                                                                                   ;
+;     -- PLLs                                 ; 1                                                                                   ;
+;                                             ;                                                                                     ;
+; Maximum fan-out node                        ; altpll1:inst|altpll:altpll_component|altpll1_altpll:auto_generated|wire_pll1_clk[0] ;
+; Maximum fan-out                             ; 235                                                                                 ;
+; Total fan-out                               ; 4130                                                                                ;
+; Average fan-out                             ; 3.00                                                                                ;
++---------------------------------------------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                               ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |FlappyBird-FlappyCompsys                    ; 1053 (0)          ; 282 (0)      ; 8192        ; 0            ; 0       ; 0         ; 11   ; 0            ; |FlappyBird-FlappyCompsys                                                                                                               ; work         ;
+;    |LFSR:inst8|                              ; 12 (12)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|LFSR:inst8                                                                                                    ; work         ;
+;    |MOUSE:inst2|                             ; 51 (51)           ; 63 (63)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|MOUSE:inst2                                                                                                   ; work         ;
+;    |Massive_Counter:inst9|                   ; 26 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9                                                                                         ; work         ;
+;       |BCD_counter:BCD_ones|                 ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_ones                                                                    ; work         ;
+;       |BCD_counter:BCD_tens|                 ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_tens                                                                    ; work         ;
+;    |VGA_SYNC:inst1|                          ; 67 (67)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|VGA_SYNC:inst1                                                                                                ; work         ;
+;    |altpll1:inst|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll1:inst                                                                                                  ; work         ;
+;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll1:inst|altpll:altpll_component                                                                          ; work         ;
+;          |altpll1_altpll:auto_generated|     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll1:inst|altpll:altpll_component|altpll1_altpll:auto_generated                                            ; work         ;
+;    |bird:inst5|                              ; 174 (174)         ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|bird:inst5                                                                                                    ; work         ;
+;    |clk_div:inst14|                          ; 42 (42)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|clk_div:inst14                                                                                                ; work         ;
+;    |final_display:inst7|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|final_display:inst7                                                                                           ; work         ;
+;    |pipes:inst6|                             ; 345 (345)         ; 93 (93)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|pipes:inst6                                                                                                   ; work         ;
+;    |text_display_general:inst11|             ; 120 (116)         ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_general:inst11                                                                                   ; work         ;
+;       |char_rom:display|                     ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_general:inst11|char_rom:display                                                                  ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component                                  ; work         ;
+;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated   ; work         ;
+;    |text_display_main_menu:inst15|           ; 215 (211)         ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_main_menu:inst15                                                                                 ; work         ;
+;       |char_rom:display|                     ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_main_menu:inst15|char_rom:display                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_main_menu:inst15|char_rom:display|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_main_menu:inst15|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                       ;
++--------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
+; Name                                                                                                                     ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF        ;
++--------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
+; text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM   ; AUTO ; ROM  ; 512          ; 8            ; --           ; --           ; 4096 ; TCGROM.mif ;
+; text_display_main_menu:inst15|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 512          ; 8            ; --           ; --           ; 4096 ; TCGROM.mif ;
++--------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis IP Cores Summary                                                                                                                             ;
 +--------+--------------+---------+--------------+--------------+----------------------------------------+----------------------------------------------------------+
@@ -161,13 +292,753 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------+--------------+---------+--------------+--------------+----------------------------------------+----------------------------------------------------------+
 
 
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |FlappyBird-FlappyCompsys|MOUSE:inst2|mouse_state                                                                                                                                       ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+; Name                          ; mouse_state.INPUT_PACKETS ; mouse_state.WAIT_CMD_ACK ; mouse_state.WAIT_OUTPUT_READY ; mouse_state.LOAD_COMMAND2 ; mouse_state.LOAD_COMMAND ; mouse_state.INHIBIT_TRANS ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+; mouse_state.INHIBIT_TRANS     ; 0                         ; 0                        ; 0                             ; 0                         ; 0                        ; 0                         ;
+; mouse_state.LOAD_COMMAND      ; 0                         ; 0                        ; 0                             ; 0                         ; 1                        ; 1                         ;
+; mouse_state.LOAD_COMMAND2     ; 0                         ; 0                        ; 0                             ; 1                         ; 0                        ; 1                         ;
+; mouse_state.WAIT_OUTPUT_READY ; 0                         ; 0                        ; 1                             ; 0                         ; 0                        ; 1                         ;
+; mouse_state.WAIT_CMD_ACK      ; 0                         ; 1                        ; 0                             ; 0                         ; 0                        ; 1                         ;
+; mouse_state.INPUT_PACKETS     ; 1                         ; 0                        ; 0                             ; 0                         ; 0                        ; 1                         ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                       ;
++-----------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal        ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------+------------------------+
+; bird:inst5|temp_bird_dead                           ; bird:inst5|temp_bird_dead  ; yes                    ;
+; pipes:inst6|pipe_speed[5]                           ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; pipes:inst6|pipe_speed[6]                           ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; pipes:inst6|pipe_speed[7]                           ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; pipes:inst6|pipe_speed[8]                           ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; pipes:inst6|pipe_speed[9]                           ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; pipes:inst6|pipe_speed[11]                          ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; pipes:inst6|pipe_speed[12]                          ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; pipes:inst6|pipe_speed[13]                          ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; pipes:inst6|pipe_speed[15]                          ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; pipes:inst6|pipe_speed[16]                          ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; pipes:inst6|pipe_speed[17]                          ; pipes:inst6|pipe_speed[30] ; yes                    ;
+; bird:inst5|reset_score                              ; GND                        ; yes                    ;
+; Number of user-specified and inferred latches = 13  ;                            ;                        ;
++-----------------------------------------------------+----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++----------------------------------------+-----------------------------------------------+
+; Register name                          ; Reason for Removal                            ;
++----------------------------------------+-----------------------------------------------+
+; bird:inst5|bird_y_motion[2]            ; Stuck at GND due to stuck port data_in        ;
+; pipes:inst6|pipe1_top_y_pos[0,9]       ; Stuck at GND due to stuck port data_in        ;
+; pipes:inst6|pipe1_bottom_y_pos[0,9]    ; Stuck at GND due to stuck port data_in        ;
+; pipes:inst6|pipe2_top_y_pos[0,9]       ; Stuck at GND due to stuck port data_in        ;
+; pipes:inst6|pipe2_bottom_y_pos[0,9]    ; Stuck at GND due to stuck port data_in        ;
+; pipes:inst6|pipe3_top_y_pos[0,9]       ; Stuck at GND due to stuck port data_in        ;
+; pipes:inst6|pipe3_bottom_y_pos[0,9]    ; Stuck at GND due to stuck port data_in        ;
+; MOUSE:inst2|CHAROUT[4..7]              ; Stuck at VCC due to stuck port data_in        ;
+; MOUSE:inst2|CHAROUT[3]                 ; Stuck at GND due to stuck port data_in        ;
+; MOUSE:inst2|CHAROUT[2]                 ; Stuck at VCC due to stuck port data_in        ;
+; MOUSE:inst2|CHAROUT[0,1]               ; Stuck at GND due to stuck port data_in        ;
+; MOUSE:inst2|SHIFTOUT[10]               ; Stuck at VCC due to stuck port data_in        ;
+; pipes:inst6|pipe1_top_y_pos[3,6]       ; Merged with pipes:inst6|pipe1_bottom_y_pos[4] ;
+; pipes:inst6|pipe1_top_y_pos[4]         ; Merged with pipes:inst6|pipe1_top_y_pos[1]    ;
+; pipes:inst6|pipe1_top_y_pos[2]         ; Merged with pipes:inst6|pipe1_bottom_y_pos[5] ;
+; bird:inst5|bird_y_motion[4..9]         ; Merged with bird:inst5|bird_y_motion[3]       ;
+; pipes:inst6|pipe2_top_y_pos[3,6]       ; Merged with pipes:inst6|pipe2_bottom_y_pos[4] ;
+; pipes:inst6|pipe2_top_y_pos[4]         ; Merged with pipes:inst6|pipe2_top_y_pos[1]    ;
+; pipes:inst6|pipe2_top_y_pos[2]         ; Merged with pipes:inst6|pipe2_bottom_y_pos[5] ;
+; pipes:inst6|pipe3_top_y_pos[3,6]       ; Merged with pipes:inst6|pipe3_bottom_y_pos[4] ;
+; pipes:inst6|pipe3_top_y_pos[4]         ; Merged with pipes:inst6|pipe3_top_y_pos[1]    ;
+; pipes:inst6|pipe3_top_y_pos[2]         ; Merged with pipes:inst6|pipe3_bottom_y_pos[5] ;
+; VGA_SYNC:inst1|pixel_row[9]            ; Stuck at GND due to stuck port data_in        ;
+; pipes:inst6|pipe1_top_y_pos[1]         ; Merged with pipes:inst6|pipe1_bottom_y_pos[1] ;
+; pipes:inst6|pipe1_top_y_pos[5]         ; Merged with pipes:inst6|pipe1_bottom_y_pos[2] ;
+; pipes:inst6|pipe2_top_y_pos[1]         ; Merged with pipes:inst6|pipe2_bottom_y_pos[1] ;
+; pipes:inst6|pipe2_top_y_pos[5]         ; Merged with pipes:inst6|pipe2_bottom_y_pos[2] ;
+; pipes:inst6|pipe3_top_y_pos[1]         ; Merged with pipes:inst6|pipe3_bottom_y_pos[1] ;
+; pipes:inst6|pipe3_top_y_pos[5]         ; Merged with pipes:inst6|pipe3_bottom_y_pos[2] ;
+; Total Number of Removed Registers = 47 ;                                               ;
++----------------------------------------+-----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 282   ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 26    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 174   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; pipes:inst6|pipe1_x_pos[7]              ; 5       ;
+; pipes:inst6|pipe1_x_pos[6]              ; 5       ;
+; pipes:inst6|pipe1_x_pos[4]              ; 4       ;
+; pipes:inst6|pipe1_x_pos[2]              ; 5       ;
+; pipes:inst6|pipe1_x_pos[0]              ; 5       ;
+; pipes:inst6|pipe1_bottom_y_pos[8]       ; 2       ;
+; pipes:inst6|pipe1_bottom_y_pos[6]       ; 2       ;
+; pipes:inst6|pipe1_bottom_y_pos[4]       ; 7       ;
+; pipes:inst6|pipe1_bottom_y_pos[3]       ; 2       ;
+; pipes:inst6|pipe1_bottom_y_pos[2]       ; 5       ;
+; pipes:inst6|pipe1_bottom_y_pos[1]       ; 6       ;
+; pipes:inst6|pipe1_top_y_pos[7]          ; 2       ;
+; pipes:inst6|pipe2_x_pos[8]              ; 5       ;
+; pipes:inst6|pipe2_x_pos[7]              ; 5       ;
+; pipes:inst6|pipe2_x_pos[5]              ; 4       ;
+; pipes:inst6|pipe2_x_pos[3]              ; 4       ;
+; pipes:inst6|pipe2_x_pos[1]              ; 5       ;
+; pipes:inst6|pipe2_bottom_y_pos[8]       ; 2       ;
+; pipes:inst6|pipe2_bottom_y_pos[6]       ; 2       ;
+; pipes:inst6|pipe2_bottom_y_pos[4]       ; 7       ;
+; pipes:inst6|pipe2_bottom_y_pos[3]       ; 2       ;
+; pipes:inst6|pipe2_bottom_y_pos[2]       ; 5       ;
+; pipes:inst6|pipe2_bottom_y_pos[1]       ; 6       ;
+; pipes:inst6|pipe2_top_y_pos[7]          ; 2       ;
+; pipes:inst6|pipe3_x_pos[9]              ; 5       ;
+; pipes:inst6|pipe3_x_pos[7]              ; 5       ;
+; pipes:inst6|pipe3_bottom_y_pos[8]       ; 2       ;
+; pipes:inst6|pipe3_bottom_y_pos[6]       ; 2       ;
+; pipes:inst6|pipe3_bottom_y_pos[4]       ; 6       ;
+; pipes:inst6|pipe3_bottom_y_pos[3]       ; 2       ;
+; pipes:inst6|pipe3_bottom_y_pos[2]       ; 4       ;
+; pipes:inst6|pipe3_bottom_y_pos[1]       ; 6       ;
+; pipes:inst6|pipe3_top_y_pos[7]          ; 2       ;
+; bird:inst5|bird_y_pos[7]~_emulated      ; 1       ;
+; bird:inst5|bird_y_pos[6]~_emulated      ; 1       ;
+; bird:inst5|bird_y_pos[5]~_emulated      ; 1       ;
+; bird:inst5|bird_y_pos[4]~_emulated      ; 1       ;
+; pipes:inst6|\pipe_move:clk_cnt[0]       ; 1       ;
+; LFSR:inst8|q[3]                         ; 11      ;
+; LFSR:inst8|q[1]                         ; 1       ;
+; MOUSE:inst2|send_char                   ; 3       ;
+; LFSR:inst8|q[11]                        ; 2       ;
+; LFSR:inst8|q[15]                        ; 1       ;
+; MOUSE:inst2|SHIFTOUT[3]                 ; 1       ;
+; LFSR:inst8|q[9]                         ; 1       ;
+; LFSR:inst8|q[12]                        ; 1       ;
+; MOUSE:inst2|SHIFTOUT[5]                 ; 1       ;
+; MOUSE:inst2|SHIFTOUT[6]                 ; 1       ;
+; LFSR:inst8|q[6]                         ; 1       ;
+; MOUSE:inst2|SHIFTOUT[7]                 ; 1       ;
+; LFSR:inst8|q[5]                         ; 1       ;
+; MOUSE:inst2|SHIFTOUT[8]                 ; 1       ;
+; Total number of inverted registers = 52 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |FlappyBird-FlappyCompsys|VGA_SYNC:inst1|v_count[7]                                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_ones|temp_QOut1[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_tens|temp_QOut1[0] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|pipes:inst6|next_pipe_top                                ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_general:inst11|char_rom:display|Mux0        ;
+; 31:1               ; 2 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_general:inst11|temp_char_address[4]         ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_general:inst11|temp_char_address[2]         ;
+; 47:1               ; 3 bits    ; 93 LEs        ; 93 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_main_menu:inst15|temp_char_address[3]       ;
+; 49:1               ; 2 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_main_menu:inst15|temp_char_address[4]       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                   ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                    ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for text_display_main_menu:inst15|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                     ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                      ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: altpll1:inst|altpll:altpll_component ;
++-------------------------------+---------------------------+-----------------------+
+; Parameter Name                ; Value                     ; Type                  ;
++-------------------------------+---------------------------+-----------------------+
+; OPERATION_MODE                ; NORMAL                    ; Untyped               ;
+; PLL_TYPE                      ; AUTO                      ; Untyped               ;
+; LPM_HINT                      ; CBX_MODULE_PREFIX=altpll1 ; Untyped               ;
+; QUALIFY_CONF_DONE             ; OFF                       ; Untyped               ;
+; COMPENSATE_CLOCK              ; CLK0                      ; Untyped               ;
+; SCAN_CHAIN                    ; LONG                      ; Untyped               ;
+; PRIMARY_CLOCK                 ; INCLK0                    ; Untyped               ;
+; INCLK0_INPUT_FREQUENCY        ; 20000                     ; Signed Integer        ;
+; INCLK1_INPUT_FREQUENCY        ; 0                         ; Untyped               ;
+; GATE_LOCK_SIGNAL              ; NO                        ; Untyped               ;
+; GATE_LOCK_COUNTER             ; 0                         ; Untyped               ;
+; LOCK_HIGH                     ; 1                         ; Untyped               ;
+; LOCK_LOW                      ; 1                         ; Untyped               ;
+; VALID_LOCK_MULTIPLIER         ; 1                         ; Untyped               ;
+; INVALID_LOCK_MULTIPLIER       ; 5                         ; Untyped               ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF                       ; Untyped               ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF                       ; Untyped               ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF                       ; Untyped               ;
+; SKIP_VCO                      ; OFF                       ; Untyped               ;
+; SWITCH_OVER_COUNTER           ; 0                         ; Untyped               ;
+; SWITCH_OVER_TYPE              ; AUTO                      ; Untyped               ;
+; FEEDBACK_SOURCE               ; EXTCLK0                   ; Untyped               ;
+; BANDWIDTH                     ; 0                         ; Untyped               ;
+; BANDWIDTH_TYPE                ; AUTO                      ; Untyped               ;
+; SPREAD_FREQUENCY              ; 0                         ; Untyped               ;
+; DOWN_SPREAD                   ; 0                         ; Untyped               ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                       ; Untyped               ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF                       ; Untyped               ;
+; CLK9_MULTIPLY_BY              ; 0                         ; Untyped               ;
+; CLK8_MULTIPLY_BY              ; 0                         ; Untyped               ;
+; CLK7_MULTIPLY_BY              ; 0                         ; Untyped               ;
+; CLK6_MULTIPLY_BY              ; 0                         ; Untyped               ;
+; CLK5_MULTIPLY_BY              ; 1                         ; Untyped               ;
+; CLK4_MULTIPLY_BY              ; 1                         ; Untyped               ;
+; CLK3_MULTIPLY_BY              ; 1                         ; Untyped               ;
+; CLK2_MULTIPLY_BY              ; 1                         ; Untyped               ;
+; CLK1_MULTIPLY_BY              ; 1                         ; Untyped               ;
+; CLK0_MULTIPLY_BY              ; 1                         ; Signed Integer        ;
+; CLK9_DIVIDE_BY                ; 0                         ; Untyped               ;
+; CLK8_DIVIDE_BY                ; 0                         ; Untyped               ;
+; CLK7_DIVIDE_BY                ; 0                         ; Untyped               ;
+; CLK6_DIVIDE_BY                ; 0                         ; Untyped               ;
+; CLK5_DIVIDE_BY                ; 1                         ; Untyped               ;
+; CLK4_DIVIDE_BY                ; 1                         ; Untyped               ;
+; CLK3_DIVIDE_BY                ; 1                         ; Untyped               ;
+; CLK2_DIVIDE_BY                ; 1                         ; Untyped               ;
+; CLK1_DIVIDE_BY                ; 1                         ; Untyped               ;
+; CLK0_DIVIDE_BY                ; 2                         ; Signed Integer        ;
+; CLK9_PHASE_SHIFT              ; 0                         ; Untyped               ;
+; CLK8_PHASE_SHIFT              ; 0                         ; Untyped               ;
+; CLK7_PHASE_SHIFT              ; 0                         ; Untyped               ;
+; CLK6_PHASE_SHIFT              ; 0                         ; Untyped               ;
+; CLK5_PHASE_SHIFT              ; 0                         ; Untyped               ;
+; CLK4_PHASE_SHIFT              ; 0                         ; Untyped               ;
+; CLK3_PHASE_SHIFT              ; 0                         ; Untyped               ;
+; CLK2_PHASE_SHIFT              ; 0                         ; Untyped               ;
+; CLK1_PHASE_SHIFT              ; 0                         ; Untyped               ;
+; CLK0_PHASE_SHIFT              ; 0                         ; Untyped               ;
+; CLK5_TIME_DELAY               ; 0                         ; Untyped               ;
+; CLK4_TIME_DELAY               ; 0                         ; Untyped               ;
+; CLK3_TIME_DELAY               ; 0                         ; Untyped               ;
+; CLK2_TIME_DELAY               ; 0                         ; Untyped               ;
+; CLK1_TIME_DELAY               ; 0                         ; Untyped               ;
+; CLK0_TIME_DELAY               ; 0                         ; Untyped               ;
+; CLK9_DUTY_CYCLE               ; 50                        ; Untyped               ;
+; CLK8_DUTY_CYCLE               ; 50                        ; Untyped               ;
+; CLK7_DUTY_CYCLE               ; 50                        ; Untyped               ;
+; CLK6_DUTY_CYCLE               ; 50                        ; Untyped               ;
+; CLK5_DUTY_CYCLE               ; 50                        ; Untyped               ;
+; CLK4_DUTY_CYCLE               ; 50                        ; Untyped               ;
+; CLK3_DUTY_CYCLE               ; 50                        ; Untyped               ;
+; CLK2_DUTY_CYCLE               ; 50                        ; Untyped               ;
+; CLK1_DUTY_CYCLE               ; 50                        ; Untyped               ;
+; CLK0_DUTY_CYCLE               ; 50                        ; Signed Integer        ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped               ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped               ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped               ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped               ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped               ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped               ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped               ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped               ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped               ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped               ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped               ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped               ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped               ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped               ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped               ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped               ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped               ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped               ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped               ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped               ;
+; LOCK_WINDOW_UI                ;  0.05                     ; Untyped               ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED                    ; Untyped               ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                    ; Untyped               ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                    ; Untyped               ;
+; DPA_MULTIPLY_BY               ; 0                         ; Untyped               ;
+; DPA_DIVIDE_BY                 ; 1                         ; Untyped               ;
+; DPA_DIVIDER                   ; 0                         ; Untyped               ;
+; EXTCLK3_MULTIPLY_BY           ; 1                         ; Untyped               ;
+; EXTCLK2_MULTIPLY_BY           ; 1                         ; Untyped               ;
+; EXTCLK1_MULTIPLY_BY           ; 1                         ; Untyped               ;
+; EXTCLK0_MULTIPLY_BY           ; 1                         ; Untyped               ;
+; EXTCLK3_DIVIDE_BY             ; 1                         ; Untyped               ;
+; EXTCLK2_DIVIDE_BY             ; 1                         ; Untyped               ;
+; EXTCLK1_DIVIDE_BY             ; 1                         ; Untyped               ;
+; EXTCLK0_DIVIDE_BY             ; 1                         ; Untyped               ;
+; EXTCLK3_PHASE_SHIFT           ; 0                         ; Untyped               ;
+; EXTCLK2_PHASE_SHIFT           ; 0                         ; Untyped               ;
+; EXTCLK1_PHASE_SHIFT           ; 0                         ; Untyped               ;
+; EXTCLK0_PHASE_SHIFT           ; 0                         ; Untyped               ;
+; EXTCLK3_TIME_DELAY            ; 0                         ; Untyped               ;
+; EXTCLK2_TIME_DELAY            ; 0                         ; Untyped               ;
+; EXTCLK1_TIME_DELAY            ; 0                         ; Untyped               ;
+; EXTCLK0_TIME_DELAY            ; 0                         ; Untyped               ;
+; EXTCLK3_DUTY_CYCLE            ; 50                        ; Untyped               ;
+; EXTCLK2_DUTY_CYCLE            ; 50                        ; Untyped               ;
+; EXTCLK1_DUTY_CYCLE            ; 50                        ; Untyped               ;
+; EXTCLK0_DUTY_CYCLE            ; 50                        ; Untyped               ;
+; VCO_MULTIPLY_BY               ; 0                         ; Untyped               ;
+; VCO_DIVIDE_BY                 ; 0                         ; Untyped               ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                         ; Untyped               ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                         ; Untyped               ;
+; VCO_MIN                       ; 0                         ; Untyped               ;
+; VCO_MAX                       ; 0                         ; Untyped               ;
+; VCO_CENTER                    ; 0                         ; Untyped               ;
+; PFD_MIN                       ; 0                         ; Untyped               ;
+; PFD_MAX                       ; 0                         ; Untyped               ;
+; M_INITIAL                     ; 0                         ; Untyped               ;
+; M                             ; 0                         ; Untyped               ;
+; N                             ; 1                         ; Untyped               ;
+; M2                            ; 1                         ; Untyped               ;
+; N2                            ; 1                         ; Untyped               ;
+; SS                            ; 1                         ; Untyped               ;
+; C0_HIGH                       ; 0                         ; Untyped               ;
+; C1_HIGH                       ; 0                         ; Untyped               ;
+; C2_HIGH                       ; 0                         ; Untyped               ;
+; C3_HIGH                       ; 0                         ; Untyped               ;
+; C4_HIGH                       ; 0                         ; Untyped               ;
+; C5_HIGH                       ; 0                         ; Untyped               ;
+; C6_HIGH                       ; 0                         ; Untyped               ;
+; C7_HIGH                       ; 0                         ; Untyped               ;
+; C8_HIGH                       ; 0                         ; Untyped               ;
+; C9_HIGH                       ; 0                         ; Untyped               ;
+; C0_LOW                        ; 0                         ; Untyped               ;
+; C1_LOW                        ; 0                         ; Untyped               ;
+; C2_LOW                        ; 0                         ; Untyped               ;
+; C3_LOW                        ; 0                         ; Untyped               ;
+; C4_LOW                        ; 0                         ; Untyped               ;
+; C5_LOW                        ; 0                         ; Untyped               ;
+; C6_LOW                        ; 0                         ; Untyped               ;
+; C7_LOW                        ; 0                         ; Untyped               ;
+; C8_LOW                        ; 0                         ; Untyped               ;
+; C9_LOW                        ; 0                         ; Untyped               ;
+; C0_INITIAL                    ; 0                         ; Untyped               ;
+; C1_INITIAL                    ; 0                         ; Untyped               ;
+; C2_INITIAL                    ; 0                         ; Untyped               ;
+; C3_INITIAL                    ; 0                         ; Untyped               ;
+; C4_INITIAL                    ; 0                         ; Untyped               ;
+; C5_INITIAL                    ; 0                         ; Untyped               ;
+; C6_INITIAL                    ; 0                         ; Untyped               ;
+; C7_INITIAL                    ; 0                         ; Untyped               ;
+; C8_INITIAL                    ; 0                         ; Untyped               ;
+; C9_INITIAL                    ; 0                         ; Untyped               ;
+; C0_MODE                       ; BYPASS                    ; Untyped               ;
+; C1_MODE                       ; BYPASS                    ; Untyped               ;
+; C2_MODE                       ; BYPASS                    ; Untyped               ;
+; C3_MODE                       ; BYPASS                    ; Untyped               ;
+; C4_MODE                       ; BYPASS                    ; Untyped               ;
+; C5_MODE                       ; BYPASS                    ; Untyped               ;
+; C6_MODE                       ; BYPASS                    ; Untyped               ;
+; C7_MODE                       ; BYPASS                    ; Untyped               ;
+; C8_MODE                       ; BYPASS                    ; Untyped               ;
+; C9_MODE                       ; BYPASS                    ; Untyped               ;
+; C0_PH                         ; 0                         ; Untyped               ;
+; C1_PH                         ; 0                         ; Untyped               ;
+; C2_PH                         ; 0                         ; Untyped               ;
+; C3_PH                         ; 0                         ; Untyped               ;
+; C4_PH                         ; 0                         ; Untyped               ;
+; C5_PH                         ; 0                         ; Untyped               ;
+; C6_PH                         ; 0                         ; Untyped               ;
+; C7_PH                         ; 0                         ; Untyped               ;
+; C8_PH                         ; 0                         ; Untyped               ;
+; C9_PH                         ; 0                         ; Untyped               ;
+; L0_HIGH                       ; 1                         ; Untyped               ;
+; L1_HIGH                       ; 1                         ; Untyped               ;
+; G0_HIGH                       ; 1                         ; Untyped               ;
+; G1_HIGH                       ; 1                         ; Untyped               ;
+; G2_HIGH                       ; 1                         ; Untyped               ;
+; G3_HIGH                       ; 1                         ; Untyped               ;
+; E0_HIGH                       ; 1                         ; Untyped               ;
+; E1_HIGH                       ; 1                         ; Untyped               ;
+; E2_HIGH                       ; 1                         ; Untyped               ;
+; E3_HIGH                       ; 1                         ; Untyped               ;
+; L0_LOW                        ; 1                         ; Untyped               ;
+; L1_LOW                        ; 1                         ; Untyped               ;
+; G0_LOW                        ; 1                         ; Untyped               ;
+; G1_LOW                        ; 1                         ; Untyped               ;
+; G2_LOW                        ; 1                         ; Untyped               ;
+; G3_LOW                        ; 1                         ; Untyped               ;
+; E0_LOW                        ; 1                         ; Untyped               ;
+; E1_LOW                        ; 1                         ; Untyped               ;
+; E2_LOW                        ; 1                         ; Untyped               ;
+; E3_LOW                        ; 1                         ; Untyped               ;
+; L0_INITIAL                    ; 1                         ; Untyped               ;
+; L1_INITIAL                    ; 1                         ; Untyped               ;
+; G0_INITIAL                    ; 1                         ; Untyped               ;
+; G1_INITIAL                    ; 1                         ; Untyped               ;
+; G2_INITIAL                    ; 1                         ; Untyped               ;
+; G3_INITIAL                    ; 1                         ; Untyped               ;
+; E0_INITIAL                    ; 1                         ; Untyped               ;
+; E1_INITIAL                    ; 1                         ; Untyped               ;
+; E2_INITIAL                    ; 1                         ; Untyped               ;
+; E3_INITIAL                    ; 1                         ; Untyped               ;
+; L0_MODE                       ; BYPASS                    ; Untyped               ;
+; L1_MODE                       ; BYPASS                    ; Untyped               ;
+; G0_MODE                       ; BYPASS                    ; Untyped               ;
+; G1_MODE                       ; BYPASS                    ; Untyped               ;
+; G2_MODE                       ; BYPASS                    ; Untyped               ;
+; G3_MODE                       ; BYPASS                    ; Untyped               ;
+; E0_MODE                       ; BYPASS                    ; Untyped               ;
+; E1_MODE                       ; BYPASS                    ; Untyped               ;
+; E2_MODE                       ; BYPASS                    ; Untyped               ;
+; E3_MODE                       ; BYPASS                    ; Untyped               ;
+; L0_PH                         ; 0                         ; Untyped               ;
+; L1_PH                         ; 0                         ; Untyped               ;
+; G0_PH                         ; 0                         ; Untyped               ;
+; G1_PH                         ; 0                         ; Untyped               ;
+; G2_PH                         ; 0                         ; Untyped               ;
+; G3_PH                         ; 0                         ; Untyped               ;
+; E0_PH                         ; 0                         ; Untyped               ;
+; E1_PH                         ; 0                         ; Untyped               ;
+; E2_PH                         ; 0                         ; Untyped               ;
+; E3_PH                         ; 0                         ; Untyped               ;
+; M_PH                          ; 0                         ; Untyped               ;
+; C1_USE_CASC_IN                ; OFF                       ; Untyped               ;
+; C2_USE_CASC_IN                ; OFF                       ; Untyped               ;
+; C3_USE_CASC_IN                ; OFF                       ; Untyped               ;
+; C4_USE_CASC_IN                ; OFF                       ; Untyped               ;
+; C5_USE_CASC_IN                ; OFF                       ; Untyped               ;
+; C6_USE_CASC_IN                ; OFF                       ; Untyped               ;
+; C7_USE_CASC_IN                ; OFF                       ; Untyped               ;
+; C8_USE_CASC_IN                ; OFF                       ; Untyped               ;
+; C9_USE_CASC_IN                ; OFF                       ; Untyped               ;
+; CLK0_COUNTER                  ; G0                        ; Untyped               ;
+; CLK1_COUNTER                  ; G0                        ; Untyped               ;
+; CLK2_COUNTER                  ; G0                        ; Untyped               ;
+; CLK3_COUNTER                  ; G0                        ; Untyped               ;
+; CLK4_COUNTER                  ; G0                        ; Untyped               ;
+; CLK5_COUNTER                  ; G0                        ; Untyped               ;
+; CLK6_COUNTER                  ; E0                        ; Untyped               ;
+; CLK7_COUNTER                  ; E1                        ; Untyped               ;
+; CLK8_COUNTER                  ; E2                        ; Untyped               ;
+; CLK9_COUNTER                  ; E3                        ; Untyped               ;
+; L0_TIME_DELAY                 ; 0                         ; Untyped               ;
+; L1_TIME_DELAY                 ; 0                         ; Untyped               ;
+; G0_TIME_DELAY                 ; 0                         ; Untyped               ;
+; G1_TIME_DELAY                 ; 0                         ; Untyped               ;
+; G2_TIME_DELAY                 ; 0                         ; Untyped               ;
+; G3_TIME_DELAY                 ; 0                         ; Untyped               ;
+; E0_TIME_DELAY                 ; 0                         ; Untyped               ;
+; E1_TIME_DELAY                 ; 0                         ; Untyped               ;
+; E2_TIME_DELAY                 ; 0                         ; Untyped               ;
+; E3_TIME_DELAY                 ; 0                         ; Untyped               ;
+; M_TIME_DELAY                  ; 0                         ; Untyped               ;
+; N_TIME_DELAY                  ; 0                         ; Untyped               ;
+; EXTCLK3_COUNTER               ; E3                        ; Untyped               ;
+; EXTCLK2_COUNTER               ; E2                        ; Untyped               ;
+; EXTCLK1_COUNTER               ; E1                        ; Untyped               ;
+; EXTCLK0_COUNTER               ; E0                        ; Untyped               ;
+; ENABLE0_COUNTER               ; L0                        ; Untyped               ;
+; ENABLE1_COUNTER               ; L0                        ; Untyped               ;
+; CHARGE_PUMP_CURRENT           ; 2                         ; Untyped               ;
+; LOOP_FILTER_R                 ;  1.000000                 ; Untyped               ;
+; LOOP_FILTER_C                 ; 5                         ; Untyped               ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999                      ; Untyped               ;
+; LOOP_FILTER_R_BITS            ; 9999                      ; Untyped               ;
+; LOOP_FILTER_C_BITS            ; 9999                      ; Untyped               ;
+; VCO_POST_SCALE                ; 0                         ; Untyped               ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                         ; Untyped               ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                         ; Untyped               ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                         ; Untyped               ;
+; INTENDED_DEVICE_FAMILY        ; Cyclone III               ; Untyped               ;
+; PORT_CLKENA0                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLKENA1                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLKENA2                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLKENA3                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLKENA4                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLKENA5                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY         ; Untyped               ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY         ; Untyped               ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY         ; Untyped               ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY         ; Untyped               ;
+; PORT_EXTCLK0                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_EXTCLK1                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_EXTCLK2                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_EXTCLK3                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLKBAD0                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLKBAD1                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLK0                     ; PORT_USED                 ; Untyped               ;
+; PORT_CLK1                     ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLK2                     ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLK3                     ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLK4                     ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLK5                     ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLK6                     ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLK7                     ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLK8                     ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLK9                     ; PORT_UNUSED               ; Untyped               ;
+; PORT_SCANDATA                 ; PORT_UNUSED               ; Untyped               ;
+; PORT_SCANDATAOUT              ; PORT_UNUSED               ; Untyped               ;
+; PORT_SCANDONE                 ; PORT_UNUSED               ; Untyped               ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY         ; Untyped               ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY         ; Untyped               ;
+; PORT_ACTIVECLOCK              ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLKLOSS                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_INCLK1                   ; PORT_UNUSED               ; Untyped               ;
+; PORT_INCLK0                   ; PORT_USED                 ; Untyped               ;
+; PORT_FBIN                     ; PORT_UNUSED               ; Untyped               ;
+; PORT_PLLENA                   ; PORT_UNUSED               ; Untyped               ;
+; PORT_CLKSWITCH                ; PORT_UNUSED               ; Untyped               ;
+; PORT_ARESET                   ; PORT_USED                 ; Untyped               ;
+; PORT_PFDENA                   ; PORT_UNUSED               ; Untyped               ;
+; PORT_SCANCLK                  ; PORT_UNUSED               ; Untyped               ;
+; PORT_SCANACLR                 ; PORT_UNUSED               ; Untyped               ;
+; PORT_SCANREAD                 ; PORT_UNUSED               ; Untyped               ;
+; PORT_SCANWRITE                ; PORT_UNUSED               ; Untyped               ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY         ; Untyped               ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY         ; Untyped               ;
+; PORT_LOCKED                   ; PORT_USED                 ; Untyped               ;
+; PORT_CONFIGUPDATE             ; PORT_UNUSED               ; Untyped               ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY         ; Untyped               ;
+; PORT_PHASEDONE                ; PORT_UNUSED               ; Untyped               ;
+; PORT_PHASESTEP                ; PORT_UNUSED               ; Untyped               ;
+; PORT_PHASEUPDOWN              ; PORT_UNUSED               ; Untyped               ;
+; PORT_SCANCLKENA               ; PORT_UNUSED               ; Untyped               ;
+; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED               ; Untyped               ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY         ; Untyped               ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY         ; Untyped               ;
+; M_TEST_SOURCE                 ; 5                         ; Untyped               ;
+; C0_TEST_SOURCE                ; 5                         ; Untyped               ;
+; C1_TEST_SOURCE                ; 5                         ; Untyped               ;
+; C2_TEST_SOURCE                ; 5                         ; Untyped               ;
+; C3_TEST_SOURCE                ; 5                         ; Untyped               ;
+; C4_TEST_SOURCE                ; 5                         ; Untyped               ;
+; C5_TEST_SOURCE                ; 5                         ; Untyped               ;
+; C6_TEST_SOURCE                ; 5                         ; Untyped               ;
+; C7_TEST_SOURCE                ; 5                         ; Untyped               ;
+; C8_TEST_SOURCE                ; 5                         ; Untyped               ;
+; C9_TEST_SOURCE                ; 5                         ; Untyped               ;
+; CBXI_PARAMETER                ; altpll1_altpll            ; Untyped               ;
+; VCO_FREQUENCY_CONTROL         ; AUTO                      ; Untyped               ;
+; VCO_PHASE_SHIFT_STEP          ; 0                         ; Untyped               ;
+; WIDTH_CLOCK                   ; 5                         ; Signed Integer        ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                         ; Untyped               ;
+; USING_FBMIMICBIDIR_PORT       ; OFF                       ; Untyped               ;
+; DEVICE_FAMILY                 ; Cyclone III               ; Untyped               ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED                    ; Untyped               ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                       ; Untyped               ;
+; AUTO_CARRY_CHAINS             ; ON                        ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS          ; OFF                       ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS           ; ON                        ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS        ; OFF                       ; IGNORE_CASCADE        ;
++-------------------------------+---------------------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                          ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                       ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                       ;
+; WIDTH_A                            ; 8                    ; Signed Integer                                                ;
+; WIDTHAD_A                          ; 9                    ; Signed Integer                                                ;
+; NUMWORDS_A                         ; 512                  ; Signed Integer                                                ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; WIDTH_B                            ; 1                    ; Untyped                                                       ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                       ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                       ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                       ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                       ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                       ;
+; INIT_FILE                          ; TCGROM.mif           ; Untyped                                                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                       ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                       ;
+; DEVICE_FAMILY                      ; Cyclone III          ; Untyped                                                       ;
+; CBXI_PARAMETER                     ; altsyncram_kt91      ; Untyped                                                       ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: text_display_main_menu:inst15|char_rom:display|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                            ;
++------------------------------------+----------------------+-----------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                         ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                    ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                  ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                         ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                         ;
+; WIDTH_A                            ; 8                    ; Signed Integer                                                  ;
+; WIDTHAD_A                          ; 9                    ; Signed Integer                                                  ;
+; NUMWORDS_A                         ; 512                  ; Signed Integer                                                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                         ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                         ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                         ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                         ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                         ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                         ;
+; WIDTH_B                            ; 1                    ; Untyped                                                         ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                         ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                         ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                         ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                         ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                         ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                         ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                         ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                         ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                         ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                         ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                         ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                         ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                         ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                         ;
+; INIT_FILE                          ; TCGROM.mif           ; Untyped                                                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                         ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                         ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                         ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                         ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                         ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                         ;
+; DEVICE_FAMILY                      ; Cyclone III          ; Untyped                                                         ;
+; CBXI_PARAMETER                     ; altsyncram_kt91      ; Untyped                                                         ;
++------------------------------------+----------------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                         ;
++-------------------------------+--------------------------------------+
+; Name                          ; Value                                ;
++-------------------------------+--------------------------------------+
+; Number of entity instances    ; 1                                    ;
+; Entity Instance               ; altpll1:inst|altpll:altpll_component ;
+;     -- OPERATION_MODE         ; NORMAL                               ;
+;     -- PLL_TYPE               ; AUTO                                 ;
+;     -- PRIMARY_CLOCK          ; INCLK0                               ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                                ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                                    ;
+;     -- VCO_MULTIPLY_BY        ; 0                                    ;
+;     -- VCO_DIVIDE_BY          ; 0                                    ;
++-------------------------------+--------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                           ;
++-------------------------------------------+--------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                          ;
++-------------------------------------------+--------------------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                              ;
+; Entity Instance                           ; text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component   ;
+;     -- OPERATION_MODE                     ; ROM                                                                            ;
+;     -- WIDTH_A                            ; 8                                                                              ;
+;     -- NUMWORDS_A                         ; 512                                                                            ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                   ;
+;     -- WIDTH_B                            ; 1                                                                              ;
+;     -- NUMWORDS_B                         ; 1                                                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                      ;
+; Entity Instance                           ; text_display_main_menu:inst15|char_rom:display|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                            ;
+;     -- WIDTH_A                            ; 8                                                                              ;
+;     -- NUMWORDS_A                         ; 512                                                                            ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                   ;
+;     -- WIDTH_B                            ; 1                                                                              ;
+;     -- NUMWORDS_B                         ; 1                                                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                      ;
++-------------------------------------------+--------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jun 05 03:56:38 2020
+    Info: Processing started: Fri Jun 05 10:24:07 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FlappyBird-FlappyCompsys -c FlappyBird-FlappyCompsys
 Warning (125092): Tcl Script File altpll0.qip not found
     Info (125063): set_global_assignment -name QIP_FILE altpll0.qip
@@ -294,7 +1165,6 @@ Info (12128): Elaborating entity "altpll1_altpll" for hierarchy "altpll1:inst|al
 Info (12128): Elaborating entity "final_display" for hierarchy "final_display:inst7"
 Info (12128): Elaborating entity "bird" for hierarchy "bird:inst5"
 Warning (10492): VHDL Process Statement warning at bird.vhd(45): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(45): signal "temp_bird_dead" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(45): signal "sw2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(63): signal "pipe1_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(63): signal "pipe_size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -313,50 +1183,136 @@ Warning (10492): VHDL Process Statement warning at bird.vhd(65): signal "bird_y_
 Warning (10492): VHDL Process Statement warning at bird.vhd(65): signal "pipe3_bottom_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(66): signal "bird_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(66): signal "bird_size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bird.vhd(73): signal "sw2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10631): VHDL Process Statement warning at bird.vhd(42): inferring latch(es) for signal or variable "reset_score", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bird.vhd(42): inferring latch(es) for signal or variable "bird_dead", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at bird.vhd(42): inferring latch(es) for signal or variable "temp_bird_dead", which holds its previous value in one or more paths through the process
-Warning (10492): VHDL Process Statement warning at bird.vhd(80): signal "sw2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at bird.vhd(78): inferring latch(es) for signal or variable "bird_dead", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bird.vhd(78): inferring latch(es) for signal or variable "temp_bird_dead", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bird.vhd(78): inferring latch(es) for signal or variable "bird_y_pos", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bird.vhd(78): inferring latch(es) for signal or variable "reset_score", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "reset_score" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_y_pos[0]" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_y_pos[1]" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_y_pos[2]" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_y_pos[3]" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_y_pos[4]" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_y_pos[5]" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_y_pos[6]" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_y_pos[7]" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_y_pos[8]" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_y_pos[9]" at bird.vhd(78)
-Info (10041): Inferred latch for "temp_bird_dead" at bird.vhd(78)
-Info (10041): Inferred latch for "bird_dead" at bird.vhd(78)
 Info (10041): Inferred latch for "temp_bird_dead" at bird.vhd(42)
-Info (10041): Inferred latch for "bird_dead" at bird.vhd(42)
 Info (10041): Inferred latch for "reset_score" at bird.vhd(42)
-Error (10028): Can't resolve multiple constant drivers for net "bird_dead" at bird.vhd(78) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 78
-Error (10029): Constant driver at bird.vhd(42) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 42
-Error (10028): Can't resolve multiple constant drivers for net "reset_score" at bird.vhd(78) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 78
-Error (10028): Can't resolve multiple constant drivers for net "bird_y_pos[9]" at bird.vhd(48) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 48
-Error (10029): Constant driver at bird.vhd(78) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 78
-Error (10028): Can't resolve multiple constant drivers for net "bird_y_pos[8]" at bird.vhd(48) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 48
-Error (10028): Can't resolve multiple constant drivers for net "bird_y_pos[7]" at bird.vhd(48) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 48
-Error (10028): Can't resolve multiple constant drivers for net "bird_y_pos[6]" at bird.vhd(48) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 48
-Error (10028): Can't resolve multiple constant drivers for net "bird_y_pos[5]" at bird.vhd(48) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 48
-Error (10028): Can't resolve multiple constant drivers for net "bird_y_pos[4]" at bird.vhd(48) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 48
-Error (10028): Can't resolve multiple constant drivers for net "bird_y_pos[3]" at bird.vhd(48) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 48
-Error (10028): Can't resolve multiple constant drivers for net "bird_y_pos[2]" at bird.vhd(48) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 48
-Error (10028): Can't resolve multiple constant drivers for net "bird_y_pos[1]" at bird.vhd(48) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 48
-Error (10028): Can't resolve multiple constant drivers for net "bird_y_pos[0]" at bird.vhd(48) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 48
-Error (10028): Can't resolve multiple constant drivers for net "temp_bird_dead" at bird.vhd(42) File: D:/Docs/GitHub/flappy-bird-VHDL/bird.vhd Line: 42
-Error (12152): Can't elaborate user hierarchy "bird:inst5"
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 16 errors, 35 warnings
-    Error: Peak virtual memory: 4635 megabytes
-    Error: Processing ended: Fri Jun 05 03:56:39 2020
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12128): Elaborating entity "MOUSE" for hierarchy "MOUSE:inst2"
+Warning (10036): Verilog HDL or VHDL warning at mouse_new_ver.vhd(25): object "CHARIN" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at mouse_new_ver.vhd(151): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mouse_new_ver.vhd(155): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mouse_new_ver.vhd(156): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mouse_new_ver.vhd(157): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "pipes" for hierarchy "pipes:inst6"
+Warning (10540): VHDL Signal Declaration warning at pipes.vhd(26): used explicit default value for signal "pipe_size" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at pipes.vhd(52): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(52): signal "bird_dead" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(52): signal "sw2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(115): signal "sw1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(118): signal "Qtens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(118): signal "Qones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(120): signal "Qtens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(120): signal "Qones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(122): signal "Qtens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(122): signal "Qones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at pipes.vhd(44): inferring latch(es) for signal or variable "pipe_speed", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "pipe_speed[0]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[1]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[2]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[3]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[4]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[5]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[6]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[7]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[8]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[9]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[10]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[11]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[12]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[13]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[14]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[15]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[16]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[17]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[18]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[19]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[20]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[21]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[22]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[23]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[24]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[25]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[26]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[27]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[28]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[29]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[30]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[31]" at pipes.vhd(44)
+Info (12128): Elaborating entity "Massive_Counter" for hierarchy "Massive_Counter:inst9"
+Info (12128): Elaborating entity "BCD_counter" for hierarchy "Massive_Counter:inst9|BCD_counter:BCD_ones"
+Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst14"
+Info (12128): Elaborating entity "LFSR" for hierarchy "LFSR:inst8"
+Info (12128): Elaborating entity "text_display_general" for hierarchy "text_display_general:inst11"
+Info (12128): Elaborating entity "char_rom" for hierarchy "text_display_general:inst11|char_rom:display"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "TCGROM.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone III"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "512"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "9"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kt91.tdf
+    Info (12023): Found entity 1: altsyncram_kt91
+Info (12128): Elaborating entity "altsyncram_kt91" for hierarchy "text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated"
+Info (12128): Elaborating entity "text_display_main_menu" for hierarchy "text_display_main_menu:inst15"
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "pipes:inst6|pipe_speed[15]" merged with LATCH primitive "pipes:inst6|pipe_speed[5]"
+    Info (13026): Duplicate LATCH primitive "pipes:inst6|pipe_speed[8]" merged with LATCH primitive "pipes:inst6|pipe_speed[5]"
+    Info (13026): Duplicate LATCH primitive "pipes:inst6|pipe_speed[12]" merged with LATCH primitive "pipes:inst6|pipe_speed[7]"
+    Info (13026): Duplicate LATCH primitive "pipes:inst6|pipe_speed[9]" merged with LATCH primitive "pipes:inst6|pipe_speed[7]"
+    Info (13026): Duplicate LATCH primitive "pipes:inst6|pipe_speed[16]" merged with LATCH primitive "pipes:inst6|pipe_speed[13]"
+Warning (13012): Latch bird:inst5|temp_bird_dead has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sw0
+Warning (13012): Latch pipes:inst6|pipe_speed[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Massive_Counter:inst9|BCD_counter:BCD_ones|Q_Out[0]
+Warning (13012): Latch pipes:inst6|pipe_speed[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Massive_Counter:inst9|BCD_counter:BCD_tens|Q_Out[0]
+Warning (13012): Latch pipes:inst6|pipe_speed[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Massive_Counter:inst9|BCD_counter:BCD_tens|Q_Out[0]
+Warning (13012): Latch pipes:inst6|pipe_speed[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Massive_Counter:inst9|BCD_counter:BCD_ones|Q_Out[0]
+Warning (13012): Latch pipes:inst6|pipe_speed[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Massive_Counter:inst9|BCD_counter:BCD_tens|Q_Out[0]
+Warning (13012): Latch pipes:inst6|pipe_speed[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Massive_Counter:inst9|BCD_counter:BCD_tens|Q_Out[0]
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "bird:inst5|bird_y_pos[9]" is converted into an equivalent circuit using register "bird:inst5|bird_y_pos[9]~_emulated" and latch "bird:inst5|bird_y_pos[9]~1"
+    Warning (13310): Register "bird:inst5|bird_y_pos[8]" is converted into an equivalent circuit using register "bird:inst5|bird_y_pos[8]~_emulated" and latch "bird:inst5|bird_y_pos[8]~6"
+    Warning (13310): Register "bird:inst5|bird_y_pos[7]" is converted into an equivalent circuit using register "bird:inst5|bird_y_pos[7]~_emulated" and latch "bird:inst5|bird_y_pos[7]~11"
+    Warning (13310): Register "bird:inst5|bird_y_pos[6]" is converted into an equivalent circuit using register "bird:inst5|bird_y_pos[6]~_emulated" and latch "bird:inst5|bird_y_pos[6]~16"
+    Warning (13310): Register "bird:inst5|bird_y_pos[5]" is converted into an equivalent circuit using register "bird:inst5|bird_y_pos[5]~_emulated" and latch "bird:inst5|bird_y_pos[5]~21"
+    Warning (13310): Register "bird:inst5|bird_y_pos[4]" is converted into an equivalent circuit using register "bird:inst5|bird_y_pos[4]~_emulated" and latch "bird:inst5|bird_y_pos[4]~26"
+    Warning (13310): Register "bird:inst5|bird_y_pos[3]" is converted into an equivalent circuit using register "bird:inst5|bird_y_pos[3]~_emulated" and latch "bird:inst5|bird_y_pos[3]~31"
+    Warning (13310): Register "bird:inst5|bird_y_pos[2]" is converted into an equivalent circuit using register "bird:inst5|bird_y_pos[2]~_emulated" and latch "bird:inst5|bird_y_pos[2]~36"
+    Warning (13310): Register "bird:inst5|bird_y_pos[1]" is converted into an equivalent circuit using register "bird:inst5|bird_y_pos[1]~_emulated" and latch "bird:inst5|bird_y_pos[1]~41"
+    Warning (13310): Register "bird:inst5|bird_y_pos[0]" is converted into an equivalent circuit using register "bird:inst5|bird_y_pos[0]~_emulated" and latch "bird:inst5|bird_y_pos[0]~46"
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1194 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 1166 logic cells
+    Info (21064): Implemented 16 RAM segments
+    Info (21065): Implemented 1 PLLs
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 71 warnings
+    Info: Peak virtual memory: 4653 megabytes
+    Info: Processing ended: Fri Jun 05 10:24:13 2020
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

@@ -17,7 +17,7 @@ ENTITY bird IS
 		SIGNAL pipe2_x_pos, pipe2_top_y_pos, pipe2_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
 		SIGNAL pipe3_x_pos, pipe3_top_y_pos, pipe3_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
 		--Bird Signals--
-		SIGNAL bird_on, bird_dead, reset_score 										: OUT std_logic
+		SIGNAL bird_on, bird_dead, reset_score 						: OUT std_logic
 		);		
 END bird;
 
@@ -42,7 +42,7 @@ bird_on <= '1' when ( ('0' & bird_x_pos <= '0' & pixel_column + bird_size) and (
 Move_Bird: process (vert_sync, left_click)  	
 begin
 	-- Game should only run if not paused and the bird is alive
-	if (sw0 = '0' and temp_bird_dead = '0' and sw2 = '1') then
+	if (sw0 = '0' and sw2 = '1') then
 		reset_score <= '0';
 		-- Move bird once every vertical sync
 		if (rising_edge(vert_sync)) then
@@ -65,19 +65,17 @@ begin
 				or (conv_integer(pipe3_x_pos) <= 320 and conv_integer(pipe3_x_pos + pipe_size) >= 320 and (pipe3_top_y_pos > bird_y_pos or pipe3_bottom_y_pos < bird_y_pos))
 				or ('0' & bird_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - bird_size)
 				) then
-				bird_dead <= '1';
 				temp_bird_dead <= '1';
 		else
-				bird_dead <= '0';
 				temp_bird_dead <= '0';
 		end if;
 	-- Reset game when user goes back to the main menu and then starts a new game
-	elsif (temp_bird_dead = '1' and sw2 = '0') then
-		bird_dead <= '0';
+	elsif (sw2 = '0') then
 		temp_bird_dead <= '0';
 		bird_y_pos <= CONV_STD_LOGIC_VECTOR(240,10);
 		reset_score <= '1';
 	end if;
-end process Move_Bird;	
+end process Move_Bird;
+bird_dead <= temp_bird_dead;
 -- when game over, if sw2 high, wait for a bit then start game again. otherwise flick sw2 low and go back to main menu
 END behavior;

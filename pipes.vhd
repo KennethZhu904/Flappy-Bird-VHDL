@@ -124,16 +124,11 @@ begin
 			end if;
 		end if;
 	end if;
-	if (bird_dead = '1') then
-	pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(213,10);
-	pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(426,10);
-	pipe3_x_pos <= CONV_STD_LOGIC_VECTOR(640,10);
-	end if;
---	if (bird_dead = '1' and sw2 = '1') then
---			--implement a counter so that  it counts for a bit
---			--set bird values to default
+--	if (bird_dead = '1') then
+--	pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(213,10);
+--	pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(426,10);
+--	pipe3_x_pos <= CONV_STD_LOGIC_VECTOR(640,10);
 --	end if;
-	-- when game over, if sw2 high, wait for a bit then start game again. otherwise flick sw2 low and go back to main menu
 end process;
 	
 	
