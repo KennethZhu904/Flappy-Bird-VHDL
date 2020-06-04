@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FlappyBird-FlappyCompsys
-Fri Jun 05 00:54:57 2020
+Fri Jun 05 01:27:14 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -55,15 +55,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 05 00:54:57 2020           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 05 01:27:14 2020           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; FlappyBird-FlappyCompsys                        ;
 ; Top-level Entity Name              ; FlappyBird-FlappyCompsys                        ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 1,220                                           ;
-;     Total combinational functions  ; 1,139                                           ;
-;     Dedicated logic registers      ; 322                                             ;
-; Total registers                    ; 322                                             ;
+; Total logic elements               ; 1,074                                           ;
+;     Total combinational functions  ; 1,007                                           ;
+;     Dedicated logic registers      ; 300                                             ;
+; Total registers                    ; 300                                             ;
 ; Total pins                         ; 11                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 8,192                                           ;
@@ -213,20 +213,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                               ;
 +---------------------------------------------+-------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,220                                                                               ;
+; Estimated Total logic elements              ; 1,074                                                                               ;
 ;                                             ;                                                                                     ;
-; Total combinational functions               ; 1139                                                                                ;
+; Total combinational functions               ; 1007                                                                                ;
 ; Logic element usage by number of LUT inputs ;                                                                                     ;
 ;     -- 4 input functions                    ; 376                                                                                 ;
-;     -- 3 input functions                    ; 343                                                                                 ;
-;     -- <=2 input functions                  ; 420                                                                                 ;
+;     -- 3 input functions                    ; 268                                                                                 ;
+;     -- <=2 input functions                  ; 363                                                                                 ;
 ;                                             ;                                                                                     ;
 ; Logic elements by mode                      ;                                                                                     ;
-;     -- normal mode                          ; 723                                                                                 ;
-;     -- arithmetic mode                      ; 416                                                                                 ;
+;     -- normal mode                          ; 696                                                                                 ;
+;     -- arithmetic mode                      ; 311                                                                                 ;
 ;                                             ;                                                                                     ;
-; Total registers                             ; 322                                                                                 ;
-;     -- Dedicated logic registers            ; 322                                                                                 ;
+; Total registers                             ; 300                                                                                 ;
+;     -- Dedicated logic registers            ; 300                                                                                 ;
 ;     -- I/O registers                        ; 0                                                                                   ;
 ;                                             ;                                                                                     ;
 ; I/O pins                                    ; 11                                                                                  ;
@@ -236,9 +236,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                                                                                   ;
 ;                                             ;                                                                                     ;
 ; Maximum fan-out node                        ; altpll1:inst|altpll:altpll_component|altpll1_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 275                                                                                 ;
-; Total fan-out                               ; 4405                                                                                ;
-; Average fan-out                             ; 2.93                                                                                ;
+; Maximum fan-out                             ; 253                                                                                 ;
+; Total fan-out                               ; 3997                                                                                ;
+; Average fan-out                             ; 2.97                                                                                ;
 +---------------------------------------------+-------------------------------------------------------------------------------------+
 
 
@@ -247,21 +247,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |FlappyBird-FlappyCompsys                    ; 1139 (0)          ; 322 (0)      ; 8192        ; 0            ; 0       ; 0         ; 11   ; 0            ; |FlappyBird-FlappyCompsys                                                                                                               ; work         ;
+; |FlappyBird-FlappyCompsys                    ; 1007 (0)          ; 300 (0)      ; 8192        ; 0            ; 0       ; 0         ; 11   ; 0            ; |FlappyBird-FlappyCompsys                                                                                                               ; work         ;
 ;    |LFSR:inst8|                              ; 12 (12)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|LFSR:inst8                                                                                                    ; work         ;
-;    |MOUSE:inst2|                             ; 51 (51)           ; 63 (63)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|MOUSE:inst2                                                                                                   ; work         ;
-;    |Massive_Counter:inst9|                   ; 26 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9                                                                                         ; work         ;
-;       |BCD_counter:BCD_ones|                 ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_ones                                                                    ; work         ;
+;    |MOUSE:inst2|                             ; 53 (53)           ; 63 (63)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|MOUSE:inst2                                                                                                   ; work         ;
+;    |Massive_Counter:inst9|                   ; 27 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9                                                                                         ; work         ;
+;       |BCD_counter:BCD_ones|                 ; 14 (14)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_ones                                                                    ; work         ;
 ;       |BCD_counter:BCD_tens|                 ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_tens                                                                    ; work         ;
-;    |VGA_SYNC:inst1|                          ; 75 (75)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|VGA_SYNC:inst1                                                                                                ; work         ;
+;    |VGA_SYNC:inst1|                          ; 67 (67)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|VGA_SYNC:inst1                                                                                                ; work         ;
 ;    |altpll1:inst|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll1:inst                                                                                                  ; work         ;
 ;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll1:inst|altpll:altpll_component                                                                          ; work         ;
 ;          |altpll1_altpll:auto_generated|     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll1:inst|altpll:altpll_component|altpll1_altpll:auto_generated                                            ; work         ;
-;    |bird:inst5|                              ; 110 (110)         ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|bird:inst5                                                                                                    ; work         ;
+;    |bird:inst5|                              ; 113 (113)         ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|bird:inst5                                                                                                    ; work         ;
 ;    |clk_div:inst14|                          ; 42 (42)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|clk_div:inst14                                                                                                ; work         ;
 ;    |final_display:inst7|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|final_display:inst7                                                                                           ; work         ;
-;    |pipes:inst6|                             ; 494 (494)         ; 133 (133)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|pipes:inst6                                                                                                   ; work         ;
-;    |text_display_general:inst11|             ; 109 (105)         ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_general:inst11                                                                                   ; work         ;
+;    |pipes:inst6|                             ; 362 (362)         ; 111 (111)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|pipes:inst6                                                                                                   ; work         ;
+;    |text_display_general:inst11|             ; 111 (107)         ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_general:inst11                                                                                   ; work         ;
 ;       |char_rom:display|                     ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_general:inst11|char_rom:display                                                                  ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component                                  ; work         ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display_general:inst11|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated   ; work         ;
@@ -331,56 +331,62 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+----------------------------------------+-----------------------------------------------+
-; Register name                          ; Reason for Removal                            ;
-+----------------------------------------+-----------------------------------------------+
-; bird:inst5|bird_y_motion[2]            ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe1_top_y_pos[0,9]       ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe1_bottom_y_pos[0,9]    ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe2_top_y_pos[0,9]       ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe2_bottom_y_pos[0,9]    ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe3_top_y_pos[0,9]       ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe3_bottom_y_pos[0,9]    ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe4_top_y_pos[0,9]       ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe4_bottom_y_pos[0,9]    ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe5_top_y_pos[0,9]       ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe5_bottom_y_pos[0,9]    ; Stuck at GND due to stuck port data_in        ;
-; MOUSE:inst2|CHAROUT[4..7]              ; Stuck at VCC due to stuck port data_in        ;
-; MOUSE:inst2|CHAROUT[3]                 ; Stuck at GND due to stuck port data_in        ;
-; MOUSE:inst2|CHAROUT[2]                 ; Stuck at VCC due to stuck port data_in        ;
-; MOUSE:inst2|CHAROUT[0,1]               ; Stuck at GND due to stuck port data_in        ;
-; MOUSE:inst2|SHIFTOUT[10]               ; Stuck at VCC due to stuck port data_in        ;
-; pipes:inst6|pipe1_top_y_pos[3,6]       ; Merged with pipes:inst6|pipe1_bottom_y_pos[4] ;
-; pipes:inst6|pipe1_top_y_pos[4]         ; Merged with pipes:inst6|pipe1_top_y_pos[1]    ;
-; pipes:inst6|pipe1_top_y_pos[2]         ; Merged with pipes:inst6|pipe1_bottom_y_pos[5] ;
-; pipes:inst6|pipe2_top_y_pos[3,6]       ; Merged with pipes:inst6|pipe2_bottom_y_pos[4] ;
-; pipes:inst6|pipe2_top_y_pos[4]         ; Merged with pipes:inst6|pipe2_top_y_pos[1]    ;
-; pipes:inst6|pipe2_top_y_pos[2]         ; Merged with pipes:inst6|pipe2_bottom_y_pos[5] ;
-; pipes:inst6|pipe3_top_y_pos[3,6]       ; Merged with pipes:inst6|pipe3_bottom_y_pos[4] ;
-; pipes:inst6|pipe3_top_y_pos[4]         ; Merged with pipes:inst6|pipe3_top_y_pos[1]    ;
-; pipes:inst6|pipe3_top_y_pos[2]         ; Merged with pipes:inst6|pipe3_bottom_y_pos[5] ;
-; pipes:inst6|pipe4_top_y_pos[3,6]       ; Merged with pipes:inst6|pipe4_bottom_y_pos[4] ;
-; pipes:inst6|pipe4_top_y_pos[4]         ; Merged with pipes:inst6|pipe4_top_y_pos[1]    ;
-; pipes:inst6|pipe4_top_y_pos[2]         ; Merged with pipes:inst6|pipe4_bottom_y_pos[5] ;
-; bird:inst5|bird_y_motion[4..9]         ; Merged with bird:inst5|bird_y_motion[3]       ;
-; pipes:inst6|pipe5_top_y_pos[3,6]       ; Merged with pipes:inst6|pipe5_bottom_y_pos[4] ;
-; pipes:inst6|pipe5_top_y_pos[4]         ; Merged with pipes:inst6|pipe5_top_y_pos[1]    ;
-; pipes:inst6|pipe5_top_y_pos[2]         ; Merged with pipes:inst6|pipe5_bottom_y_pos[5] ;
-; VGA_SYNC:inst1|pixel_row[9]            ; Stuck at GND due to stuck port data_in        ;
-; pipes:inst6|pipe1_top_y_pos[1]         ; Merged with pipes:inst6|pipe1_bottom_y_pos[1] ;
-; pipes:inst6|pipe1_top_y_pos[5]         ; Merged with pipes:inst6|pipe1_bottom_y_pos[2] ;
-; pipes:inst6|pipe2_top_y_pos[1]         ; Merged with pipes:inst6|pipe2_bottom_y_pos[1] ;
-; pipes:inst6|pipe2_top_y_pos[5]         ; Merged with pipes:inst6|pipe2_bottom_y_pos[2] ;
-; pipes:inst6|pipe3_top_y_pos[1]         ; Merged with pipes:inst6|pipe3_bottom_y_pos[1] ;
-; pipes:inst6|pipe3_top_y_pos[5]         ; Merged with pipes:inst6|pipe3_bottom_y_pos[2] ;
-; pipes:inst6|pipe4_top_y_pos[1]         ; Merged with pipes:inst6|pipe4_bottom_y_pos[1] ;
-; pipes:inst6|pipe4_top_y_pos[5]         ; Merged with pipes:inst6|pipe4_bottom_y_pos[2] ;
-; pipes:inst6|pipe5_top_y_pos[1]         ; Merged with pipes:inst6|pipe5_bottom_y_pos[1] ;
-; pipes:inst6|pipe5_top_y_pos[5]         ; Merged with pipes:inst6|pipe5_bottom_y_pos[2] ;
-; Total Number of Removed Registers = 67 ;                                               ;
-+----------------------------------------+-----------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++------------------------------------------+--------------------------------------------------+
+; Register name                            ; Reason for Removal                               ;
++------------------------------------------+--------------------------------------------------+
+; bird:inst5|bird_y_motion[2]              ; Stuck at GND due to stuck port data_in           ;
+; pipes:inst6|pipe1_top_y_pos[0,9]         ; Stuck at GND due to stuck port data_in           ;
+; pipes:inst6|pipe1_bottom_y_pos[0,9]      ; Stuck at GND due to stuck port data_in           ;
+; pipes:inst6|pipe2_top_y_pos[0,9]         ; Stuck at GND due to stuck port data_in           ;
+; pipes:inst6|pipe2_bottom_y_pos[0,9]      ; Stuck at GND due to stuck port data_in           ;
+; pipes:inst6|pipe3_top_y_pos[0,9]         ; Stuck at GND due to stuck port data_in           ;
+; pipes:inst6|pipe3_bottom_y_pos[0,9]      ; Stuck at GND due to stuck port data_in           ;
+; MOUSE:inst2|CHAROUT[4..7]                ; Stuck at VCC due to stuck port data_in           ;
+; MOUSE:inst2|CHAROUT[3]                   ; Stuck at GND due to stuck port data_in           ;
+; MOUSE:inst2|CHAROUT[2]                   ; Stuck at VCC due to stuck port data_in           ;
+; MOUSE:inst2|CHAROUT[0,1]                 ; Stuck at GND due to stuck port data_in           ;
+; MOUSE:inst2|SHIFTOUT[10]                 ; Stuck at VCC due to stuck port data_in           ;
+; pipes:inst6|pipe1_x_pos[9]               ; Merged with pipes:inst6|\pipe_move:position1[9]  ;
+; pipes:inst6|pipe1_x_pos[8]               ; Merged with pipes:inst6|\pipe_move:position1[8]  ;
+; pipes:inst6|pipe1_x_pos[5]               ; Merged with pipes:inst6|\pipe_move:position1[5]  ;
+; pipes:inst6|pipe1_x_pos[3]               ; Merged with pipes:inst6|\pipe_move:position1[3]  ;
+; pipes:inst6|pipe1_x_pos[1]               ; Merged with pipes:inst6|\pipe_move:position1[1]  ;
+; pipes:inst6|pipe1_top_y_pos[3,6]         ; Merged with pipes:inst6|pipe1_bottom_y_pos[4]    ;
+; pipes:inst6|pipe1_top_y_pos[4]           ; Merged with pipes:inst6|pipe1_top_y_pos[1]       ;
+; pipes:inst6|pipe1_top_y_pos[2]           ; Merged with pipes:inst6|pipe1_bottom_y_pos[5]    ;
+; bird:inst5|bird_y_motion[4..9]           ; Merged with bird:inst5|bird_y_motion[3]          ;
+; pipes:inst6|\pipe_move:position1[11..30] ; Merged with pipes:inst6|\pipe_move:position1[10] ;
+; pipes:inst6|pipe1_x_pos[0]               ; Merged with pipes:inst6|\pipe_move:position1[0]  ;
+; pipes:inst6|\pipe_move:position2[11..30] ; Merged with pipes:inst6|\pipe_move:position2[10] ;
+; pipes:inst6|pipe2_x_pos[9]               ; Merged with pipes:inst6|\pipe_move:position2[9]  ;
+; pipes:inst6|pipe2_x_pos[6]               ; Merged with pipes:inst6|\pipe_move:position2[6]  ;
+; pipes:inst6|pipe2_x_pos[4]               ; Merged with pipes:inst6|\pipe_move:position2[4]  ;
+; pipes:inst6|pipe2_x_pos[2]               ; Merged with pipes:inst6|\pipe_move:position2[2]  ;
+; pipes:inst6|\pipe_move:position3[11..30] ; Merged with pipes:inst6|\pipe_move:position3[10] ;
+; pipes:inst6|pipe3_x_pos[8]               ; Merged with pipes:inst6|\pipe_move:position3[8]  ;
+; pipes:inst6|pipe3_x_pos[6]               ; Merged with pipes:inst6|\pipe_move:position3[6]  ;
+; pipes:inst6|pipe3_x_pos[5]               ; Merged with pipes:inst6|\pipe_move:position3[5]  ;
+; pipes:inst6|pipe3_x_pos[4]               ; Merged with pipes:inst6|\pipe_move:position3[4]  ;
+; pipes:inst6|pipe3_x_pos[3]               ; Merged with pipes:inst6|\pipe_move:position3[3]  ;
+; pipes:inst6|pipe3_x_pos[2]               ; Merged with pipes:inst6|\pipe_move:position3[2]  ;
+; pipes:inst6|pipe3_x_pos[1]               ; Merged with pipes:inst6|\pipe_move:position3[1]  ;
+; pipes:inst6|pipe2_top_y_pos[3,6]         ; Merged with pipes:inst6|pipe2_bottom_y_pos[4]    ;
+; pipes:inst6|pipe2_top_y_pos[4]           ; Merged with pipes:inst6|pipe2_top_y_pos[1]       ;
+; pipes:inst6|pipe2_top_y_pos[2]           ; Merged with pipes:inst6|pipe2_bottom_y_pos[5]    ;
+; pipes:inst6|pipe3_top_y_pos[3,6]         ; Merged with pipes:inst6|pipe3_bottom_y_pos[4]    ;
+; pipes:inst6|pipe3_top_y_pos[4]           ; Merged with pipes:inst6|pipe3_top_y_pos[1]       ;
+; pipes:inst6|pipe3_top_y_pos[2]           ; Merged with pipes:inst6|pipe3_bottom_y_pos[5]    ;
+; VGA_SYNC:inst1|pixel_row[9]              ; Stuck at GND due to stuck port data_in           ;
+; pipes:inst6|pipe1_top_y_pos[1]           ; Merged with pipes:inst6|pipe1_bottom_y_pos[1]    ;
+; pipes:inst6|pipe1_top_y_pos[5]           ; Merged with pipes:inst6|pipe1_bottom_y_pos[2]    ;
+; pipes:inst6|pipe2_top_y_pos[1]           ; Merged with pipes:inst6|pipe2_bottom_y_pos[1]    ;
+; pipes:inst6|pipe2_top_y_pos[5]           ; Merged with pipes:inst6|pipe2_bottom_y_pos[2]    ;
+; pipes:inst6|pipe3_top_y_pos[1]           ; Merged with pipes:inst6|pipe3_bottom_y_pos[1]    ;
+; pipes:inst6|pipe3_top_y_pos[5]           ; Merged with pipes:inst6|pipe3_bottom_y_pos[2]    ;
+; Total Number of Removed Registers = 124  ;                                                  ;
++------------------------------------------+--------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -388,12 +394,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 322   ;
+; Total registers                              ; 300   ;
 ; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 26    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 214   ;
+; Number of registers using Clock Enable       ; 192   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -403,8 +409,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; pipes:inst6|pipe1_x_pos[9]              ; 4       ;
 ; pipes:inst6|pipe1_x_pos[7]              ; 4       ;
+; pipes:inst6|pipe1_x_pos[6]              ; 4       ;
+; pipes:inst6|pipe1_x_pos[4]              ; 4       ;
+; pipes:inst6|pipe1_x_pos[2]              ; 5       ;
+; pipes:inst6|\pipe_move:position1[0]     ; 5       ;
 ; pipes:inst6|pipe1_bottom_y_pos[8]       ; 1       ;
 ; pipes:inst6|pipe1_bottom_y_pos[6]       ; 1       ;
 ; pipes:inst6|pipe1_bottom_y_pos[4]       ; 3       ;
@@ -412,10 +421,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; pipes:inst6|pipe1_bottom_y_pos[2]       ; 2       ;
 ; pipes:inst6|pipe1_bottom_y_pos[1]       ; 3       ;
 ; pipes:inst6|pipe1_top_y_pos[7]          ; 1       ;
-; pipes:inst6|pipe2_x_pos[9]              ; 4       ;
-; pipes:inst6|pipe2_x_pos[8]              ; 5       ;
-; pipes:inst6|pipe2_x_pos[6]              ; 5       ;
+; pipes:inst6|pipe2_x_pos[8]              ; 4       ;
+; pipes:inst6|pipe2_x_pos[7]              ; 4       ;
+; pipes:inst6|pipe2_x_pos[5]              ; 4       ;
 ; pipes:inst6|pipe2_x_pos[3]              ; 4       ;
+; pipes:inst6|pipe2_x_pos[1]              ; 4       ;
 ; pipes:inst6|pipe2_bottom_y_pos[8]       ; 1       ;
 ; pipes:inst6|pipe2_bottom_y_pos[6]       ; 1       ;
 ; pipes:inst6|pipe2_bottom_y_pos[4]       ; 3       ;
@@ -423,7 +433,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; pipes:inst6|pipe2_bottom_y_pos[2]       ; 2       ;
 ; pipes:inst6|pipe2_bottom_y_pos[1]       ; 3       ;
 ; pipes:inst6|pipe2_top_y_pos[7]          ; 1       ;
-; pipes:inst6|pipe3_x_pos[4]              ; 4       ;
+; pipes:inst6|pipe3_x_pos[9]              ; 4       ;
+; pipes:inst6|pipe3_x_pos[7]              ; 4       ;
 ; pipes:inst6|pipe3_bottom_y_pos[8]       ; 1       ;
 ; pipes:inst6|pipe3_bottom_y_pos[6]       ; 1       ;
 ; pipes:inst6|pipe3_bottom_y_pos[4]       ; 3       ;
@@ -431,29 +442,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; pipes:inst6|pipe3_bottom_y_pos[2]       ; 2       ;
 ; pipes:inst6|pipe3_bottom_y_pos[1]       ; 3       ;
 ; pipes:inst6|pipe3_top_y_pos[7]          ; 1       ;
-; pipes:inst6|pipe4_x_pos[7]              ; 4       ;
-; pipes:inst6|pipe4_x_pos[6]              ; 5       ;
-; pipes:inst6|pipe4_x_pos[4]              ; 4       ;
-; pipes:inst6|pipe4_x_pos[3]              ; 4       ;
-; pipes:inst6|pipe4_bottom_y_pos[8]       ; 1       ;
-; pipes:inst6|pipe4_bottom_y_pos[6]       ; 1       ;
-; pipes:inst6|pipe4_bottom_y_pos[4]       ; 3       ;
-; pipes:inst6|pipe4_bottom_y_pos[3]       ; 1       ;
-; pipes:inst6|pipe4_bottom_y_pos[2]       ; 2       ;
-; pipes:inst6|pipe4_bottom_y_pos[1]       ; 3       ;
-; pipes:inst6|pipe4_top_y_pos[7]          ; 1       ;
-; pipes:inst6|pipe5_x_pos[8]              ; 5       ;
-; pipes:inst6|pipe5_x_pos[7]              ; 4       ;
-; pipes:inst6|pipe5_x_pos[5]              ; 4       ;
-; pipes:inst6|pipe5_bottom_y_pos[8]       ; 1       ;
-; pipes:inst6|pipe5_bottom_y_pos[6]       ; 1       ;
-; pipes:inst6|pipe5_bottom_y_pos[4]       ; 3       ;
-; pipes:inst6|pipe5_bottom_y_pos[3]       ; 1       ;
-; pipes:inst6|pipe5_bottom_y_pos[2]       ; 2       ;
-; pipes:inst6|pipe5_bottom_y_pos[1]       ; 3       ;
-; pipes:inst6|pipe5_top_y_pos[7]          ; 1       ;
 ; pipes:inst6|\pipe_move:clk_cnt[0]       ; 1       ;
-; LFSR:inst8|q[3]                         ; 15      ;
+; LFSR:inst8|q[3]                         ; 11      ;
+; pipes:inst6|\pipe_move:position1[31]    ; 1       ;
+; pipes:inst6|\pipe_move:position2[31]    ; 1       ;
+; pipes:inst6|\pipe_move:position2[0]     ; 1       ;
+; pipes:inst6|\pipe_move:position3[31]    ; 1       ;
+; pipes:inst6|\pipe_move:position3[0]     ; 1       ;
 ; LFSR:inst8|q[1]                         ; 1       ;
 ; MOUSE:inst2|send_char                   ; 3       ;
 ; LFSR:inst8|q[11]                        ; 2       ;
@@ -467,7 +462,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; MOUSE:inst2|SHIFTOUT[7]                 ; 1       ;
 ; LFSR:inst8|q[5]                         ; 1       ;
 ; MOUSE:inst2|SHIFTOUT[8]                 ; 1       ;
-; Total number of inverted registers = 64 ;         ;
+; Total number of inverted registers = 53 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -476,14 +471,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |FlappyBird-FlappyCompsys|VGA_SYNC:inst1|v_count[5]                                ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_ones|temp_QOut1[1] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |FlappyBird-FlappyCompsys|VGA_SYNC:inst1|v_count[2]                                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_ones|temp_QOut1[3] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_tens|temp_QOut1[0] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|pipes:inst6|next_pipe_top                                ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_general:inst11|char_rom:display|Mux0        ;
-; 31:1               ; 2 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_general:inst11|temp_char_address[4]         ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_general:inst11|temp_char_address[2]         ;
-; 47:1               ; 3 bits    ; 93 LEs        ; 93 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_main_menu:inst15|temp_char_address[1]       ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_main_menu:inst15|char_rom:display|Mux0      ;
+; 31:1               ; 2 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_general:inst11|temp_char_address[1]         ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_general:inst11|temp_char_address[0]         ;
+; 47:1               ; 3 bits    ; 93 LEs        ; 93 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_main_menu:inst15|temp_char_address[3]       ;
 ; 49:1               ; 2 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display_main_menu:inst15|temp_char_address[4]       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
 
@@ -1065,7 +1060,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jun 05 00:54:52 2020
+    Info: Processing started: Fri Jun 05 01:27:09 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FlappyBird-FlappyCompsys -c FlappyBird-FlappyCompsys
 Warning (125092): Tcl Script File altpll0.qip not found
     Info (125063): set_global_assignment -name QIP_FILE altpll0.qip
@@ -1191,19 +1186,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/altp
 Info (12128): Elaborating entity "altpll1_altpll" for hierarchy "altpll1:inst|altpll:altpll_component|altpll1_altpll:auto_generated"
 Info (12128): Elaborating entity "final_display" for hierarchy "final_display:inst7"
 Info (12128): Elaborating entity "bird" for hierarchy "bird:inst5"
-Warning (10492): VHDL Process Statement warning at bird.vhd(47): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(47): signal "temp_bird_dead" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(47): signal "sw2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(64): signal "bird_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(64): signal "bird_size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(72): signal "temp_bird_dead" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(72): signal "sw2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at bird.vhd(44): inferring latch(es) for signal or variable "reset_score", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bird.vhd(44): inferring latch(es) for signal or variable "bird_dead", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bird.vhd(44): inferring latch(es) for signal or variable "temp_bird_dead", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "temp_bird_dead" at bird.vhd(44)
-Info (10041): Inferred latch for "bird_dead" at bird.vhd(44)
-Info (10041): Inferred latch for "reset_score" at bird.vhd(44)
+Warning (10492): VHDL Process Statement warning at bird.vhd(45): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bird.vhd(45): signal "temp_bird_dead" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bird.vhd(45): signal "sw2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bird.vhd(62): signal "bird_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bird.vhd(62): signal "bird_size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bird.vhd(70): signal "temp_bird_dead" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bird.vhd(70): signal "sw2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at bird.vhd(42): inferring latch(es) for signal or variable "reset_score", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bird.vhd(42): inferring latch(es) for signal or variable "bird_dead", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bird.vhd(42): inferring latch(es) for signal or variable "temp_bird_dead", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "temp_bird_dead" at bird.vhd(42)
+Info (10041): Inferred latch for "bird_dead" at bird.vhd(42)
+Info (10041): Inferred latch for "reset_score" at bird.vhd(42)
 Info (12128): Elaborating entity "MOUSE" for hierarchy "MOUSE:inst2"
 Warning (10036): Verilog HDL or VHDL warning at mouse_new_ver.vhd(25): object "CHARIN" assigned a value but never read
 Warning (10492): VHDL Process Statement warning at mouse_new_ver.vhd(151): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -1211,50 +1206,50 @@ Warning (10492): VHDL Process Statement warning at mouse_new_ver.vhd(155): signa
 Warning (10492): VHDL Process Statement warning at mouse_new_ver.vhd(156): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at mouse_new_ver.vhd(157): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "pipes" for hierarchy "pipes:inst6"
-Warning (10540): VHDL Signal Declaration warning at pipes.vhd(28): used explicit default value for signal "pipe_size" because signal was never assigned a value
-Warning (10492): VHDL Process Statement warning at pipes.vhd(62): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipes.vhd(62): signal "bird_dead" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipes.vhd(62): signal "sw2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipes.vhd(145): signal "sw1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipes.vhd(148): signal "Qtens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipes.vhd(148): signal "Qones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipes.vhd(150): signal "Qtens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipes.vhd(150): signal "Qones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipes.vhd(152): signal "Qtens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipes.vhd(152): signal "Qones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at pipes.vhd(54): inferring latch(es) for signal or variable "pipe_speed", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "pipe_speed[0]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[1]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[2]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[3]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[4]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[5]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[6]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[7]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[8]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[9]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[10]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[11]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[12]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[13]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[14]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[15]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[16]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[17]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[18]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[19]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[20]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[21]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[22]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[23]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[24]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[25]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[26]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[27]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[28]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[29]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[30]" at pipes.vhd(54)
-Info (10041): Inferred latch for "pipe_speed[31]" at pipes.vhd(54)
+Warning (10540): VHDL Signal Declaration warning at pipes.vhd(26): used explicit default value for signal "pipe_size" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at pipes.vhd(52): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(52): signal "bird_dead" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(52): signal "sw2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(109): signal "sw1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(112): signal "Qtens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(112): signal "Qones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(114): signal "Qtens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(114): signal "Qones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(116): signal "Qtens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipes.vhd(116): signal "Qones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at pipes.vhd(44): inferring latch(es) for signal or variable "pipe_speed", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "pipe_speed[0]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[1]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[2]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[3]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[4]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[5]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[6]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[7]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[8]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[9]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[10]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[11]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[12]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[13]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[14]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[15]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[16]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[17]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[18]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[19]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[20]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[21]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[22]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[23]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[24]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[25]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[26]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[27]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[28]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[29]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[30]" at pipes.vhd(44)
+Info (10041): Inferred latch for "pipe_speed[31]" at pipes.vhd(44)
 Info (12128): Elaborating entity "Massive_Counter" for hierarchy "Massive_Counter:inst9"
 Info (12128): Elaborating entity "BCD_counter" for hierarchy "Massive_Counter:inst9|BCD_counter:BCD_ones"
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst14"
@@ -1319,16 +1314,16 @@ Warning (13004): Presettable and clearable registers converted to equivalent cir
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1276 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1146 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 5 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1248 logic cells
+    Info (21061): Implemented 1118 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 4661 megabytes
-    Info: Processing ended: Fri Jun 05 00:54:57 2020
+    Info: Peak virtual memory: 4658 megabytes
+    Info: Processing ended: Fri Jun 05 01:27:14 2020
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 

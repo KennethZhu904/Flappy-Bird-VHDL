@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 272 448)
+	(rect 16 16 272 352)
 	(text "bird" (rect 5 0 19 12)(font "Arial" ))
-	(text "inst" (rect 8 416 20 428)(font "Arial" ))
+	(text "inst" (rect 8 320 20 332)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -143,48 +143,6 @@ applicable agreement for further details.
 		(line (pt 0 288)(pt 16 288)(line_width 3))
 	)
 	(port
-		(pt 0 304)
-		(input)
-		(text "pipe4_x_pos[9..0]" (rect 0 0 71 12)(font "Arial" ))
-		(text "pipe4_x_pos[9..0]" (rect 21 299 92 311)(font "Arial" ))
-		(line (pt 0 304)(pt 16 304)(line_width 3))
-	)
-	(port
-		(pt 0 320)
-		(input)
-		(text "pipe4_top_y_pos[9..0]" (rect 0 0 90 12)(font "Arial" ))
-		(text "pipe4_top_y_pos[9..0]" (rect 21 315 111 327)(font "Arial" ))
-		(line (pt 0 320)(pt 16 320)(line_width 3))
-	)
-	(port
-		(pt 0 336)
-		(input)
-		(text "pipe4_bottom_y_pos[9..0]" (rect 0 0 106 12)(font "Arial" ))
-		(text "pipe4_bottom_y_pos[9..0]" (rect 21 331 127 343)(font "Arial" ))
-		(line (pt 0 336)(pt 16 336)(line_width 3))
-	)
-	(port
-		(pt 0 352)
-		(input)
-		(text "pipe5_x_pos[9..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "pipe5_x_pos[9..0]" (rect 21 347 91 359)(font "Arial" ))
-		(line (pt 0 352)(pt 16 352)(line_width 3))
-	)
-	(port
-		(pt 0 368)
-		(input)
-		(text "pipe5_top_y_pos[9..0]" (rect 0 0 89 12)(font "Arial" ))
-		(text "pipe5_top_y_pos[9..0]" (rect 21 363 110 375)(font "Arial" ))
-		(line (pt 0 368)(pt 16 368)(line_width 3))
-	)
-	(port
-		(pt 0 384)
-		(input)
-		(text "pipe5_bottom_y_pos[9..0]" (rect 0 0 105 12)(font "Arial" ))
-		(text "pipe5_bottom_y_pos[9..0]" (rect 21 379 126 391)(font "Arial" ))
-		(line (pt 0 384)(pt 16 384)(line_width 3))
-	)
-	(port
 		(pt 256 32)
 		(output)
 		(text "bird_on" (rect 0 0 29 12)(font "Arial" ))
@@ -206,6 +164,6 @@ applicable agreement for further details.
 		(line (pt 256 64)(pt 240 64)(line_width 1))
 	)
 	(drawing
-		(rectangle (rect 16 16 240 416)(line_width 1))
+		(rectangle (rect 16 16 240 320)(line_width 1))
 	)
 )

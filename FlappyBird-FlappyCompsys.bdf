@@ -557,9 +557,9 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 768 432 1024 864)
+	(rect 768 432 1024 768)
 	(text "bird" (rect 5 0 22 12)(font "Arial" ))
-	(text "inst5" (rect 8 416 31 428)(font "Arial" ))
+	(text "inst5" (rect 8 320 31 332)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -680,48 +680,6 @@ applicable agreement for further details.
 		(line (pt 0 288)(pt 16 288)(line_width 3))
 	)
 	(port
-		(pt 0 304)
-		(input)
-		(text "pipe4_x_pos[9..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "pipe4_x_pos[9..0]" (rect 21 299 108 311)(font "Arial" ))
-		(line (pt 0 304)(pt 16 304)(line_width 3))
-	)
-	(port
-		(pt 0 320)
-		(input)
-		(text "pipe4_top_y_pos[9..0]" (rect 0 0 109 12)(font "Arial" ))
-		(text "pipe4_top_y_pos[9..0]" (rect 21 315 130 327)(font "Arial" ))
-		(line (pt 0 320)(pt 16 320)(line_width 3))
-	)
-	(port
-		(pt 0 336)
-		(input)
-		(text "pipe4_bottom_y_pos[9..0]" (rect 0 0 128 12)(font "Arial" ))
-		(text "pipe4_bottom_y_pos[9..0]" (rect 21 331 149 343)(font "Arial" ))
-		(line (pt 0 336)(pt 16 336)(line_width 3))
-	)
-	(port
-		(pt 0 352)
-		(input)
-		(text "pipe5_x_pos[9..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "pipe5_x_pos[9..0]" (rect 21 347 108 359)(font "Arial" ))
-		(line (pt 0 352)(pt 16 352)(line_width 3))
-	)
-	(port
-		(pt 0 368)
-		(input)
-		(text "pipe5_top_y_pos[9..0]" (rect 0 0 109 12)(font "Arial" ))
-		(text "pipe5_top_y_pos[9..0]" (rect 21 363 130 375)(font "Arial" ))
-		(line (pt 0 368)(pt 16 368)(line_width 3))
-	)
-	(port
-		(pt 0 384)
-		(input)
-		(text "pipe5_bottom_y_pos[9..0]" (rect 0 0 128 12)(font "Arial" ))
-		(text "pipe5_bottom_y_pos[9..0]" (rect 21 379 149 391)(font "Arial" ))
-		(line (pt 0 384)(pt 16 384)(line_width 3))
-	)
-	(port
 		(pt 256 32)
 		(output)
 		(text "bird_on" (rect 0 0 35 12)(font "Arial" ))
@@ -743,7 +701,7 @@ applicable agreement for further details.
 		(line (pt 256 64)(pt 240 64))
 	)
 	(drawing
-		(rectangle (rect 16 16 240 416))
+		(rectangle (rect 16 16 240 320))
 	)
 )
 (symbol
@@ -791,9 +749,9 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 336 544 624 912)
+	(rect 336 544 624 816)
 	(text "pipes" (rect 5 0 30 12)(font "Arial" ))
-	(text "inst6" (rect 8 352 31 364)(font "Arial" ))
+	(text "inst6" (rect 8 256 31 268)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -937,68 +895,26 @@ applicable agreement for further details.
 	(port
 		(pt 288 192)
 		(output)
-		(text "q_pipe4_x_pos[9..0]" (rect 0 0 99 12)(font "Arial" ))
-		(text "q_pipe4_x_pos[9..0]" (rect 184 187 267 199)(font "Arial" ))
-		(line (pt 288 192)(pt 272 192)(line_width 3))
+		(text "pipe_top" (rect 0 0 41 12)(font "Arial" ))
+		(text "pipe_top" (rect 233 187 267 199)(font "Arial" ))
+		(line (pt 288 192)(pt 272 192))
 	)
 	(port
 		(pt 288 208)
 		(output)
-		(text "q_pipe4_top_y_pos[9..0]" (rect 0 0 121 12)(font "Arial" ))
-		(text "q_pipe4_top_y_pos[9..0]" (rect 165 203 267 215)(font "Arial" ))
-		(line (pt 288 208)(pt 272 208)(line_width 3))
+		(text "pipe_bottom" (rect 0 0 60 12)(font "Arial" ))
+		(text "pipe_bottom" (rect 217 203 267 215)(font "Arial" ))
+		(line (pt 288 208)(pt 272 208))
 	)
 	(port
 		(pt 288 224)
 		(output)
-		(text "q_pipe4_bottom_y_pos[9..0]" (rect 0 0 140 12)(font "Arial" ))
-		(text "q_pipe4_bottom_y_pos[9..0]" (rect 149 219 267 231)(font "Arial" ))
-		(line (pt 288 224)(pt 272 224)(line_width 3))
-	)
-	(port
-		(pt 288 240)
-		(output)
-		(text "q_pipe5_x_pos[9..0]" (rect 0 0 99 12)(font "Arial" ))
-		(text "q_pipe5_x_pos[9..0]" (rect 184 235 267 247)(font "Arial" ))
-		(line (pt 288 240)(pt 272 240)(line_width 3))
-	)
-	(port
-		(pt 288 256)
-		(output)
-		(text "q_pipe5_top_y_pos[9..0]" (rect 0 0 121 12)(font "Arial" ))
-		(text "q_pipe5_top_y_pos[9..0]" (rect 165 251 267 263)(font "Arial" ))
-		(line (pt 288 256)(pt 272 256)(line_width 3))
-	)
-	(port
-		(pt 288 272)
-		(output)
-		(text "q_pipe5_bottom_y_pos[9..0]" (rect 0 0 140 12)(font "Arial" ))
-		(text "q_pipe5_bottom_y_pos[9..0]" (rect 149 267 267 279)(font "Arial" ))
-		(line (pt 288 272)(pt 272 272)(line_width 3))
-	)
-	(port
-		(pt 288 288)
-		(output)
-		(text "pipe_top" (rect 0 0 41 12)(font "Arial" ))
-		(text "pipe_top" (rect 233 283 267 295)(font "Arial" ))
-		(line (pt 288 288)(pt 272 288))
-	)
-	(port
-		(pt 288 304)
-		(output)
-		(text "pipe_bottom" (rect 0 0 60 12)(font "Arial" ))
-		(text "pipe_bottom" (rect 217 299 267 311)(font "Arial" ))
-		(line (pt 288 304)(pt 272 304))
-	)
-	(port
-		(pt 288 320)
-		(output)
 		(text "score_incr" (rect 0 0 50 12)(font "Arial" ))
-		(text "score_incr" (rect 225 315 267 327)(font "Arial" ))
-		(line (pt 288 320)(pt 272 320))
+		(text "score_incr" (rect 225 219 267 231)(font "Arial" ))
+		(line (pt 288 224)(pt 272 224))
 	)
 	(drawing
-		(rectangle (rect 16 16 272 352))
+		(rectangle (rect 16 16 272 256))
 	)
 )
 (symbol
@@ -1356,16 +1272,6 @@ applicable agreement for further details.
 	(pt 296 576)
 )
 (connector
-	(text "pipe_top" (rect 664 824 705 836)(font "Arial" ))
-	(pt 624 832)
-	(pt 656 832)
-)
-(connector
-	(text "pipe_bottom" (rect 664 840 724 852)(font "Arial" ))
-	(pt 624 848)
-	(pt 656 848)
-)
-(connector
 	(text "sw0" (rect 274 584 292 596)(font "Arial" ))
 	(pt 336 592)
 	(pt 296 592)
@@ -1418,36 +1324,6 @@ applicable agreement for further details.
 (connector
 	(pt 624 720)
 	(pt 768 720)
-	(bus)
-)
-(connector
-	(pt 624 736)
-	(pt 768 736)
-	(bus)
-)
-(connector
-	(pt 624 752)
-	(pt 768 752)
-	(bus)
-)
-(connector
-	(pt 624 768)
-	(pt 768 768)
-	(bus)
-)
-(connector
-	(pt 624 784)
-	(pt 768 784)
-	(bus)
-)
-(connector
-	(pt 624 800)
-	(pt 768 800)
-	(bus)
-)
-(connector
-	(pt 624 816)
-	(pt 768 816)
 	(bus)
 )
 (connector
@@ -1633,13 +1509,23 @@ applicable agreement for further details.
 	(pt 224 328)
 )
 (connector
-	(text "score_incr" (rect 656 856 706 868)(font "Arial" ))
-	(pt 624 864)
-	(pt 648 864)
-)
-(connector
 	(text "reset_score" (rect 1056 488 1113 500)(font "Arial" ))
 	(pt 1024 496)
 	(pt 1048 496)
+)
+(connector
+	(text "pipe_top" (rect 664 728 705 740)(font "Arial" ))
+	(pt 624 736)
+	(pt 656 736)
+)
+(connector
+	(text "pipe_bottom" (rect 664 744 724 756)(font "Arial" ))
+	(pt 624 752)
+	(pt 656 752)
+)
+(connector
+	(text "score_incr" (rect 656 760 706 772)(font "Arial" ))
+	(pt 624 768)
+	(pt 648 768)
 )
 (junction (pt 1168 336))

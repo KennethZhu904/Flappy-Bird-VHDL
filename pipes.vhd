@@ -17,8 +17,6 @@ ENTITY pipes IS
 		SIGNAL q_pipe1_x_pos, q_pipe1_top_y_pos, q_pipe1_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL q_pipe2_x_pos, q_pipe2_top_y_pos, q_pipe2_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL q_pipe3_x_pos, q_pipe3_top_y_pos, q_pipe3_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
-		SIGNAL q_pipe4_x_pos, q_pipe4_top_y_pos, q_pipe4_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
-		SIGNAL q_pipe5_x_pos, q_pipe5_top_y_pos, q_pipe5_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL pipe_top, pipe_bottom, score_incr		: OUT std_logic
 		);
 END pipes;
@@ -29,23 +27,15 @@ SIGNAL pipe_size 								: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR
  
 SIGNAL pipe1_top_y_pos 						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(200,10);
 SIGNAL pipe1_bottom_y_pos 					: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(350,10);
-SIGNAL pipe1_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(640,10);
+SIGNAL pipe1_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(213,10);
 
 SIGNAL pipe2_top_y_pos 						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(200,10);
 SIGNAL pipe2_bottom_y_pos 					: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(350,10);
-SIGNAL pipe2_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(840,10);
+SIGNAL pipe2_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(426,10);
 
 SIGNAL pipe3_top_y_pos 						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(200,10);
 SIGNAL pipe3_bottom_y_pos 					: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(350,10);
-SIGNAL pipe3_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(1040,10);
-
-SIGNAL pipe4_top_y_pos 						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(200,10);
-SIGNAL pipe4_bottom_y_pos 					: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(350,10);
-SIGNAL pipe4_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(1240,10);
-
-SIGNAL pipe5_top_y_pos 						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(200,10);
-SIGNAL pipe5_bottom_y_pos 					: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(350,10);
-SIGNAL pipe5_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(1440,10);
+SIGNAL pipe3_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(640,10);
 
 SIGNAL pipe_speed								: integer := 750000;
 
@@ -54,7 +44,7 @@ BEGIN
 pipe_move: process(clk)
 variable clk_cnt 																				: integer := 1;
 variable clk_t 																				: STD_LOGIC := '0';
-variable position1, position2, position3, position4, position5, position6 	: integer := 640;
+variable position1, position2, position3, position4, position5, position6 	: integer;
 variable RNG_int : integer;
 variable next_pipe_top, next_pipe_bottom : std_logic_vector(9 DOWNTO 0);
 begin
@@ -71,8 +61,6 @@ begin
 				position1 := conv_integer(pipe1_x_pos);
 				position2 := conv_integer(pipe2_x_pos);
 				position3 := conv_integer(pipe3_x_pos);
-				position4 := conv_integer(pipe4_x_pos);
-				position5 := conv_integer(pipe5_x_pos);
 		--Get RNG--
 				RNG_int := conv_integer('0' & RNG(3 DOWNTO 0));
 				if (RNG_int >= 0 and RNG_int < 4) then
@@ -100,7 +88,7 @@ begin
 				pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(position1, 10);
 				
 				if (position2 <= 0) then
-					position2 := 840;
+					position2 := 640;
 					pipe2_top_y_pos <= next_pipe_top;
 					pipe2_bottom_y_pos <= next_pipe_bottom;
 				else
@@ -109,33 +97,15 @@ begin
 				pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(position2, 10);
 				
 				if (position3 <= 0) then
-					position3 := 1040;
+					position3 := 640;
 					pipe3_top_y_pos <= next_pipe_top;
 					pipe3_bottom_y_pos <= next_pipe_bottom;
 				else
 					position3 := position3 - 1;
 				end if;
 				pipe3_x_pos <= CONV_STD_LOGIC_VECTOR(position3, 10);
-				
-				if (position4 <= 0) then
-					position4 := 1240;
-					pipe4_top_y_pos <= next_pipe_top;
-					pipe4_bottom_y_pos <= next_pipe_bottom;
-				else
-					position4 := position4 - 1;
-				end if;
-				pipe4_x_pos <= CONV_STD_LOGIC_VECTOR(position4, 10);
-				
-				if (position5 <= 0) then
-					position5 := 640;
-					pipe5_top_y_pos <= next_pipe_top;
-					pipe5_bottom_y_pos <= next_pipe_bottom;
-				else
-					position5 := position5 - 1;
-				end if;
-				pipe5_x_pos <= CONV_STD_LOGIC_VECTOR(position5, 10);
 		--If Pipe Passes Bird, Increase Score--
-				if (pipe1_x_pos = CONV_STD_LOGIC_VECTOR(320,10) or pipe2_x_pos = CONV_STD_LOGIC_VECTOR(320,10) or pipe3_x_pos = CONV_STD_LOGIC_VECTOR(320,10) or pipe4_x_pos = CONV_STD_LOGIC_VECTOR(320,10) or pipe5_x_pos = CONV_STD_LOGIC_VECTOR(320,10)) then
+				if (position1 = 320 or position2 = 320 or position3 = 320) then
 					score_incr <= '1';
 				else
 					score_incr <= '0';
@@ -171,12 +141,6 @@ pipe_top <= '1' when ( ((pipe1_x_pos <= pixel_column + pipe_size) and (pixel_col
 					 or ((pipe3_x_pos <= pixel_column + pipe_size) and (pixel_column <= pipe3_x_pos + pipe_size)
 					 and (pixel_row <= pipe3_top_y_pos + pipe_size))
 					 
-					 or ((pipe4_x_pos <= pixel_column + pipe_size) and (pixel_column <= pipe4_x_pos + pipe_size)
-					 and (pixel_row <= pipe4_top_y_pos + pipe_size))
-					 
-					 or ((pipe5_x_pos <= pixel_column + pipe_size) and (pixel_column <= pipe5_x_pos + pipe_size)
-					 and (pixel_row <= pipe5_top_y_pos + pipe_size))
-					 
 					 )
 
 					 else '0';
@@ -188,12 +152,6 @@ pipe_bottom <= '1' when (( (pipe1_x_pos <= pixel_column + pipe_size) and (pixel_
 					 
 					 or ((pipe3_x_pos <= pixel_column + pipe_size) and (pixel_column <= pipe3_x_pos + pipe_size)
 					 and (pipe3_bottom_y_pos <= pixel_row +pipe_size))
- 
-					 or ((pipe4_x_pos <= pixel_column + pipe_size) and (pixel_column <= pipe4_x_pos + pipe_size)
-					 and (pipe4_bottom_y_pos <= pixel_row +pipe_size))
-					 
-					 or ((pipe5_x_pos <= pixel_column + pipe_size) and (pixel_column <= pipe5_x_pos + pipe_size)
-					 and (pipe5_bottom_y_pos <= pixel_row +pipe_size))
 					 
 					 )
  
@@ -212,13 +170,5 @@ q_pipe2_x_pos <= pipe2_x_pos;
 q_pipe3_top_y_pos <= pipe3_top_y_pos;
 q_pipe3_bottom_y_pos <= pipe3_bottom_y_pos;
 q_pipe3_x_pos <= pipe3_x_pos;
-
-q_pipe4_top_y_pos <= pipe4_top_y_pos;
-q_pipe4_bottom_y_pos <= pipe4_bottom_y_pos;
-q_pipe4_x_pos <= pipe4_x_pos;
-
-q_pipe5_top_y_pos <= pipe5_top_y_pos;
-q_pipe5_bottom_y_pos <= pipe5_bottom_y_pos;
-q_pipe5_x_pos <= pipe5_x_pos;
 
 END behavior;

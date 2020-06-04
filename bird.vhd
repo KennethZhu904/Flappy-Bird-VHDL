@@ -16,8 +16,6 @@ ENTITY bird IS
 		SIGNAL pipe1_x_pos, pipe1_top_y_pos, pipe1_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
 		SIGNAL pipe2_x_pos, pipe2_top_y_pos, pipe2_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
 		SIGNAL pipe3_x_pos, pipe3_top_y_pos, pipe3_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
-		SIGNAL pipe4_x_pos, pipe4_top_y_pos, pipe4_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
-		SIGNAL pipe5_x_pos, pipe5_top_y_pos, pipe5_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
 		--Bird Signals--
 		SIGNAL bird_on, bird_dead, reset_score 										: OUT std_logic
 		);		
