@@ -27,6 +27,7 @@ architecture behavior of bird is
 SIGNAL bird_size, bird_y_pos, bird_y_motion		: std_logic_vector(9 DOWNTO 0);
 SIGNAL bird_x_pos											: std_logic_vector(10 DOWNTO 0);
 SIGNAL temp_bird_dead									: std_logic := '0';
+SIGNAL t_reset_score										: std_logic;
 BEGIN           
 
 ------ Initialisation of the bird ------
@@ -43,7 +44,7 @@ Move_Bird: process (vert_sync, left_click)
 begin
 	-- Game should only run if not paused and the bird is alive
 	if (sw0 = '0' and sw2 = '1') then
-		reset_score <= '0';
+		t_reset_score <= '0';
 		-- Move bird once every vertical sync
 		if (rising_edge(vert_sync)) then
 			-- Let the bird freefall when there is no left click
@@ -73,9 +74,10 @@ begin
 	elsif (sw2 = '0') then
 		temp_bird_dead <= '0';
 		bird_y_pos <= CONV_STD_LOGIC_VECTOR(240,10);
-		reset_score <= '1';
+		t_reset_score <= '1';
 	end if;
 end process Move_Bird;
 bird_dead <= temp_bird_dead;
+reset_score <= t_reset_score;
 -- when game over, if sw2 high, wait for a bit then start game again. otherwise flick sw2 low and go back to main menu
 END behavior;

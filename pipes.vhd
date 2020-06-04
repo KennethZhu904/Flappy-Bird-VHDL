@@ -9,15 +9,15 @@ USE ieee.numeric_std.ALL;
 ENTITY pipes IS
 	PORT
 		(
-		SIGNAL clk, sw0, sw1, sw2, bird_dead	: IN std_logic;
-		SIGNAL pixel_row, pixel_column			: IN std_logic_vector(9 DOWNTO 0);
-		SIGNAL Qones, Qtens							: IN std_logic_vector(3 DOWNTO 0);
-		SIGNAL RNG										: IN std_LOGIC_vector(15 DOWNTO 0);
-		SIGNAL q_pipe_size : OUT std_logic_vector(9 DOWNTO 0);
-		SIGNAL q_pipe1_x_pos, q_pipe1_top_y_pos, q_pipe1_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
-		SIGNAL q_pipe2_x_pos, q_pipe2_top_y_pos, q_pipe2_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
-		SIGNAL q_pipe3_x_pos, q_pipe3_top_y_pos, q_pipe3_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
-		SIGNAL pipe_top, pipe_bottom, score_incr		: OUT std_logic
+		SIGNAL clk, sw0, sw1, sw2, bird_dead									: IN std_logic;
+		SIGNAL pixel_row, pixel_column											: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL Qones, Qtens															: IN std_logic_vector(3 DOWNTO 0);
+		SIGNAL RNG																		: IN std_LOGIC_vector(15 DOWNTO 0);
+		SIGNAL q_pipe_size 															: OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL q_pipe1_x_pos, q_pipe1_top_y_pos, q_pipe1_bottom_y_pos 	: OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL q_pipe2_x_pos, q_pipe2_top_y_pos, q_pipe2_bottom_y_pos 	: OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL q_pipe3_x_pos, q_pipe3_top_y_pos, q_pipe3_bottom_y_pos 	: OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL pipe_top, pipe_bottom, score_incr								: OUT std_logic
 		);
 END pipes;
 
@@ -37,8 +37,7 @@ SIGNAL pipe3_top_y_pos 						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VE
 SIGNAL pipe3_bottom_y_pos 					: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(350,10);
 SIGNAL pipe3_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(640,10);
 
-SIGNAL pipe_speed								: integer := 750000;
-
+SIGNAL pipe_speed								: integer;
 BEGIN
 
 pipe_move: process(clk)
@@ -112,17 +111,17 @@ begin
 				end if;
 			end if;
 		end if;
-		if (sw1 = '1') then
-			-- Speed adjustment for the levels of the games	--
-			-- Score: 0-25 (Level 1) - Game is initialised at the speed for this level
-			if (Qtens = "0010" and Qones = "0110") then -- Score: 26-50 (Level 2)
-				pipe_speed <= 500000;
-			elsif (Qtens = "0101" and Qones = "0001") then -- Score: 51-75 (Level 3)
-				pipe_speed <= 400000;
-			elsif (Qtens = "0111" and Qones = "0110") then -- Score: 76-99 (Level 4)
-				pipe_speed <= 300000;
-			end if;
+			if (sw1 = '1') then
+		-- Speed adjustment for the levels of the games	--
+		-- Score: 0-25 (Level 1) - Game is initialised at the speed for this level
+		if (Qtens = "0010" and Qones = "0110") then -- Score: 26-50 (Level 2)
+			pipe_speed <= 500000;
+		elsif (Qtens = "0101" and Qones = "0001") then -- Score: 51-75 (Level 3)
+			pipe_speed <= 400000;
+		elsif (Qtens = "0111" and Qones = "0110") then -- Score: 76-99 (Level 4)
+			pipe_speed <= 300000;
 		end if;
+	end if;
 	end if;
 end process;
 	
