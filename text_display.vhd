@@ -4,12 +4,16 @@ USE ieee.numeric_std.all;
 USE IEEE.STD_LOGIC_UNSIGNED.all;
 USE IEEE.STD_LOGIC_ARITH.all; 
 
+
+-- This component implemented the text for the pause menu, game over menu, and the score on the VGA screen.
+
 entity text_display is
    port (
      signal clk : in std_logic;
 	 signal pixel_row, pixel_column: in std_logic_vector(9 downto 0);
 	signal counter_tens, counter_ones: in std_logic_vector(3 downto 0); 
 	signal pause_enable: in std_logic; 
+	signal game_over_enable: in std_logic; 
 	 signal text_output: out std_logic);
 	
 end entity text_display;
@@ -18,9 +22,9 @@ architecture arch of text_display is
 	
 	signal temp_char_address: std_logic_vector(5 downto 0) ;
 	signal pix_row_font: std_logic_vector(2 downto 0); 
-	signal pix_col_font: std_logic_vector (2 downto 0);  
+	signal pix_col_font: std_logic_vector (2 downto 0); 
 	constant character_size: std_logic_vector(5 downto 0):= "001000"; 
-	signal text_x_pos, text_y_pos,text_x_pos1, pause_y_pos,P_x_pos, A_x_pos,U_x_pos,S_x_pos, E_x_pos  : std_logic_vector(9 downto 0); 
+	signal text_x_pos, text_y_pos,text_x_pos1, pause_y_pos,P_x_pos, A_x_pos,U_x_pos,S_x_pos, E_x_pos, O_x_pos,V_x_pos,E1_x_pos,R_x_pos: std_logic_vector(9 downto 0); 
 	
 
 	
@@ -43,11 +47,15 @@ display: component char_rom
 	text_x_pos1<= CONV_STD_LOGIC_VECTOR(327,10);
 	text_y_pos <= CONV_STD_LOGIC_VECTOR(88,10);
 	pause_y_pos<= CONV_STD_LOGIC_VECTOR(232,10);-- Y Position of the word 'Pause'  on the screen
-	P_x_pos<= CONV_STD_LOGIC_VECTOR(295,10);
-	A_x_pos<= CONV_STD_LOGIC_VECTOR(311,10);
-	U_x_pos<= CONV_STD_LOGIC_VECTOR(327,10);
-	S_x_pos<= CONV_STD_LOGIC_VECTOR(343,10);
-	E_x_pos<= CONV_STD_LOGIC_VECTOR(359,10);
+	P_x_pos<= CONV_STD_LOGIC_VECTOR(279,10);    --Also position for G
+	A_x_pos<= CONV_STD_LOGIC_VECTOR(295,10);--Also position for A_x_pos
+	U_x_pos<= CONV_STD_LOGIC_VECTOR(311,10);  --Also position for M 
+	S_x_pos<= CONV_STD_LOGIC_VECTOR(327,10);   --Also position for E
+	E_x_pos<= CONV_STD_LOGIC_VECTOR(343,10); 
+	O_x_pos<= CONV_STD_LOGIC_VECTOR(375,10); 
+	V_x_pos<= CONV_STD_LOGIC_VECTOR(391,10); 
+	E1_x_pos<= CONV_STD_LOGIC_VECTOR(407,10);
+	R_x_pos<= CONV_STD_LOGIC_VECTOR(423,10);	
 	
 	
 	
@@ -105,7 +113,23 @@ temp_char_address<= "110000" when counter_ones="0000" and ( '0' & text_x_pos<= p
 							"010011" when pause_enable='1' and ( '0' & S_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= S_x_pos + character_size) --Display S
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
 							"000101" when pause_enable='1' and ( '0' & E_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= E_x_pos + character_size) --Display E
+												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else-----------DISPLAYING GAME OVER
+							"000111" when game_over_enable='1' and ( '0' & P_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= P_x_pos + character_size) --Display G
 												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else					
+							"000001" when game_over_enable='1' and ( '0' & A_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= A_x_pos + character_size) --Display A
+												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else					
+							"001101" when game_over_enable='1' and ( '0' & U_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= U_x_pos + character_size) --Display M
+												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
+							"000101" when game_over_enable='1' and ( '0' & S_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= S_x_pos + character_size) --Display E
+												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
+							"001111" when game_over_enable='1' and ( '0' & O_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= O_x_pos + character_size) --Display O
+												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
+							"010110" when game_over_enable='1' and ( '0' & V_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= V_x_pos + character_size) --Display V
+												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
+							"000101" when game_over_enable='1' and ( '0' & E1_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= E1_x_pos + character_size) --Display E
+												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else
+							"010010" when game_over_enable='1' and ( '0' & R_x_pos<= pixel_column+ character_size) and ('0' & pixel_column <= R_x_pos + character_size) --Display R
+												and ('0' & pause_y_pos <= pixel_row +character_size)and ('0' & pixel_row <= pause_y_pos +character_size) else						
 							"100000";--Display it blank screen. 
 							
 							

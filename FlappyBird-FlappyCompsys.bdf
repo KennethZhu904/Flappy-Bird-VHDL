@@ -392,9 +392,9 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 48 408 264 552)
+	(rect 8 392 232 568)
 	(text "text_display" (rect 5 0 65 12)(font "Arial" ))
-	(text "inst11" (rect 8 128 37 140)(font "Arial" ))
+	(text "inst11" (rect 8 160 37 172)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -438,14 +438,21 @@ applicable agreement for further details.
 		(line (pt 0 112)(pt 16 112))
 	)
 	(port
-		(pt 216 32)
+		(pt 0 128)
+		(input)
+		(text "game_over_enable" (rect 0 0 93 12)(font "Arial" ))
+		(text "game_over_enable" (rect 21 123 114 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 224 32)
 		(output)
 		(text "text_output" (rect 0 0 55 12)(font "Arial" ))
-		(text "text_output" (rect 149 27 195 39)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32))
+		(text "text_output" (rect 157 27 203 39)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32))
 	)
 	(drawing
-		(rectangle (rect 16 16 200 128))
+		(rectangle (rect 16 16 208 160))
 	)
 )
 (symbol
@@ -632,7 +639,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1168 520 1328 632)
+	(rect 1160 520 1328 632)
 	(text "final_display" (rect 5 0 67 12)(font "Arial" ))
 	(text "inst7" (rect 8 96 31 108)(font "Arial" ))
 	(port
@@ -659,33 +666,33 @@ applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "score" (rect 0 0 27 12)(font "Arial" ))
-		(text "score" (rect 21 75 48 87)(font "Arial" ))
+		(text "game_text" (rect 0 0 51 12)(font "Arial" ))
+		(text "game_text" (rect 21 75 72 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80))
 	)
 	(port
-		(pt 160 32)
+		(pt 168 32)
 		(output)
 		(text "red" (rect 0 0 15 12)(font "Arial" ))
-		(text "red" (rect 127 27 139 39)(font "Arial" ))
-		(line (pt 160 32)(pt 144 32))
+		(text "red" (rect 135 27 147 39)(font "Arial" ))
+		(line (pt 168 32)(pt 152 32))
 	)
 	(port
-		(pt 160 48)
+		(pt 168 48)
 		(output)
 		(text "green" (rect 0 0 27 12)(font "Arial" ))
-		(text "green" (rect 117 43 139 55)(font "Arial" ))
-		(line (pt 160 48)(pt 144 48))
+		(text "green" (rect 125 43 147 55)(font "Arial" ))
+		(line (pt 168 48)(pt 152 48))
 	)
 	(port
-		(pt 160 64)
+		(pt 168 64)
 		(output)
 		(text "blue" (rect 0 0 20 12)(font "Arial" ))
-		(text "blue" (rect 123 59 139 71)(font "Arial" ))
-		(line (pt 160 64)(pt 144 64))
+		(text "blue" (rect 131 59 147 71)(font "Arial" ))
+		(line (pt 168 64)(pt 152 64))
 	)
 	(drawing
-		(rectangle (rect 16 16 144 96))
+		(rectangle (rect 16 16 152 96))
 	)
 )
 (symbol
@@ -1246,67 +1253,9 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "counter_ones[3..0]" (rect -72 496 20 508)(font "Arial" ))
-	(pt 48 504)
-	(pt 16 504)
-	(bus)
-)
-(connector
-	(text "clk_25MHz" (rect -40 432 13 444)(font "Arial" ))
-	(pt 48 440)
-	(pt 16 440)
-)
-(connector
-	(text "score" (rect 312 432 339 444)(font "Arial" ))
-	(pt 264 440)
-	(pt 304 440)
-)
-(connector
-	(text "pixel_row[9..0]" (rect -56 448 14 460)(font "Arial" ))
-	(pt 48 456)
-	(pt 8 456)
-	(bus)
-)
-(connector
-	(text "pixel_column[9..0]" (rect -80 464 9 476)(font "Arial" ))
-	(pt 48 472)
-	(pt 8 472)
-	(bus)
-)
-(connector
 	(text "bird_on" (rect 1058 456 1093 468)(font "Arial" ))
 	(pt 1048 464)
 	(pt 1016 464)
-)
-(connector
-	(text "red" (rect 1306 544 1321 556)(font "Arial" ))
-	(pt 1328 552)
-	(pt 1336 552)
-)
-(connector
-	(text "green" (rect 1298 560 1325 572)(font "Arial" ))
-	(pt 1328 568)
-	(pt 1336 568)
-)
-(connector
-	(text "blue" (rect 1306 576 1326 588)(font "Arial" ))
-	(pt 1328 584)
-	(pt 1336 584)
-)
-(connector
-	(text "bird_on" (rect 1082 544 1117 556)(font "Arial" ))
-	(pt 1120 552)
-	(pt 1168 552)
-)
-(connector
-	(text "pipe_top" (rect 1074 560 1115 572)(font "Arial" ))
-	(pt 1168 568)
-	(pt 1120 568)
-)
-(connector
-	(text "pipe_bottom" (rect 1072 576 1132 588)(font "Arial" ))
-	(pt 1136 584)
-	(pt 1168 584)
 )
 (connector
 	(text "bird_dead" (rect 1056 472 1103 484)(font "Arial" ))
@@ -1317,17 +1266,6 @@ applicable agreement for further details.
 	(text "score_incr" (rect 1056 488 1106 500)(font "Arial" ))
 	(pt 1016 496)
 	(pt 1048 496)
-)
-(connector
-	(text "score" (rect 1090 592 1117 604)(font "Arial" ))
-	(pt 1168 600)
-	(pt 1120 600)
-)
-(connector
-	(text "counter_tens[3..0]" (rect -64 480 25 492)(font "Arial" ))
-	(pt 48 488)
-	(pt 16 488)
-	(bus)
 )
 (connector
 	(text "seg0[0]" (rect 512 920 548 932)(font "Arial" ))
@@ -1378,11 +1316,6 @@ applicable agreement for further details.
 	(text "sw0" (rect 714 504 732 516)(font "Arial" ))
 	(pt 768 512)
 	(pt 736 512)
-)
-(connector
-	(text "sw0" (rect -6 512 12 524)(font "Arial" ))
-	(pt 48 520)
-	(pt 16 520)
 )
 (connector
 	(text "counter_tens[3..0]" (rect 632 360 721 372)(font "Arial" ))
@@ -1583,7 +1516,83 @@ applicable agreement for further details.
 	(pt 336 672)
 	(bus)
 )
+(connector
+	(text "clk_25MHz" (rect -80 416 -27 428)(font "Arial" ))
+	(pt -24 424)
+	(pt 8 424)
+)
+(connector
+	(text "pixel_row[9..0]" (rect -96 432 -26 444)(font "Arial" ))
+	(pt -32 440)
+	(pt 8 440)
+	(bus)
+)
+(connector
+	(text "pixel_column[9..0]" (rect -120 448 -31 460)(font "Arial" ))
+	(pt -32 456)
+	(pt 8 456)
+	(bus)
+)
+(connector
+	(text "counter_tens[3..0]" (rect -104 464 -15 476)(font "Arial" ))
+	(pt -24 472)
+	(pt 8 472)
+	(bus)
+)
+(connector
+	(text "counter_ones[3..0]" (rect -112 480 -20 492)(font "Arial" ))
+	(pt -24 488)
+	(pt 8 488)
+	(bus)
+)
+(connector
+	(text "sw0" (rect -46 496 -28 508)(font "Arial" ))
+	(pt -24 504)
+	(pt 8 504)
+)
+(connector
+	(text "score" (rect 272 416 299 428)(font "Arial" ))
+	(pt 232 424)
+	(pt 264 424)
+)
+(connector
+	(text "bird_dead" (rect -72 512 -25 524)(font "Arial" ))
+	(pt 8 520)
+	(pt -24 520)
+)
+(connector
+	(text "bird_on" (rect 1074 544 1109 556)(font "Arial" ))
+	(pt 1112 552)
+	(pt 1160 552)
+)
+(connector
+	(text "pipe_top" (rect 1066 560 1107 572)(font "Arial" ))
+	(pt 1160 568)
+	(pt 1112 568)
+)
+(connector
+	(text "score" (rect 1082 592 1109 604)(font "Arial" ))
+	(pt 1160 600)
+	(pt 1112 600)
+)
+(connector
+	(text "pipe_bottom" (rect 1048 576 1108 588)(font "Arial" ))
+	(pt 1112 584)
+	(pt 1160 584)
+)
+(connector
+	(text "red" (rect 1362 544 1377 556)(font "Arial" ))
+	(pt 1328 552)
+	(pt 1352 552)
+)
+(connector
+	(text "green" (rect 1362 560 1389 572)(font "Arial" ))
+	(pt 1328 568)
+	(pt 1352 568)
+)
+(connector
+	(text "blue" (rect 1362 576 1382 588)(font "Arial" ))
+	(pt 1328 584)
+	(pt 1352 584)
+)
 (junction (pt 1168 336))
-(text "red" (rect 1338 536 1353 548)(font "Arial" ))
-(text "green" (rect 1330 552 1357 564)(font "Arial" ))
-(text "blue" (rect 1338 568 1358 580)(font "Arial" ))
