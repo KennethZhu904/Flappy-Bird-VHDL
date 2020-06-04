@@ -10,12 +10,17 @@ ENTITY display IS
 	PORT
 		(
 		--Global Signals--
-		SIGNAL clk, vert_sync, left_click, sw0	: IN std_logic;
-		SIGNAL pixel_row, pixel_column			: IN std_logic_vector(9 DOWNTO 0);
-		SIGNAL pipe_x_pos, pipe_top_y_pos, pipe_bottom_y_pos, pipe_size : IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL clk, vert_sync, left_click, sw0							: IN std_logic;
+		SIGNAL pixel_row, pixel_column									: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL pipe_size 														: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL pipe1_x_pos, pipe1_top_y_pos, pipe1_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL pipe2_x_pos, pipe2_top_y_pos, pipe2_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL pipe3_x_pos, pipe3_top_y_pos, pipe3_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL pipe4_x_pos, pipe4_top_y_pos, pipe4_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
+		SIGNAL pipe5_x_pos, pipe5_top_y_pos, pipe5_bottom_y_pos 	: IN std_logic_vector(9 DOWNTO 0);
 		--Bird Signals--
-		SIGNAL bird_dead 								: OUT std_logic;
-		SIGNAL bird_on									: OUT std_logic
+		SIGNAL bird_dead 										: OUT std_logic;
+		SIGNAL bird_on											: OUT std_logic
 		);		
 END display;
 
@@ -55,7 +60,7 @@ begin
 			bird_y_pos <= bird_y_pos + bird_y_motion;
 		end if;
 		-- Flag when the bird lands at the bottom of the screen.
-		if (('0' & bird_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - bird_size) or ((pipe_x_pos <= bird_x_pos and bird_x_pos <= pipe_x_pos + pipe_size) and (bird_y_pos < pipe_top_y_pos or bird_y_pos > pipe_bottom_y_pos))) then
+		if ('0' & bird_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - bird_size) then
 			bird_dead <= '1'; -------------------- BIRD DIES WHEN IT HITS THE GROUND BUT NOT WHEN IT HITS THE PIPES --------------------
 		else
 			bird_dead <= '0';

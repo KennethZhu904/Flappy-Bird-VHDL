@@ -11,19 +11,24 @@ ENTITY pipes IS
 		SIGNAL clk 								: IN std_logic;
 		SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
 		--SIGNAL RNG								: IN std_LOGIC_vector(1 downto 0);
-		SIGNAL q_pipe_x_pos, q_pipe_top_y_pos, q_pipe_bottom_y_pos, q_pipe_size : OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL q_pipe_size : OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL q_pipe1_x_pos, q_pipe1_top_y_pos, q_pipe1_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL q_pipe2_x_pos, q_pipe2_top_y_pos, q_pipe2_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL q_pipe3_x_pos, q_pipe3_top_y_pos, q_pipe3_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL q_pipe4_x_pos, q_pipe4_top_y_pos, q_pipe4_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL q_pipe5_x_pos, q_pipe5_top_y_pos, q_pipe5_bottom_y_pos : OUT std_logic_vector(9 DOWNTO 0);
 		SIGNAL pipe_top, pipe_bottom		: OUT std_logic
 		);
 END pipes;
 
 architecture behavior of pipes is
 
-SIGNAL pipe_size 							: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(20,10); 
+SIGNAL pipe_size 								: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(20,10); 
  
 SIGNAL pipe1_top_y_pos 						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(200,10);
 SIGNAL pipe1_bottom_y_pos 					: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(350,10);
 SIGNAL pipe1_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(640,10);
- 
+
 SIGNAL pipe2_top_y_pos 						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(200,10);
 SIGNAL pipe2_bottom_y_pos 					: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(350,10);
 SIGNAL pipe2_x_pos 							: std_logic_vector(9 DOWNTO 0	) := CONV_STD_LOGIC_VECTOR(840,10);
@@ -117,8 +122,26 @@ pipe_bottom <= '1' when (( (pipe1_x_pos <= pixel_column + pipe_size) and (pixel_
  
 					 else '0';
 
-q_pipe_top_y_pos <= pipe1_top_y_pos;
-q_pipe_bottom_y_pos <= pipe1_bottom_y_pos;
 q_pipe_size <= pipe_size;
-q_pipe_x_pos <= pipe1_x_pos;
+					 
+q_pipe1_top_y_pos <= pipe1_top_y_pos;
+q_pipe1_bottom_y_pos <= pipe1_bottom_y_pos;
+q_pipe1_x_pos <= pipe1_x_pos;
+
+q_pipe2_top_y_pos <= pipe2_top_y_pos;
+q_pipe2_bottom_y_pos <= pipe2_bottom_y_pos;
+q_pipe2_x_pos <= pipe2_x_pos;
+
+q_pipe3_top_y_pos <= pipe3_top_y_pos;
+q_pipe3_bottom_y_pos <= pipe3_bottom_y_pos;
+q_pipe3_x_pos <= pipe3_x_pos;
+
+q_pipe4_top_y_pos <= pipe4_top_y_pos;
+q_pipe4_bottom_y_pos <= pipe4_bottom_y_pos;
+q_pipe4_x_pos <= pipe4_x_pos;
+
+q_pipe5_top_y_pos <= pipe5_top_y_pos;
+q_pipe5_bottom_y_pos <= pipe5_bottom_y_pos;
+q_pipe5_x_pos <= pipe5_x_pos;
+
 END behavior;
