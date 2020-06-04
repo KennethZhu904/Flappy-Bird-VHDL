@@ -68,11 +68,11 @@ begin
 			temp_bird_dead <= '0';
 		end if;
 		-- Increment the score when the bird passes through a pipe.
-		if (((bird_x_pos = pipe1_x_pos + pipe_size) and (bird_y_pos > pipe1_top_y_pos and bird_y_pos < pipe1_bottom_y_pos)) -- Passes through pipe 1 --
-			or ((bird_x_pos = pipe2_x_pos + pipe_size) and (bird_y_pos > pipe2_top_y_pos and bird_y_pos < pipe2_bottom_y_pos)) -- Passes through pipe 2 --
-			or ((bird_x_pos = pipe3_x_pos + pipe_size) and (bird_y_pos > pipe3_top_y_pos and bird_y_pos < pipe3_bottom_y_pos)) -- Passes through pipe 3 --
-			or ((bird_x_pos = pipe4_x_pos + pipe_size) and (bird_y_pos > pipe4_top_y_pos and bird_y_pos < pipe4_bottom_y_pos)) -- Passes through pipe 4 --
-			or ((bird_x_pos = pipe5_x_pos + pipe_size) and (bird_y_pos > pipe5_top_y_pos and bird_y_pos < pipe5_bottom_y_pos))) then -- Passes through pipe 5 --
+		if ((bird_x_pos = pipe1_x_pos + pipe_size) -- Passes through pipe 1 --
+			or (bird_x_pos = pipe2_x_pos + pipe_size) -- Passes through pipe 2 --
+			or (bird_x_pos = pipe3_x_pos + pipe_size) -- Passes through pipe 3 --
+			or (bird_x_pos = pipe4_x_pos + pipe_size) -- Passes through pipe 4 --
+			or (bird_x_pos = pipe5_x_pos + pipe_size)) then -- Passes through pipe 5 --
 			score_incr <= '1';
 		else
 			score_incr <= '0';

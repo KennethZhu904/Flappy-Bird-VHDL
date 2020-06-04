@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FlappyBird-FlappyCompsys
-Thu Jun 04 17:03:55 2020
+Thu Jun 04 17:59:36 2020
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -22,13 +22,12 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
  14. Inverted Register Statistics
  15. Multiplexer Restructuring Statistics (Restructuring Performed)
  16. Source assignments for text_display:inst11|char_rom:display|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated
- 17. Parameter Settings for User Entity Instance: altpll0:inst|altpll:altpll_component
- 18. Parameter Settings for User Entity Instance: LED_Clk_Divider:inst10
- 19. Parameter Settings for User Entity Instance: text_display:inst11|char_rom:display|altsyncram:altsyncram_component
- 20. altpll Parameter Settings by Entity Instance
- 21. altsyncram Parameter Settings by Entity Instance
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 17. Parameter Settings for User Entity Instance: altpll1:inst|altpll:altpll_component
+ 18. Parameter Settings for User Entity Instance: text_display:inst11|char_rom:display|altsyncram:altsyncram_component
+ 19. altpll Parameter Settings by Entity Instance
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -54,15 +53,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 04 17:03:55 2020      ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 04 17:59:36 2020      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; FlappyBird-FlappyCompsys                   ;
 ; Top-level Entity Name              ; FlappyBird-FlappyCompsys                   ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 731                                        ;
-;     Total combinational functions  ; 686                                        ;
-;     Dedicated logic registers      ; 242                                        ;
-; Total registers                    ; 242                                        ;
+; Total logic elements               ; 706                                        ;
+;     Total combinational functions  ; 660                                        ;
+;     Dedicated logic registers      ; 243                                        ;
+; Total registers                    ; 243                                        ;
 ; Total pins                         ; 17                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 4,096                                      ;
@@ -174,25 +173,25 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                    ; Library ;
 +----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------+
+; ../../../Lab 3/clock_divider.vhd ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Lab 3/clock_divider.vhd                                              ;         ;
 ; 1bit_sev_seg.vhd                 ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/1bit_sev_seg.vhd             ;         ;
 ; text_display.vhd                 ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/text_display.vhd             ;         ;
 ; bird.vhd                         ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/bird.vhd                     ;         ;
 ; Massive_Counter.vhd              ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/Massive_Counter.vhd          ;         ;
-; clock_divider.vhd                ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/clock_divider.vhd            ;         ;
 ; char_rom.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/char_rom.vhd                 ;         ;
 ; BCD_Counter.vhd                  ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/BCD_Counter.vhd              ;         ;
 ; vga_sync.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/vga_sync.vhd                 ;         ;
 ; mouse_new_ver.vhd                ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/mouse_new_ver.vhd            ;         ;
-; altpll0.vhd                      ; yes             ; User Wizard-Generated File             ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/altpll0.vhd                  ;         ;
 ; FlappyBird-FlappyCompsys.bdf     ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/FlappyBird-FlappyCompsys.bdf ;         ;
 ; pipes.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/pipes.vhd                    ;         ;
 ; final_display.vhd                ; yes             ; User VHDL File                         ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/final_display.vhd            ;         ;
+; output_files/altpll1.vhd         ; yes             ; User Wizard-Generated File             ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/output_files/altpll1.vhd     ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altpll.tdf                                                       ;         ;
 ; aglobal130.inc                   ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                                                   ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_pll.inc                                                  ;         ;
 ; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratixii_pll.inc                                                ;         ;
 ; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/cycloneii_pll.inc                                                ;         ;
-; db/altpll0_altpll.v              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/db/altpll0_altpll.v          ;         ;
+; db/altpll1_altpll.v              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/db/altpll1_altpll.v          ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                                                   ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                            ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                                                      ;         ;
@@ -211,20 +210,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                               ;
 +---------------------------------------------+-------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 731                                                                                 ;
+; Estimated Total logic elements              ; 706                                                                                 ;
 ;                                             ;                                                                                     ;
-; Total combinational functions               ; 686                                                                                 ;
+; Total combinational functions               ; 660                                                                                 ;
 ; Logic element usage by number of LUT inputs ;                                                                                     ;
-;     -- 4 input functions                    ; 206                                                                                 ;
-;     -- 3 input functions                    ; 184                                                                                 ;
-;     -- <=2 input functions                  ; 296                                                                                 ;
+;     -- 4 input functions                    ; 201                                                                                 ;
+;     -- 3 input functions                    ; 182                                                                                 ;
+;     -- <=2 input functions                  ; 277                                                                                 ;
 ;                                             ;                                                                                     ;
 ; Logic elements by mode                      ;                                                                                     ;
-;     -- normal mode                          ; 377                                                                                 ;
-;     -- arithmetic mode                      ; 309                                                                                 ;
+;     -- normal mode                          ; 350                                                                                 ;
+;     -- arithmetic mode                      ; 310                                                                                 ;
 ;                                             ;                                                                                     ;
-; Total registers                             ; 242                                                                                 ;
-;     -- Dedicated logic registers            ; 242                                                                                 ;
+; Total registers                             ; 243                                                                                 ;
+;     -- Dedicated logic registers            ; 243                                                                                 ;
 ;     -- I/O registers                        ; 0                                                                                   ;
 ;                                             ;                                                                                     ;
 ; I/O pins                                    ; 17                                                                                  ;
@@ -233,10 +232,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Total PLLs                                  ; 1                                                                                   ;
 ;     -- PLLs                                 ; 1                                                                                   ;
 ;                                             ;                                                                                     ;
-; Maximum fan-out node                        ; altpll0:inst|altpll:altpll_component|altpll0_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 195                                                                                 ;
-; Total fan-out                               ; 2699                                                                                ;
-; Average fan-out                             ; 2.77                                                                                ;
+; Maximum fan-out node                        ; altpll1:inst|altpll:altpll_component|altpll1_altpll:auto_generated|wire_pll1_clk[0] ;
+; Maximum fan-out                             ; 196                                                                                 ;
+; Total fan-out                               ; 2671                                                                                ;
+; Average fan-out                             ; 2.82                                                                                ;
 +---------------------------------------------+-------------------------------------------------------------------------------------+
 
 
@@ -245,17 +244,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                           ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |FlappyBird-FlappyCompsys                    ; 686 (0)           ; 242 (0)      ; 4096        ; 0            ; 0       ; 0         ; 17   ; 0            ; |FlappyBird-FlappyCompsys                                                                                                     ;              ;
-;    |LED_Clk_Divider:inst10|                  ; 55 (55)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|LED_Clk_Divider:inst10                                                                              ;              ;
-;    |MOUSE:inst2|                             ; 52 (52)           ; 63 (63)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|MOUSE:inst2                                                                                         ;              ;
-;    |Massive_Counter:inst9|                   ; 16 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9                                                                               ;              ;
-;       |BCD_counter:BCD_ones|                 ; 8 (8)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_ones                                                          ;              ;
-;       |BCD_counter:BCD_tens|                 ; 8 (8)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_tens                                                          ;              ;
-;    |VGA_SYNC:inst1|                          ; 62 (62)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|VGA_SYNC:inst1                                                                                      ;              ;
-;    |altpll0:inst|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll0:inst                                                                                        ;              ;
-;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll0:inst|altpll:altpll_component                                                                ;              ;
-;          |altpll0_altpll:auto_generated|     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll0:inst|altpll:altpll_component|altpll0_altpll:auto_generated                                  ;              ;
-;    |bird:inst5|                              ; 91 (91)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|bird:inst5                                                                                          ;              ;
+; |FlappyBird-FlappyCompsys                    ; 660 (0)           ; 243 (0)      ; 4096        ; 0            ; 0       ; 0         ; 17   ; 0            ; |FlappyBird-FlappyCompsys                                                                                                     ;              ;
+;    |MOUSE:inst2|                             ; 53 (53)           ; 63 (63)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|MOUSE:inst2                                                                                         ;              ;
+;    |Massive_Counter:inst9|                   ; 9 (1)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9                                                                               ;              ;
+;       |BCD_counter:BCD_ones|                 ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_ones                                                          ;              ;
+;       |BCD_counter:BCD_tens|                 ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_tens                                                          ;              ;
+;    |VGA_SYNC:inst1|                          ; 60 (60)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|VGA_SYNC:inst1                                                                                      ;              ;
+;    |altpll1:inst|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll1:inst                                                                                        ;              ;
+;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll1:inst|altpll:altpll_component                                                                ;              ;
+;          |altpll1_altpll:auto_generated|     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|altpll1:inst|altpll:altpll_component|altpll1_altpll:auto_generated                                  ;              ;
+;    |bird:inst5|                              ; 86 (86)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|bird:inst5                                                                                          ;              ;
+;    |clk_div:inst14|                          ; 42 (42)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|clk_div:inst14                                                                                      ;              ;
 ;    |pipes:inst6|                             ; 294 (294)         ; 78 (78)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|pipes:inst6                                                                                         ;              ;
 ;    |text_display:inst11|                     ; 116 (112)         ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display:inst11                                                                                 ;              ;
 ;       |char_rom:display|                     ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FlappyBird-FlappyCompsys|text_display:inst11|char_rom:display                                                                ;              ;
@@ -274,13 +273,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                                   ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------+------------------------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                        ; IP Include File                                                                                ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------+------------------------------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |FlappyBird-FlappyCompsys|altpll0:inst ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/altpll0.vhd ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------+------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                ;
++--------+--------------+---------+--------------+--------------+----------------------------------------+-------------------------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                        ; IP Include File                                                                                             ;
++--------+--------------+---------+--------------+--------------+----------------------------------------+-------------------------------------------------------------------------------------------------------------+
+; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |FlappyBird-FlappyCompsys|altpll1:inst ; C:/Users/Isaac Rebello/Desktop/COMPSYS 305/Miniproject/FlappyBird/flappy-bird-VHDL/output_files/altpll1.vhd ;
++--------+--------------+---------+--------------+--------------+----------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -347,8 +346,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; pipes:inst6|pipe3_x_pos[0]                               ; Merged with pipes:inst6|pipe1_x_pos[0]                          ;
 ; pipes:inst6|pipe4_x_pos[0]                               ; Merged with pipes:inst6|pipe1_x_pos[0]                          ;
 ; pipes:inst6|pipe5_x_pos[0]                               ; Merged with pipes:inst6|pipe1_x_pos[0]                          ;
-; LED_Clk_Divider:inst10|count[0]                          ; Merged with VGA_SYNC:inst1|h_count[0]                           ;
-; Total Number of Removed Registers = 30                   ;                                                                 ;
+; Total Number of Removed Registers = 29                   ;                                                                 ;
 +----------------------------------------------------------+-----------------------------------------------------------------+
 
 
@@ -357,8 +355,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 242   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 243   ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -386,7 +384,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; pipes:inst6|pipe5_x_pos[8]              ; 3       ;
 ; pipes:inst6|pipe5_x_pos[7]              ; 3       ;
 ; pipes:inst6|pipe5_x_pos[5]              ; 3       ;
-; VGA_SYNC:inst1|h_count[0]               ; 7       ;
 ; pipes:inst6|\pipe_move:clk_cnt[0]       ; 1       ;
 ; MOUSE:inst2|send_char                   ; 3       ;
 ; MOUSE:inst2|SHIFTOUT[3]                 ; 1       ;
@@ -394,21 +391,19 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; MOUSE:inst2|SHIFTOUT[6]                 ; 1       ;
 ; MOUSE:inst2|SHIFTOUT[7]                 ; 1       ;
 ; MOUSE:inst2|SHIFTOUT[8]                 ; 1       ;
-; Total number of inverted registers = 22 ;         ;
+; Total number of inverted registers = 21 ;         ;
 +-----------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |FlappyBird-FlappyCompsys|VGA_SYNC:inst1|v_count[4]                           ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_tens|Q_Out[1] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |FlappyBird-FlappyCompsys|Massive_Counter:inst9|BCD_counter:BCD_ones|Q_Out[0] ;
-; 22:1               ; 2 bits    ; 28 LEs        ; 26 LEs               ; 2 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display:inst11|temp_char_address[4]            ;
-; 25:1               ; 3 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display:inst11|temp_char_address[5]            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |FlappyBird-FlappyCompsys|VGA_SYNC:inst1|v_count[4]                ;
+; 22:1               ; 2 bits    ; 28 LEs        ; 26 LEs               ; 2 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display:inst11|temp_char_address[1] ;
+; 25:1               ; 3 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |FlappyBird-FlappyCompsys|text_display:inst11|temp_char_address[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -421,13 +416,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: altpll0:inst|altpll:altpll_component ;
+; Parameter Settings for User Entity Instance: altpll1:inst|altpll:altpll_component ;
 +-------------------------------+---------------------------+-----------------------+
 ; Parameter Name                ; Value                     ; Type                  ;
 +-------------------------------+---------------------------+-----------------------+
 ; OPERATION_MODE                ; NORMAL                    ; Untyped               ;
 ; PLL_TYPE                      ; AUTO                      ; Untyped               ;
-; LPM_HINT                      ; CBX_MODULE_PREFIX=altpll0 ; Untyped               ;
+; LPM_HINT                      ; CBX_MODULE_PREFIX=altpll1 ; Untyped               ;
 ; QUALIFY_CONF_DONE             ; OFF                       ; Untyped               ;
 ; COMPENSATE_CLOCK              ; CLK0                      ; Untyped               ;
 ; SCAN_CHAIN                    ; LONG                      ; Untyped               ;
@@ -777,7 +772,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; C7_TEST_SOURCE                ; 5                         ; Untyped               ;
 ; C8_TEST_SOURCE                ; 5                         ; Untyped               ;
 ; C9_TEST_SOURCE                ; 5                         ; Untyped               ;
-; CBXI_PARAMETER                ; altpll0_altpll            ; Untyped               ;
+; CBXI_PARAMETER                ; altpll1_altpll            ; Untyped               ;
 ; VCO_FREQUENCY_CONTROL         ; AUTO                      ; Untyped               ;
 ; VCO_PHASE_SHIFT_STEP          ; 0                         ; Untyped               ;
 ; WIDTH_CLOCK                   ; 5                         ; Signed Integer        ;
@@ -791,16 +786,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; AUTO_CASCADE_CHAINS           ; ON                        ; AUTO_CASCADE          ;
 ; IGNORE_CASCADE_BUFFERS        ; OFF                       ; IGNORE_CASCADE        ;
 +-------------------------------+---------------------------+-----------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LED_Clk_Divider:inst10 ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; period         ; 1000  ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -871,7 +856,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                          ; Value                                ;
 +-------------------------------+--------------------------------------+
 ; Number of entity instances    ; 1                                    ;
-; Entity Instance               ; altpll0:inst|altpll:altpll_component ;
+; Entity Instance               ; altpll1:inst|altpll:altpll_component ;
 ;     -- OPERATION_MODE         ; NORMAL                               ;
 ;     -- PLL_TYPE               ; AUTO                                 ;
 ;     -- PRIMARY_CLOCK          ; INCLK0                               ;
@@ -907,7 +892,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -917,9 +902,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Thu Jun 04 17:03:45 2020
+    Info: Processing started: Thu Jun 04 17:59:26 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FlappyBird-FlappyCompsys -c FlappyBird-FlappyCompsys
+Warning (125092): Tcl Script File altpll0.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE altpll0.qip
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file /users/isaac rebello/desktop/compsys 305/lab 3/clock_divider.vhd
+    Info (12022): Found design unit 1: clk_div-behaviour
+    Info (12023): Found entity 1: clk_div
 Info (12021): Found 2 design units, including 1 entities, in source file 1bit_sev_seg.vhd
     Info (12022): Found design unit 1: one_bit_seg7-behaviour
     Info (12023): Found entity 1: one_bit_seg7
@@ -950,9 +940,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file vga_syn
 Info (12021): Found 2 design units, including 1 entities, in source file mouse_new_ver.vhd
     Info (12022): Found design unit 1: MOUSE-behavior
     Info (12023): Found entity 1: MOUSE
-Info (12021): Found 2 design units, including 1 entities, in source file altpll0.vhd
-    Info (12022): Found design unit 1: altpll0-SYN
-    Info (12023): Found entity 1: altpll0
 Info (12021): Found 1 design units, including 1 entities, in source file flappybird-flappycompsys.bdf
     Info (12023): Found entity 1: FlappyBird-FlappyCompsys
 Info (12021): Found 2 design units, including 1 entities, in source file pipes.vhd
@@ -961,6 +948,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file pipes.v
 Info (12021): Found 2 design units, including 1 entities, in source file final_display.vhd
     Info (12022): Found design unit 1: final_display-behavior
     Info (12023): Found entity 1: final_display
+Info (12021): Found 2 design units, including 1 entities, in source file output_files/altpll0.vhd
+    Info (12022): Found design unit 1: altpll0-SYN
+    Info (12023): Found entity 1: altpll0
+Info (12021): Found 2 design units, including 1 entities, in source file output_files/altpll1.vhd
+    Info (12022): Found design unit 1: altpll1-SYN
+    Info (12023): Found entity 1: altpll1
 Info (12127): Elaborating entity "FlappyBird-FlappyCompsys" for the top level hierarchy
 Warning (275083): Bus "Q_Out1[3..0]" found using same base name as "Q_Out", which might lead to a name conflict.
 Warning (275080): Converted elements in bus name "Q_Out" using legacy naming rules. Make any assignments on the new names, not on the original names.
@@ -968,10 +961,10 @@ Warning (275080): Converted elements in bus name "Q_Out" using legacy naming rul
 Warning (275080): Converted elements in bus name "Q_Out1" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "Q_Out1[3..0]" to "Q_Out13..0"
 Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:inst1"
-Info (12128): Elaborating entity "altpll0" for hierarchy "altpll0:inst"
-Info (12128): Elaborating entity "altpll" for hierarchy "altpll0:inst|altpll:altpll_component"
-Info (12130): Elaborated megafunction instantiation "altpll0:inst|altpll:altpll_component"
-Info (12133): Instantiated megafunction "altpll0:inst|altpll:altpll_component" with the following parameter:
+Info (12128): Elaborating entity "altpll1" for hierarchy "altpll1:inst"
+Info (12128): Elaborating entity "altpll" for hierarchy "altpll1:inst|altpll:altpll_component"
+Info (12130): Elaborated megafunction instantiation "altpll1:inst|altpll:altpll_component"
+Info (12133): Instantiated megafunction "altpll1:inst|altpll:altpll_component" with the following parameter:
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "2"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -980,7 +973,7 @@ Info (12133): Instantiated megafunction "altpll0:inst|altpll:altpll_component" w
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "Cyclone III"
-    Info (12134): Parameter "lpm_hint" = "CBX_MODULE_PREFIX=altpll0"
+    Info (12134): Parameter "lpm_hint" = "CBX_MODULE_PREFIX=altpll1"
     Info (12134): Parameter "lpm_type" = "altpll"
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "pll_type" = "AUTO"
@@ -1027,9 +1020,9 @@ Info (12133): Instantiated megafunction "altpll0:inst|altpll:altpll_component" w
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altpll0_altpll.v
-    Info (12023): Found entity 1: altpll0_altpll
-Info (12128): Elaborating entity "altpll0_altpll" for hierarchy "altpll0:inst|altpll:altpll_component|altpll0_altpll:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altpll1_altpll.v
+    Info (12023): Found entity 1: altpll1_altpll
+Info (12128): Elaborating entity "altpll1_altpll" for hierarchy "altpll1:inst|altpll:altpll_component|altpll1_altpll:auto_generated"
 Info (12128): Elaborating entity "final_display" for hierarchy "final_display:inst7"
 Info (12128): Elaborating entity "bird" for hierarchy "bird:inst5"
 Warning (10492): VHDL Process Statement warning at bird.vhd(47): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -1039,33 +1032,18 @@ Warning (10492): VHDL Process Statement warning at bird.vhd(63): signal "bird_si
 Warning (10492): VHDL Process Statement warning at bird.vhd(71): signal "bird_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(71): signal "pipe1_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(71): signal "pipe_size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(71): signal "bird_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(71): signal "pipe1_top_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(71): signal "pipe1_bottom_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(72): signal "bird_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(72): signal "pipe2_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(72): signal "pipe_size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(72): signal "bird_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(72): signal "pipe2_top_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(72): signal "pipe2_bottom_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(73): signal "bird_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(73): signal "pipe3_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(73): signal "pipe_size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(73): signal "bird_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(73): signal "pipe3_top_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(73): signal "pipe3_bottom_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(74): signal "bird_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(74): signal "pipe4_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(74): signal "pipe_size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(74): signal "bird_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(74): signal "pipe4_top_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(74): signal "pipe4_bottom_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(75): signal "bird_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(75): signal "pipe5_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bird.vhd(75): signal "pipe_size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(75): signal "bird_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(75): signal "pipe5_top_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bird.vhd(75): signal "pipe5_bottom_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10631): VHDL Process Statement warning at bird.vhd(44): inferring latch(es) for signal or variable "bird_dead", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at bird.vhd(44): inferring latch(es) for signal or variable "temp_bird_dead", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at bird.vhd(44): inferring latch(es) for signal or variable "score_incr", which holds its previous value in one or more paths through the process
@@ -1138,7 +1116,7 @@ Info (10041): Inferred latch for "pipe_speed[30]" at pipes.vhd(53)
 Info (10041): Inferred latch for "pipe_speed[31]" at pipes.vhd(53)
 Info (12128): Elaborating entity "Massive_Counter" for hierarchy "Massive_Counter:inst9"
 Info (12128): Elaborating entity "BCD_counter" for hierarchy "Massive_Counter:inst9|BCD_counter:BCD_ones"
-Info (12128): Elaborating entity "LED_Clk_Divider" for hierarchy "LED_Clk_Divider:inst10"
+Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst14"
 Info (12128): Elaborating entity "text_display" for hierarchy "text_display:inst11"
 Info (12128): Elaborating entity "char_rom" for hierarchy "text_display:inst11|char_rom:display"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "text_display:inst11|char_rom:display|altsyncram:altsyncram_component"
@@ -1191,17 +1169,17 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 781 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 756 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 13 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 755 logic cells
+    Info (21061): Implemented 730 logic cells
     Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 90 warnings
-    Info: Peak virtual memory: 4644 megabytes
-    Info: Processing ended: Thu Jun 04 17:03:55 2020
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 76 warnings
+    Info: Peak virtual memory: 4641 megabytes
+    Info: Processing ended: Thu Jun 04 17:59:36 2020
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Total CPU time (on all processors): 00:00:09
 
 

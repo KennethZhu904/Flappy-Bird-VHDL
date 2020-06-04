@@ -6,7 +6,7 @@ use IEEE.numeric_std.ALL;
 
 entity Massive_Counter is
   
-port( Clk,Enable, Reset: in std_logic; 
+port( Clk,Enable: in std_logic; 
     Q_Out, Q_Out1: out std_logic_vector(3 downto 0)); 
 end entity Massive_Counter; 
 
@@ -15,7 +15,7 @@ architecture structural of Massive_Counter is
 
 component BCD_Counter is
   
-port( Clk,Enable,Init: in std_logic; 
+port( Clk,Enable : in std_logic; 
     Q_Out: out std_logic_vector(3 downto 0)); 
 end component BCD_counter; 
 
@@ -26,11 +26,11 @@ signal Q_tens, Q_ones: std_logic_vector (3 downto 0);
 begin 
   
   BCD_ones: BCD_counter
-    port map (Clk=>Clk, Enable=>Enable, Init=> Reset, Q_Out=> Q_ones); 
+    port map (Clk=>Clk, Enable=>Enable, Q_Out=> Q_ones); 
       
       
    BCD_tens: BCD_counter
-    port map (Clk=>Clk, Enable=> Enable_tens, Init=> Reset,Q_Out=>Q_tens);
+    port map (Clk=>Clk, Enable=> Enable_tens, Q_Out=>Q_tens);
      
     
 
