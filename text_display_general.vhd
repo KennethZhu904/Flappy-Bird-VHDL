@@ -6,6 +6,7 @@ USE IEEE.STD_LOGIC_ARITH.all;
 
 
 -- This component implemented the text for the pause menu, game over menu, and the score on the VGA screen.
+--The text component is written by Kenneth Zhu
 
 entity text_display_general is
    port (
